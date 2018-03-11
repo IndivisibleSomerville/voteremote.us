@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { iframeResizer } from 'iframe-resizer';
 
@@ -9,11 +8,16 @@ class VoteOrgForm extends Component {
   }
 
   render() {
+
+    const campaignCode = this.props.campaign
+      ? `&campaign=${this.props.campaign}`
+      : ""
+
     return (
       <iframe
         ref="voteorg"
         title="Vote.org"
-        src={`https://${this.props.kind}.vote.org/?partner=194963`}
+        src={`https://${this.props.kind}.vote.org/?partner=194963${campaignCode}`}
         width="100%"
         marginheight="0"
         frameborder="0"

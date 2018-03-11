@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './VoteOrgForm'
 import VoteOrgForm from './VoteOrgForm';
@@ -17,8 +16,11 @@ class App extends Component {
         </header>
         {
           this.state.kind
-            ? <VoteOrgForm kind={this.state.kind} />
-            : <button onClick={() => this.setState({ kind: "register" })}>Clicky to Register!</button>
+            ? <VoteOrgForm kind={this.state.kind} campaign="indivisiblesomerville.org" />
+            : <div>
+              <button onClick={() => this.setState({ kind: "register" })}>Clicky to Register!</button>
+              <button onClick={() => this.setState({ kind: "absentee" })}>Clicky for that absentee action!</button>
+            </div>
         }
 
       </div>
