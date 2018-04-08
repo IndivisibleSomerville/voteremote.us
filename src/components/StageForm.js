@@ -1,7 +1,6 @@
+
 import React, { Component } from 'react';
 import { Input, Form } from 'semantic-ui-react'
-import validation from 'react-validation-mixin'; //import the mixin
-import strategy from 'joi-validation-strategy'; //choose a validation strategy
 
 class StageForm extends Component {
   constructor(props) {
@@ -77,4 +76,4 @@ class StageForm extends Component {
   }
 }
 
-export default validation(strategy)(StageForm);
+export default StageForm; //validation(strategy)(StageForm);

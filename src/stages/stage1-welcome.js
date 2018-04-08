@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Form } from 'semantic-ui-react'
 import StageForm from '../components/StageForm'
-import Joi from 'joi'
 
 export default {
   firstName: {
@@ -14,8 +13,7 @@ export default {
   },
   email: {
     placeholder: "me@example.com",
-    label: "What is your email address?",
-    validation: Joi.string().email()
+    label: "What is your email address?"
   },
   phone: {
     placeholder: "555-555-5555",
