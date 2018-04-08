@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
-import './VoteOrgForm';
+import VoteOrgForm from './VoteOrgForm';
+import { Transition } from 'semantic-ui-react'
 import store from 'store';
+
+import StepZilla from 'react-stepzilla'
+import 'react-stepzilla/src/css/main.css'
+import StepFinal from './stages/stage-final'
+import StageForm from './components/StageForm'
+
+import welcomeStage from './stages/stage1-welcome'
+
 const Appcues = window.Appcues;
 
-const stages = [
-  require('./stages/stage1-welcome').default,
-  require('./stages/stage-final').default
-]
-
-const resumeStage = require('./stages/stage-resume').default
-
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      stage: null,
-      user: store.get('user') || {}
+      user: store.get('user') || { currentStep: 0 }
     }
-    this.stageComplete = this.stageComplete.bind(this);
+
+    this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
+    this.steps = [
+      { name: "Welcome", component: <StageForm form={welcomeStage} {...this.stepProps} /> },
+      { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
+    ]
   }
 
   componentDidMount() {
@@ -29,24 +36,44 @@ class App extends Component {
     }
   }
 
-  stageComplete(userProps) {
+  getStore() {
+    return this.state.user;
+  }
+
+  // Called on every keypress. Keep this lightweight.
+  updateStore(userProps, cb) {
     this.setState((prevState, props) => {
-      const user = Object.assign({}, prevState.user, userProps);
-      user.latestStage = prevState.stage;
+      const user = Object.assign({}, prevState.user, userProps, { started: true });
+      return {
+        user: cb ? cb(user) : user
+      };
+    });
+  }
+
+  // Called when the step changes. Do persistence and API calls here.
+  stepChange(step) {
+    this.updateStore({}, (user) => {
+      user.currentStep = step;
       Appcues.identify(user.email, user || {});
       store.set('user', user);
-      return { stage: prevState.stage + 1, user };
+      return user;
     });
   }
 
   render() {
-    const Stage = (this.state.stage === null) ? resumeStage : stages[this.state.stage];
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Vote Remote!</h1>
         </header>
-        <Stage user={this.state.user} stageComplete={this.stageComplete} />
+        <div className="App-form">
+          <StepZilla
+            steps={this.steps}
+            onStepChange={(step) => this.stepChange(step)}
+            nextButtonCls="ui button"
+            backButtonCls="ui button"
+            startAtStep={this.state.user.currentStep || 0}
+          />
+        </div>
       </div>
     );
   }

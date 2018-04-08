@@ -1,34 +1,65 @@
 import React, { Component } from 'react';
 import { Input, Form } from 'semantic-ui-react'
+import validation from 'react-validation-mixin'; //import the mixin
+import strategy from 'joi-validation-strategy'; //choose a validation strategy
 
-export default class Welcome extends Component {
+class StageForm extends Component {
   constructor(props) {
     super(props);
-    this.state = this.props.user;
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.validatorTypes = this.makeValidationObject(this.props.form, (key) => this.props.form[key].validation);
+    console.log(this.validatorTypes)
+
+    this.getValidatorData = this.getValidatorData.bind(this);
+    this.renderHelpText = this.renderHelpText.bind(this);
+    this.isValidated = this.isValidated.bind(this);
+  }
+
+  isValidated() {
+    return new Promise((resolve, reject) => {
+      this.props.validate((error) => {
+        if (error) {
+          reject();
+          return;
+        }
+        resolve();
+      });
+    });
+  }
+
+  getValidatorData() {
+    return this.makeValidationObject(this.props.form, (key) => this.props.getStore()[key])
+  }
+
+  makeValidationObject(key, valueCb) {
+    return Object.entries(this.props.form)
+      .map(([key, value]) => {
+        return [key, valueCb(key)];
+      })
+      .filter(([key, value]) => value !== null && value !== undefined)
+      .reduce((result, [key, value]) => {
+        result[key] = value;
+        return result
+      }, {});
   }
 
   handleChange(event) {
     const target = event.target;
 
-    this.setState({
+    this.props.updateStore({
       [target.name]: target.type === 'checkbox'
         ? target.checked
         : target.value
     });
   }
 
-  handleSubmit(event) {
-    this.props.stageComplete(this.state);
-    event.preventDefault();
+  renderHelpText(message, id) {
+    return (<div className="val-err-tooltip" key={id}><span>{message}</span></div>);
   }
 
   render() {
-
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form>
         {Object.entries(this.props.form).map(([key, value]) => {
           return (<Form.Field key={key}>
             <label>{value.label}</label>
@@ -36,13 +67,14 @@ export default class Welcome extends Component {
               name={key}
               placeholder={value.placeholder}
               type="text"
-              value={this.state[key] || ""}
-              onChange={this.handleChange} />
+              value={this.props.getStore()[key] || ""}
+              onChange={this.handleChange.bind(this)} />
+            {this.props.getValidationMessages(key).map(this.renderHelpText)}
           </Form.Field>);
         })}
-
-        <Form.Button content='Onward!' />
       </Form >
     );
   }
 }
+
+export default validation(strategy)(StageForm);

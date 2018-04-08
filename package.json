@@ -6,9 +6,13 @@
   "dependencies": {
     "gh-pages": "^1.1.0",
     "iframe-resizer": "^3.5.16",
+    "joi": "^13.1.2",
+    "joi-validation-strategy": "^0.3.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
+    "react-stepzilla": "^4.7.0",
+    "react-validation-mixin": "^5.4.0",
     "semantic-ui": "^2.3.0",
     "semantic-ui-react": "^0.78.3",
     "store": "^2.0.12"

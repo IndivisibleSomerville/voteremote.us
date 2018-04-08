@@ -4,7 +4,18 @@ import { iframeResizer } from 'iframe-resizer';
 
 class VoteOrgForm extends Component {
   componentDidMount() {
-    iframeResizer({ log: true, checkOrigin: false }, this.refs.voteorg)
+    iframeResizer({ log: false, checkOrigin: false }, this.refs.voteorg);
+    this.refs.voteorg.onload = () => {
+      this.onFrameLoad(this.refs.voteorg.src);
+    }
+  }
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  onFrameLoad(src) {
+    console.log(src);
   }
 
   render() {
@@ -13,16 +24,18 @@ class VoteOrgForm extends Component {
       ? `&campaign=${this.props.campaign}`
       : ""
 
+    const url = `https://${this.props.kind}.vote.org/?partner=194963${campaignCode}`
+
     return (
       <iframe
         ref="voteorg"
         title="Vote.org"
-        src={`https://${this.props.kind}.vote.org/?partner=194963${campaignCode}`}
+        src={url}
         width="100%"
-        marginheight="0"
-        frameborder="0"
-        id="frame1"
-        scrollable="no"></iframe>
+        marginHeight="0"
+        frameBorder="0"
+        scrollable="no" >
+      </iframe>
     );
   }
 }
