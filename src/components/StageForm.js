@@ -68,7 +68,7 @@ class StageForm extends Component {
               type="text"
               value={this.props.getStore()[key] || ""}
               onChange={this.handleChange.bind(this)} />
-            {this.props.getValidationMessages(key).map(this.renderHelpText)}
+            //{this.props.getValidationMessages(key).map(this.renderHelpText)}
           </Form.Field>);
         })}
       </Form >
