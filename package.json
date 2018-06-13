@@ -4,16 +4,16 @@
   "private": true,
   "homepage": "https://indivisiblesomerville.github.io/voteremote.us",
   "dependencies": {
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^1.2.0",
     "iframe-resizer": "^3.5.16",
     "joi-browser": "^13.0.1",
     "joi-validation-strategy": "^0.3.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
+    "react-scripts": "^1.1.4",
     "react-stepzilla": "^4.7.0",
     "react-validation-mixin": "^5.4.0",
-    "semantic-ui": "^2.3.0",
+    "semantic-ui": "^2.3.1",
     "semantic-ui-react": "^0.78.3",
     "store": "^2.0.12"
   },
@@ -26,7 +26,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "renamer": "^0.6.1"
+    "gulp": "^4.0.0",
+    "renamer": "^0.7.0"
   }
 }
