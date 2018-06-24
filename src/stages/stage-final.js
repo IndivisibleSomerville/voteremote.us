@@ -4,12 +4,13 @@ import { Input, Form } from 'semantic-ui-react'
 export default class Finished extends Component {
   constructor(props) {
     super(props);
+
     this.state = this.props.user;
   }
 
   render() {
     return (
-      <pre>{JSON.stringify(this.state)}</pre>
+      <div><h1>All set!!</h1></div>
     );
   }
 }
