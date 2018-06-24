@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import VoteOrgForm from './VoteOrgForm';
-import { Transition } from 'semantic-ui-react'
+import { Transition } from 'semantic-ui-react';
 import store from 'store';
 
-import StepZilla from 'react-stepzilla'
-import 'react-stepzilla/src/css/main.css'
-import StepFinal from './stages/stage-final'
-import StageForm from './components/StageForm'
+import StepZilla from 'react-stepzilla';
+import 'react-stepzilla/src/css/main.css';
+import StepFinal from './stages/stage-final';
+import StageForm from './components/StageForm';
 
-import welcomeStage from './stages/stage1-welcome'
+import welcomeStage from './stages/stage1-welcome';
+import addressStage from './stages/stage2-address';
 
 const Appcues = window.Appcues;
 
@@ -23,12 +24,14 @@ class App extends Component {
     this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
     this.steps = [
       { name: "Welcome", component: <StageForm form={welcomeStage} {...this.stepProps} /> },
+      { name: "Your Address", component: <StageForm form={addressStage} {...this.stepProps} /> },
       { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
     ]
   }
 
   componentDidMount() {
     const user = this.state.user;
+
     if (user.email) {
       Appcues.identify(user.email, user);
     } else {
