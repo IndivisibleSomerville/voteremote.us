@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Form } from 'semantic-ui-react';
 
-import Joi from 'joi';
+import Joi from 'joi-browser';
 
 class StageForm extends Component {
   constructor(props) {
