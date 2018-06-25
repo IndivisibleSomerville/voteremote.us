@@ -23,9 +23,9 @@ class App extends Component {
 
     this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
     this.steps = [
-      { name: "Welcome", component: <StageForm form={welcomeStage} {...this.stepProps} /> },
-      { name: "Your Address", component: <StageForm form={addressStage} {...this.stepProps} /> },
-      { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
+      { name: "Welcome", component: <StageForm step={0} form={welcomeStage} {...this.stepProps} /> },
+      { name: "Your Address", component: <StageForm step={1} form={addressStage} {...this.stepProps} /> },
+      { name: "You're Done!", component: <StepFinal step={3} {...this.stepProps} /> }
     ]
   }
 

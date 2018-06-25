@@ -12,7 +12,6 @@ class StageForm extends Component {
       props.getStore(),
       Object.keys(props.form)
     );
-
     this.onChange = this.onChange.bind(this);
     this.isValidated = this.isValidated.bind(this);
   }
@@ -20,15 +19,29 @@ class StageForm extends Component {
   setupState(store, keys) {
     let newState = {};
 
-    // Create "error" keys for each form value, and set it to null
+    // Create "error" keys for each form value
     keys.forEach((key) => {
-      let errorName = key + '_error';
-
-      newState[key] = store[key];
-      newState[errorName] = null;
+      newState[key] = store[key] === undefined ? "" : store[key];
     });
 
     return newState;
+  }
+
+  componentDidUpdate(prevProps) {
+    // If step has changeds
+    if (prevProps.step !== this.props.step) {
+      this.onStepChange();
+    }
+  }
+
+  onStepChange() {
+    let newState = this.setupState(
+      this.props.getStore(),
+      Object.keys(this.props.form)
+    );
+
+    this.setState(newState);
+    this.props.updateStore(newState);
   }
 
   isValidated() {
@@ -41,25 +54,26 @@ class StageForm extends Component {
       let schema = this.props.form[key].validation;
       let value = this.state[key];
       let validation = Joi.validate(value, schema);
-      let errorName = key + '_error';
+      let errorName = this.makeErrorKey(key);
 
       if (validation.error !== null) {
-        isDataValid = false;
         // set error message for given field property
+        isDataValid = false;
         newState[errorName] = validation.error.details[0].message;
-      } else {
-        // set null to error message value for given field property
-        newState[errorName] = null;
-        newStore[key] = value;
       }
+      newStore[key] = value;
     });
     // Update state and local store
-    this.setState(newState);
     if (isDataValid) {
       this.props.updateStore(newStore);
     }
+    this.setState(newState);
 
     return isDataValid;
+  }
+
+  makeErrorKey(key) {
+    return key + "_error";
   }
 
   onChange(e) {
@@ -73,7 +87,7 @@ class StageForm extends Component {
     return (
       <Form>
         {Object.entries(this.props.form).map(([key, value]) => {
-          let errorName = key + "_error";
+          let errorName = this.makeErrorKey(key);
           let errorCn = this.state[errorName] == null ? "" : "ui red message";
 
           return (<Form.Field key={key}>
@@ -85,7 +99,6 @@ class StageForm extends Component {
               type="text"
               value={this.state[key]}
               onChange={this.onChange}
-              onBlur={this.isValidated}
             />
           <div className={errorCn}><span>{this.state[errorName]}</span></div>
           </Form.Field>);
