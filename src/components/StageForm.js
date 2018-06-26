@@ -29,7 +29,7 @@ class StageForm extends Component {
 
   componentDidUpdate(prevProps) {
     // If step has changeds
-    if (prevProps.step !== this.props.step) {
+    if (prevProps.form !== this.props.form) {
       this.onStepChange();
     }
   }
