@@ -72,18 +72,22 @@ class StageForm extends Component {
       newStore[key] = value;
     });
 
-    const isCaptchaValid = !this.props.showCaptcha || this.state.captcha != undefined;
-
-    if (!isCaptchaValid) {
-      newState[this.makeErrorKey('captcha')] = "captcha is required"
+    const isCaptchaValid = !this.props.showCaptcha || this.state.captcha !== undefined;
+    if (this.props.showCaptcha) {
+      if (!isCaptchaValid) {
+        newState[this.makeErrorKey('captcha')] = "captcha is required"
+      }
+      newStore['captcha']  = this.state.captcha;
     }
+
     // Update state and local store
-    if (isDataValid) {
+    const isValid = isDataValid && isCaptchaValid;
+    if (isValid) {
       this.props.updateStore(newStore);
     }
     this.setState(newState);
 
-    return isDataValid && isCaptchaValid;
+    return isValid;
   }
 
   makeErrorKey(key) {
