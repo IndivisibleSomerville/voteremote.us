@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Input, Form } from 'semantic-ui-react';
 
 import Joi from 'joi-browser';
+import ReCAPTCHA from "react-google-recaptcha";
 
 class StageForm extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class StageForm extends Component {
       Object.keys(props.form)
     );
     this.onChange = this.onChange.bind(this);
+    this.onCaptchaChange = this.onCaptchaChange.bind(this);
     this.isValidated = this.isValidated.bind(this);
   }
 
@@ -44,8 +46,14 @@ class StageForm extends Component {
     this.props.updateStore(newState);
   }
 
+  onCaptchaChange(captcha) {
+    this.setState({captcha});
+    console.log("Captcha value:", captcha);
+  }
+
   isValidated() {
     let isDataValid = true;
+
     let newState = {};
     let newStore = {};
 
@@ -63,13 +71,19 @@ class StageForm extends Component {
       }
       newStore[key] = value;
     });
+
+    const isCaptchaValid = !this.props.showCaptcha || this.state.captcha != undefined;
+
+    if (!isCaptchaValid) {
+      newState[this.makeErrorKey('captcha')] = "captcha is required"
+    }
     // Update state and local store
     if (isDataValid) {
       this.props.updateStore(newStore);
     }
     this.setState(newState);
 
-    return isDataValid;
+    return isDataValid && isCaptchaValid;
   }
 
   makeErrorKey(key) {
@@ -82,14 +96,23 @@ class StageForm extends Component {
     newState[e.target.name] = e.target.value;
     this.setState(newState);
   }
-
+  makeErrorDiv(key) {
+    const errorName = this.makeErrorKey(key);
+    const errorCn = this.state[errorName] == null ? "" : "ui red message";
+    return <div className={errorCn}><span>{this.state[errorName]}</span></div>;
+  }
   render() {
+    const captcha = (this.props.showCaptcha?<div>
+      <ReCAPTCHA
+        ref="recaptcha"
+        sitekey="6LeSqWEUAAAAAIE0iuav_dtrNtBQsUJIxB3Ktq0P"
+        onChange={this.onCaptchaChange}
+      />
+      {this.makeErrorDiv('captcha')}
+    </div>:"");
     return (
       <Form>
         {Object.entries(this.props.form).map(([key, value]) => {
-          let errorName = this.makeErrorKey(key);
-          let errorCn = this.state[errorName] == null ? "" : "ui red message";
-
           return (<Form.Field key={key}>
             <label>{value.label}</label>
             <Input
@@ -100,9 +123,10 @@ class StageForm extends Component {
               value={this.state[key]}
               onChange={this.onChange}
             />
-          <div className={errorCn}><span>{this.state[errorName]}</span></div>
+            {this.makeErrorDiv(key)}
           </Form.Field>);
         })}
+        {captcha}
       </Form >
     );
   }
