@@ -19,6 +19,13 @@ export default {
   phone: {
     placeholder: "555-555-5555",
     label: "What is your phone number?",
-    validation: Joi.string().min(1).max(30)
+    validation: Joi.string().regex(/^[0-9-]{10-13}$/),
+    errorMsg: "Not a valid phone number!"
+  },
+  birthDate: {
+    placeholder: "MM/DD/YYYY",
+    label: "What is your Birthdate?",
+    validation: Joi.string().regex(/^(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d$/),
+    errorMsg: "Birthdate must be in MM/DD/YYYY format!"
   }
 }

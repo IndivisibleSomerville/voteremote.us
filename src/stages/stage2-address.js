@@ -9,7 +9,7 @@ export default {
   streetAddressLine2: {
     placeholder: "Apartment, suite, unit, building, floor, etc.",
     label: "",
-    validation: Joi.string().min(1).max(100)
+    validation: Joi.string().min(1).max(50)
   },
   city: {
     placeholder: "Boston",
@@ -19,11 +19,13 @@ export default {
   state: {
     placeholder: "MA",
     label: "State:",
-    validation: Joi.string().min(1).max(30)
+    validation: Joi.string().regex(/^[A-Z]{2}$/),
+    errorMsg: "State must be capitalized, and in a two letter abbreviated format!"
   },
   zipCode: {
     placeholder: "02111",
     label: "Zip Code:",
-    validation: Joi.string().min(5).max(9)
+    validation: Joi.string().regex(/^\d{5}$/),
+    errorMsg: "Zip code must be in 5 digit format!"
   }
 }
