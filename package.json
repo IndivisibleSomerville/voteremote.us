@@ -9,6 +9,7 @@
     "joi-browser": "^13.0.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-iframe": "^1.2.0",
     "react-scripts": "^1.1.4",
     "react-stepzilla": "^4.7.0",
     "semantic-ui": "^2.3.2",
