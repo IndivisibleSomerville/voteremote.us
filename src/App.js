@@ -5,11 +5,18 @@ import store from 'store';
 
 import StepZilla from 'react-stepzilla';
 import 'react-stepzilla/src/css/main.css';
-import StepFinal from './stages/stage-final';
-import StageForm from './components/StageForm';
 
+// Form Stages
+import StageForm from './components/StageForm';
 import welcomeStage from './stages/stage1-welcome';
 import addressStage from './stages/stage2-address';
+import StepFinal from './stages/stage-final';
+
+// Vote.org Iframe stages
+import StageIframe from './components/StageIframe';
+import voteVerify from './stages/stage-verify';
+import voteRegister from './stages/stage-register';
+import voteAbsentee from './stages/stage-absentee';
 
 const Appcues = window.Appcues;
 
@@ -25,6 +32,9 @@ class App extends Component {
     this.steps = [
       { name: "Welcome", component: <StageForm form={welcomeStage} {...this.stepProps} /> },
       { name: "Your Address", component: <StageForm form={addressStage} {...this.stepProps} /> },
+      { name: "Vote Verification", component: <StageIframe form={voteVerify} {...this.stepProps} /> },
+      { name: "Vote Registration", component: <StageIframe form={voteRegister} {...this.stepProps} /> },
+      { name: "Vote Absentee Ballot", component: <StageIframe form={voteAbsentee} {...this.stepProps} /> },
       { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
     ]
   }
@@ -43,7 +53,6 @@ class App extends Component {
     return this.state.user;
   }
 
-  // Called on every keypress. Keep this lightweight.
   updateStore(userProps, cb) {
     this.setState((prevState, props) => {
       const user = Object.assign({}, prevState.user, userProps, { started: true });
@@ -57,6 +66,7 @@ class App extends Component {
   stepChange(step) {
     this.updateStore({}, (user) => {
       user.currentStep = step;
+
       Appcues.identify(user.email, user || {});
       store.set('user', user);
       return user;

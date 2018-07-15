@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Input, Form } from 'semantic-ui-react'
 
 export default class Finished extends Component {
   constructor(props) {
@@ -10,7 +9,9 @@ export default class Finished extends Component {
 
   render() {
     return (
-      <div><h1>All set!!</h1></div>
+      <div>
+        <h1>All set!!</h1>
+      </div>
     );
   }
 }
