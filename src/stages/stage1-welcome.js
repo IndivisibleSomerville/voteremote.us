@@ -22,10 +22,22 @@ export default {
     validation: Joi.string().regex(/^([0-9]){3}(-)?([0-9]){3}(-)?([0-9]){4}$/),
     errorMsg: "Not a valid phone number! Should be in xxx-xxx-xxxx format!"
   },
-  birthDate: {
-    placeholder: "MM/DD/YYYY",
-    label: "What is your Birthdate?",
-    validation: Joi.string().regex(/^(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d$/),
-    errorMsg: "Birthdate must be in MM/DD/YYYY format!"
+  birthMonth: {
+    placeholder: "MM",
+    label: "When is your birth month?",
+    validation: Joi.string().regex(/^(0[1-9]|1[012])$/),
+    errorMsg: "Birth month must be in MM format!"
+  },
+  birthDay: {
+    placeholder: "DD",
+    label: "When is your birth day?",
+    validation: Joi.string().regex(/^(0[1-9]|[12][0-9]|3[01])$/),
+    errorMsg: "Birth day must be in DD format!"
+  },
+  birthYear: {
+    placeholder: "YYYY",
+    label: "When is your birth year?",
+    validation: Joi.string().regex(/^(19|20)\d\d$/),
+    errorMsg: "Birth year must be in YYYY format!"
   }
 }
