@@ -41,3 +41,21 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
 }
+
+.ballot_img  {
+    width: 72px;
+    height: 100px;
+    background-image: url("images/noun-ballot-811111.svg");
+}
+
+.vote_img  {
+    width: 100px;
+    height: 100px;
+    background-image: url("images/noun-vote-811112.svg");
+}
+
+.group_img  {
+    width: 100px;
+    height: 100px;
+    background-image: url("images/group-10.svg");
+}
