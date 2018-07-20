@@ -10,7 +10,9 @@
 .vr_black_background {
     background-color: #0D1730;
 }
-
+.vr_grey_background {
+    background-color: #8999AF;
+}
 /* @font-face kit by Fonts2u (http://www.fonts2u.com) */
 @font-face {
     font-family:"Lovelo-Black";
