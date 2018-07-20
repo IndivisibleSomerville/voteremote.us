@@ -157,6 +157,14 @@
                 }
 
                 </style>
+            <script>
+                function scrollToWhat() {
+                    document.querySelector('.what_box').scrollIntoView({
+                        alignToTop: true, 
+                        behavior: 'smooth' 
+                    });
+                }
+            </script>
             <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
             <link rel="stylesheet" href="vr.css">
@@ -164,10 +172,10 @@
     <body class="vr_body">
         <div class="root">
             <div class="headline">
-            <h1 class="headline fl"> VOTE REMOTE</h1> 
-            <div class="social_box fr"> 
-                <div class="social vr_black_background">
-                        <i class="fab fa-facebook-f"></i>
+                <h1 class="headline fl"> VOTE REMOTE</h1> 
+                <div class="social_box fr"> 
+                    <div class="social vr_black_background">
+                            <i class="fab fa-facebook-f"></i>
                     </div>
                     <div class="social vr_black_background">
                         <i class="fab fa-twitter"></i>
@@ -199,7 +207,7 @@
                 <div class="started_box vr_red_background">
                     GET STARTED
                 </div>
-                <div class="teaser_circle">
+                <div class="teaser_circle" onClick="scrollToWhat()">
                     <svg xmlns="http://www.w3.org/2000/svg">
                         <path fill="none" stroke-width="4" stroke-linecap="round" stroke="#FFF"
                             d="M30 25 L50 35 L70 25" />
