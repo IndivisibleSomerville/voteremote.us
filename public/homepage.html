@@ -1,162 +1,6 @@
 <html>
     <head>
             <title>Vote Remote Homepage</title>
-            <style>
-                .vr_body {
-                    background-color: #0D1730;
-                    color: #FFF;
-                }
-                .root {
-                    margin-left: auto; margin-right: auto;
-                    width: 84rem;
-                    padding: 10px;
-                }
-                div.headline {
-                    height: 7rem;
-                }
-                div.headline h1 {
-                    font-size: 4rem;
-                    font-weight: bold;
-                    margin: 0;
-                }
-                .social {
-                    float: left;
-                    padding: 14px;
-                    color: #FFFFFF;
-                    font-size: 2rem;
-                    font-weight: bold;
-                }
-                .social_box {
-                    margin: 17px;
-                }
-                .fl {
-                    float:left;
-                }
-                .fr {
-                    float: right;
-                }
-                .links_box {
-                    height: 75px;
-                }
-                .banner_box {
-                    height: 689px;
-                }
-                .count_box {
-                    width:42rem;
-                    height: 551px;
-                }
-                .links_box .vr_section_subhead {
-                    font-size: 24px;
-                    float:left;
-                    padding:30px;
-                    padding-right: 90px;
-                }
-                .banner_box {
-                    position: relative;
-                    text-align: center;
-                }
-                .banner_box .vr_section_head {
-                    padding-top: 96px;
-                    font-size: 124px;
-                }
-                .banner_box .vr_section_subhead {
-                    padding-top: 10px;
-                    font-size: 24px;
-                }
-
-                .started_box {
-                    width: 337px;
-                    height: 40px;
-                    font-family: Lovelo-Black;
-                    font-size: 24px;
-                    padding-top:20px;
-                    text-align: center;
-                }
-
-                .banner_box .started_box {
-                    margin-top: 80px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                .teaser_circle {
-                    position: absolute;
-                    bottom: 0px;
-                    left: 50%;
-
-                    width: 100px;
-                    height: 50px;
-                    background-color: #C4CCD7;
-                    margin-left: -50px;
-                    border-top-left-radius: 50px;
-                    border-top-right-radius: 50px;
-                }
-                .what_box {
-                    height: 424px;
-                    color: #0D1730;
-                    text-align: center;
-                }
-                .what_box .vr_section_head {
-                    padding-top: 60px;
-                    width:100%;
-                }
-                .what_icon_container {
-                    width: 882px;
-                    margin-top: 40px;
-                    margin-left:auto;
-                    margin-right:auto;
-                }
-                .what_icon_box {
-                    width: 294px;
-                    float: left;
-                }
-                .img  {
-                    margin-left:auto;
-                    margin-right:auto;
-                }
-                .img_txt {
-                    margin-top: 13px;
-                }
-                .count_box .vr_section_head {
-                    padding-top: 80px;
-                    padding-left: 79px;
-                }
-                .count_box .vr_body {
-                    margin: 0;
-                    padding-top: 24px;
-                    padding-left: 79px;
-                    padding-right: 62px;
-                }
-                .count_box .started_box {
-                    margin-top: 24px;
-                    margin-left: 79px;
-                }
-                .mountain_box {
-                    width:42rem;
-                    height: 551px;
-                    background-color: #D8D8D8;
-                }
-
-                .footer_box {
-                    clear:left;
-                    padding-top: 60px;
-                    padding-left: 40px;
-                    
-                }
-                .footer_box a {
-                    color: #ffffff;
-                    float: left;
-                    margin-left: 60px;
-                }
-                .cr {
-                    width: 280px;
-                    clear:left;
-                    margin-top: 24px;
-                    margin-left:auto;
-                    margin-right:auto;
-                    margin-bottom: 40px;
-                }
-
-                </style>
             <script>
                 function scrollToWhat() {
                     document.querySelector('.what_box').scrollIntoView({
@@ -168,6 +12,8 @@
             <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
             <link rel="stylesheet" href="vr.css">
+            <!-- <link rel="stylesheet" href="homepage_web.css"> -->
+            <link rel="stylesheet" href="homepage.css">
     </head>
     <body class="vr_body">
         <div class="root">
@@ -191,6 +37,9 @@
                     </div>
                     <div style="clear:left"></div>
                 </div> 
+            </div>
+            <div class="menu_box vr_red_background">
+                    MENU
             </div>
             <div class="links_box vr_red_background">
                 <div class="vr_section_subhead"> VIEW YOUR STATE REQUIREMENTS </div>
@@ -221,25 +70,39 @@
                     <div class="what_icon_container">
                         <div class="what_icon_box">
                             <div class="vote_img img"></div>
+                            <div class="vr_section_subhead">
+                                MAKE YOUR VOTE COUNT
+                            </div>
                             <div class="img_txt">
                                 Use our district tool to find out where your vote is most useful.
                             </div>
                         </div>
                         <div class="what_icon_box">
                             <div class="ballot_img img"></div>
+                            <div class="vr_section_subhead">
+                                STREAMLINE YOUR VOTE
+                            </div>
                             <div class="img_txt">
                                 When you sign up, we'll deliver everything you need to vote remotely.
                             </div>
                         </div>
                         <div class="what_icon_box">
                             <div class="group_img img"></div>
+                            <div class="vr_section_subhead">
+                                JOIN A COMMUNITY
+                            </div>
                             <div class="img_txt">
                                 Use our district tool to find out where your vote is most useful.
                             </div>
                         </div>
+                        <div style="clear:left"></div>
                     </div>
             </div>
-            <div class="count_box fl">
+
+            <div class="mountain_box">
+
+            </div>
+            <div class="count_box">
                 <div class="vr_section_head">
                         MAKE YOUR VOTE COUNT
                 </div>
@@ -259,9 +122,6 @@
                 <div class="started_box vr_red_background">
                     GET STARTED
                 </div>
-            </div>
-            <div class="mountain_box fl">
-
             </div>
             <div class="footer_box">
                 <a href="#">View your State Requirements</a>
