@@ -43,15 +43,16 @@ class StageForm extends Component {
       Object.keys(this.props.form)
     );
 
+    // update state
     this.setState(newState);
+    // Remove error messages for store update
+    delete newState.errorMsgs;
     this.props.updateStore(newState);
   }
 
   isValidated() {
     let isDataValid = true;
-    let newState = {
-      errorMsgs: {}
-    };
+    let newState = {errorMsgs: {}};
     let newStore = {};
 
     // Iterate over props.form fields and update field's error status

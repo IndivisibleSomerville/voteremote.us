@@ -38,6 +38,6 @@ export default {
     placeholder: "YYYY",
     label: "When is your birth year?",
     validation: Joi.string().regex(/^(19|20)\d\d$/),
-    errorMsg: "Birth year must be in YYYY format!"
+    errorMsg: "Birth year must be in 19YY or 20YY format!"
   }
 }
