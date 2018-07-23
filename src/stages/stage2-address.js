@@ -9,7 +9,8 @@ export default {
   streetAddressLine2: {
     placeholder: "Apartment, suite, unit, building, floor, etc.",
     label: "",
-    validation: Joi.string().min(1).max(50)
+    validation: Joi.string().min(0).max(50).valid('').optional(),
+    errorMsg: "Address entry is too long!"
   },
   city: {
     placeholder: "Boston",

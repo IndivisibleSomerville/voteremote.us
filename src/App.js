@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import VoteOrgForm from './VoteOrgForm';
 import { Transition } from 'semantic-ui-react';
-import store from 'store';
 
 import StepZilla from 'react-stepzilla';
 import 'react-stepzilla/src/css/main.css';
@@ -10,13 +9,13 @@ import 'react-stepzilla/src/css/main.css';
 import StageForm from './components/StageForm';
 import welcomeStage from './stages/stage1-welcome';
 import addressStage from './stages/stage2-address';
-import StepFinal from './stages/stage-final';
+import StepFinal from './stages/stage6-final';
 
 // Vote.org Iframe stages
 import StageIframe from './components/StageIframe';
-import voteVerify from './stages/stage-verify';
-import voteRegister from './stages/stage-register';
-import voteAbsentee from './stages/stage-absentee';
+import voteVerify from './stages/stage3-verify';
+import voteRegister from './stages/stage4-register';
+import voteAbsentee from './stages/stage5-absentee';
 
 const Appcues = window.Appcues;
 
@@ -25,8 +24,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: store.get('user') || { currentStep: 0 }
-    }
+      user: {
+        currentStep: 0
+      }
+    };
 
     this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
     this.steps = [
@@ -36,7 +37,7 @@ class App extends Component {
       { name: "Vote Registration", component: <StageIframe form={voteRegister} {...this.stepProps} /> },
       { name: "Vote Absentee Ballot", component: <StageIframe form={voteAbsentee} {...this.stepProps} /> },
       { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
-    ]
+    ];
   }
 
   componentDidMount() {
@@ -68,7 +69,6 @@ class App extends Component {
       user.currentStep = step;
 
       Appcues.identify(user.email, user || {});
-      store.set('user', user);
       return user;
     });
   }

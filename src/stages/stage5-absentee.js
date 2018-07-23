@@ -10,5 +10,7 @@ export default {
   zipCode: 'user[zip_5]',
   email: 'user[email]',
   phone: 'user[digits]',
-  birthDate: ['user[date_of_birth_month]', 'user[date_of_birth_day]', 'user[date_of_birth_year]']
+  birthMonth: 'user[date_of_birth_month]',
+  birthDay: 'user[date_of_birth_day]',
+  birthYear: 'user[date_of_birth_year]'
 };

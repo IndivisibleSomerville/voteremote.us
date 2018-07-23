@@ -10,5 +10,7 @@ export default {
   zipCode: 'zip_5',
   email: 'email',
   phone: 'digits',
-  birthDate: ['date_of_birth_month', 'date_of_birth_day', 'date_of_birth_year']
+  birthMonth: 'date_of_birth_month',
+  birthDay: 'date_of_birth_day',
+  birthYear: 'date_of_birth_year'
 };
