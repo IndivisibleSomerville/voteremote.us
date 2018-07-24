@@ -94,25 +94,31 @@ class StageForm extends Component {
 
   render() {
     return (
-      <Form>
-        {Object.entries(this.props.form).map(([key, value]) => {
-          let errorMsg = this.state.errorMsgs[key];
-          let errorCn = errorMsg == null ? "" : "ui red message";
+      // If requested form equals a certain form, then output it here
+      <WelcomeForm 
+        state={this.state}
+        onChange={this.onChange}
+      />
 
-          return (<Form.Field key={key}>
-            <label>{value.label}</label>
-            <Input
-              ref={key}
-              name={key}
-              placeholder={value.placeholder}
-              type="text"
-              value={this.state[key]}
-              onChange={this.onChange}
-            />
-          <div className={errorCn}><span>{errorMsg}</span></div>
-          </Form.Field>);
-        })}
-      </Form >
+      // <Form>
+      //   {Object.entries(this.props.form).map(([key, value]) => {
+      //     let errorMsg = this.state.errorMsgs[key];
+      //     let errorCn = errorMsg == null ? "" : "ui red message";
+
+      //     return (<Form.Field key={key}>
+      //       <label>{value.label}</label>
+      //       <Input
+      //         ref={key}
+      //         name={key}
+      //         placeholder={value.placeholder}
+      //         type="text"
+      //         value={this.state[key]}
+      //         onChange={this.onChange}
+      //       />
+      //     <div className={errorCn}><span>{errorMsg}</span></div>
+      //     </Form.Field>);
+      //   })}
+      // </Form>
     );
   }
 }
