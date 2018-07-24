@@ -11,7 +11,7 @@ const WelcomeForm = (props) => {
                 value={props.state[key] | ""}
                 onChange={props.onChange}
             />
-            <div className={props.errorCn}><span>{props.errorMsg}</span></div>
+            <div className={props.state.errorMsgs[key] === null ? "" : "ui red message"}><span>{props.state.errorMsgs[key]}</span></div>
         </Form.Field>
     </Form>
 };
