@@ -1,39 +1,77 @@
-.App {
-  max-width: 710px;
+html {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+.vr_body {
+  background-color: #0D1730;
+  color: #FFF;
+}
+.root {
   margin: 0 auto;
+  width: 100%;
+}
+.headline {
+  align-items: center;
+  display: flex;
+  height: 125px;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+.headline h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
+.headline .social_box {
+  display: none;
+}
+.social {
+  margin: 10px;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-div#AppForm {
-  margin: 0 auto;
+.form {
+  background-color:#FFFFFF;
+  padding-bottom: 20px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.footer_box {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.footer_box a {
+  color: #ffffff;
+  padding: 10px 20px;
+}
+.cr {
+  margin-top: 24px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  height: 250px;
-  padding: 0px;
-  color: black;
-  overflow: hidden;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}
-
-.App-header img {
-  margin-top: -80px;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media screen and (min-width: 600px) {
+  .headline h1 {
+    padding-left: 50px;
+  }
+  .headline .social_box {
+    display: flex;
+    padding-right: 50px;
+  }
+  .footer_box {
+    flex-direction: row;
+  }
+  .footer_box a {
+    padding: 0 20px;
+  }
 }

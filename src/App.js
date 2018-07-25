@@ -5,6 +5,12 @@ import { Transition } from 'semantic-ui-react';
 import StepZilla from 'react-stepzilla';
 import 'react-stepzilla/src/css/main.css';
 
+import './App.css';
+
+// Generic Components
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 // Form Stages
 import StageForm from './components/StageForm';
 import welcomeStage from './stages/stage1-welcome';
@@ -75,10 +81,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        </header>
-        <div className="App-form">
+      <div className="root">
+        <Header />
+        <div className="form">
           <StepZilla
             steps={this.steps}
             onStepChange={(step) => this.stepChange(step)}
@@ -87,6 +92,7 @@ class App extends Component {
             startAtStep={this.state.user.currentStep || 0}
           />
         </div>
+        <Footer />
       </div>
     );
   }
