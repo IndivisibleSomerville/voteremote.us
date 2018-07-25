@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Form } from 'semantic-ui-react';
+import WelcomeForm from '../stage-forms/stage1-welcome';
 
 import Joi from 'joi-browser';
 
