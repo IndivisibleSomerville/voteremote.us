@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WelcomeForm from '../stage-forms/stage1-welcome';
+import AddressForm from '../stage-forms/stage2-address';
 
 import Joi from 'joi-browser';
 
@@ -93,33 +94,22 @@ class StageForm extends Component {
   }
 
   render() {
-    return (
-      // If requested form equals a certain form, then output it here
-      <WelcomeForm 
-        state={this.state}
-        onChange={this.onChange}
-      />
-
-      // <Form>
-      //   {Object.entries(this.props.form).map(([key, value]) => {
-      //     let errorMsg = this.state.errorMsgs[key];
-      //     let errorCn = errorMsg == null ? "" : "ui red message";
-
-      //     return (<Form.Field key={key}>
-      //       <label>{value.label}</label>
-      //       <Input
-      //         ref={key}
-      //         name={key}
-      //         placeholder={value.placeholder}
-      //         type="text"
-      //         value={this.state[key]}
-      //         onChange={this.onChange}
-      //       />
-      //     <div className={errorCn}><span>{errorMsg}</span></div>
-      //     </Form.Field>);
-      //   })}
-      // </Form>
-    );
+    if (this.props.formName === "welcomeStage") {
+      return (
+        <WelcomeForm 
+          state={this.state}
+          onChange={this.onChange}
+        />
+      )
+    }
+    else if (this.props.formName === "addressStage") {
+      return (
+        <AddressForm 
+          state={this.state}
+          onChange={this.onChange}
+        />
+      )
+    }
   }
 }
 

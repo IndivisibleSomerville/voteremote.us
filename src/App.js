@@ -37,8 +37,8 @@ class App extends Component {
 
     this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
     this.steps = [
-      { name: "Welcome", component: <StageForm form={welcomeStage} {...this.stepProps} /> },
-      { name: "Your Address", component: <StageForm form={addressStage} {...this.stepProps} /> },
+      { name: "Welcome", component: <StageForm formName="welcomeStage" form={welcomeStage} {...this.stepProps} /> },
+      { name: "Your Address", component: <StageForm formName="addressStage" form={addressStage} {...this.stepProps} /> },
       { name: "Vote Verification", component: <StageIframe form={voteVerify} {...this.stepProps} /> },
       { name: "Vote Registration", component: <StageIframe form={voteRegister} {...this.stepProps} /> },
       { name: "Vote Absentee Ballot", component: <StageIframe form={voteAbsentee} {...this.stepProps} /> },
