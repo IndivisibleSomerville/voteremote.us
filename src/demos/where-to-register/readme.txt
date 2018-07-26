@@ -1,0 +1,1 @@
+Note: The images here shouldn't be used. I have them in, but they didn't quite work as planned so remove them before using this. If you want to use state images (with appropriate Creative Commons license), go ahead.

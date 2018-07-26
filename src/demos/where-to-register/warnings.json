@@ -1,0 +1,14 @@
+[
+    {
+        "warning-type": "deadline",
+        "warning-state": "all",
+        "warning-person-or-absentee": "both",
+        "warning-text": "If you are voting absentee, we recommend you submit your request for an absentee ballot at least one month before the election, to make sure there is enough time to get your ballot through the Postal Service."
+    },
+    {
+        "warning-type": "requirement",
+        "warning-state": "MA",
+        "warning-person-or-absentee": "both",
+        "warning-text": "Is there a requirement?"
+    }
+]
