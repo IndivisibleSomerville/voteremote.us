@@ -44,10 +44,8 @@ class StageForm extends Component {
       Object.keys(this.props.form)
     );
 
-    // update state
+    // update state and store
     this.setState(newState);
-    // Remove error messages for store update
-    delete newState.errorMsgs;
     this.props.updateStore(newState);
   }
 
