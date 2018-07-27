@@ -3,31 +3,34 @@ import { Input, Form } from 'semantic-ui-react';
 
 const WelcomeForm = (props) => (
     <Form>
-        <Form.Field>
-            <label>Your Name</label>
-            <Input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                value={props.state["firstName"]}
-                onChange={props.onChange}
-            />
-            <div className={props.state.errorMsgs["firstName"] === null ? "" : "ui red message"}>
-                <span>{props.state.errorMsgs["firstName"]}</span>
-            </div>
-        </Form.Field>
-        <Form.Field>
-            <Input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                value={props.state["lastName"]}
-                onChange={props.onChange}
-            />
-            <div className={props.state.errorMsgs["lastName"] === null ? "" : "ui red message"}>
-                <span>{props.state.errorMsgs["lastName"]}</span>
-            </div>
-        </Form.Field>
+        <Form.Group widths='equal'>
+            <Form.Field>
+                <label>Your Name</label>
+                <Input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={props.state["firstName"]}
+                    onChange={props.onChange}
+                />
+                <div className={props.state.errorMsgs["firstName"] === null ? "" : "ui red message"}>
+                    <span>{props.state.errorMsgs["firstName"]}</span>
+                </div>
+            </Form.Field>
+            <Form.Field>
+                <label>Last Name</label>
+                <Input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={props.state["lastName"]}
+                    onChange={props.onChange}
+                />
+                <div className={props.state.errorMsgs["lastName"] === null ? "" : "ui red message"}>
+                    <span>{props.state.errorMsgs["lastName"]}</span>
+                </div>
+            </Form.Field>
+        </Form.Group>
         <Form.Field>
             <label>Your Email</label>
             <Input
