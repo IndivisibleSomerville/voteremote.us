@@ -41,7 +41,7 @@ const AddressForm = (props) => (
             </div>
         </Form.Field>
         <Form.Field>
-            //TODO: Make this a dropdown
+            {/*TODO: Make this a dropdown*/}
             <Input
                 type="text"
                 name="school[state]"

@@ -43,7 +43,7 @@ const WelcomeForm = (props) => (
         </Form.Field>
         <Form.Field>
             <label>What school do you attend?</label>
-            //TODO: Make this a dropdown
+            {/*TODO: Make this a dropdown*/}
             <Input
                 type="text"
                 name="school"
