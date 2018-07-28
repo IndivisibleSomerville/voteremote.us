@@ -11,17 +11,17 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// Form Stages
-import StageForm from './components/StageForm';
-import welcomeStage from './stages/stage1-welcome';
-import addressStage from './stages/stage2-address';
-import StepFinal from './stages/stage6-final';
+// Stages
+import YourInfo from './stages/your-info';
+import YourVote from './stages/your-vote';
+import YourBallot from './stages/your-ballot';
 
-// Vote.org Iframe stages
-import StageIframe from './components/StageIframe';
-import voteVerify from './stages/stage3-verify';
-import voteRegister from './stages/stage4-register';
-import voteAbsentee from './stages/stage5-absentee';
+// Sub-steps
+import welcomeSubStep from './stages/your-info/sub-steps/substep1-welcome';
+import addressSubStep from './stages/your-info/sub-steps/substep2-address';
+import absentee from './stages/your-ballot/absentee';
+import register from './stages/your-ballot/register';
+import verify from './stages/your-ballot/verify';
 
 const Appcues = window.Appcues;
 
@@ -35,14 +35,17 @@ class App extends Component {
       }
     };
 
-    this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
+    this.stepProps = { 
+      getStore: this.getStore.bind(this), 
+      updateStore: this.updateStore.bind(this), 
+      changeSubStep: this.changeSubStep.bind(this)
+    };
+
     this.steps = [
-      { name: "Welcome", component: <StageForm formName="welcomeStage" form={welcomeStage} {...this.stepProps} /> },
-      { name: "Your Address", component: <StageForm formName="addressStage" form={addressStage} {...this.stepProps} /> },
-      { name: "Vote Verification", component: <StageIframe form={voteVerify} {...this.stepProps} /> },
-      { name: "Vote Registration", component: <StageIframe form={voteRegister} {...this.stepProps} /> },
-      { name: "Vote Absentee Ballot", component: <StageIframe form={voteAbsentee} {...this.stepProps} /> },
-      { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
+      { name: "Your Info: Welcome", component: <YourInfo formName="welcomeSubstep" form={welcomeSubStep} {...this.stepProps} /> },
+      { name: "Your Info: Address", component: <YourInfo formName="addressSubstep" form={addressSubStep} {...this.stepProps} /> },
+      { name: "Your Vote", component: <YourVote formName="YourVote" form={welcomeSubStep} {...this.stepProps} /> },
+      { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> }
     ];
   }
 
@@ -77,6 +80,40 @@ class App extends Component {
       Appcues.identify(user.email, user || {});
       return user;
     });
+  }
+
+  changeSubStep(step, subStep) {
+    let iframeComponent, index;
+
+    switch (step) {
+      case 'Your Ballot':
+        index = 3;
+        switch (subStep) {
+          case 'absentee': 
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> };
+            break;
+          case 'register':
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Register to Vote" form={register} {...this.stepProps} /> };
+            break;
+          case 'verify':
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Verify Your Registration" form={verify} {...this.stepProps} /> };
+            break;
+        }
+        break;
+      case 'Your Info':
+        index = 0;
+        switch (subStep) {
+          case 'welcome':
+            iframeComponent = { name: "Your Info", component: <YourInfo formName="welcomeSubstep" form={welcomeSubStep} {...this.stepProps} /> };
+            break;
+          case 'address':
+            iframeComponent = { name: "Your Info", component: <YourInfo formName="addressSubstep" form={addressSubStep} {...this.stepProps} /> };
+            break;
+        }
+        break;
+    }
+
+    this.steps[index] = iframeComponent;
   }
 
   render() {
