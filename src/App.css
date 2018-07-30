@@ -5,9 +5,30 @@ html {
 body {
   margin: 0;
 }
+button {  /* button style reset code, inspired by https://gist.github.com/MoOx/9137295 */
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+}
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 .vr_body {
   background-color: #0D1730;
   color: #FFF;
+  line-height: 1;
 }
 .root {
   margin: 0 auto;
@@ -42,27 +63,46 @@ body {
 }
 
 .form_header_headline_box {
-
+  color: white;
+  margin: 0 auto;
+  max-width: 708px;
+  padding: 10px;
+  text-align: center;
 }
 
 .form_header_headline_box h1 {
-
+  font-size: 48px;
+  margin: 0;
 }
 
 .form_header_headline_box h2 {
-
+  font-size: 18px;
+  margin: 0;
 }
 
 .form_header_description_box {
-
+  background-color: #f1f1f1;
+  color: black;
+  margin: 10px auto;
+  max-width: 708px;
+  padding: 20px;
 }
 
 .form_header_description_box p {
 
 }
 
-.form_header_description_box button {
+.form_header_description_box .button_container {
+  display: flex;
+  justify-content: center;
+}
 
+.form_header_description_box button {
+  border: 1px solid #FB3B3E;
+  color: #FB3B3E;
+  font-size: 24px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .footer_box {
