@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Input, Form } from 'semantic-ui-react';
+import WelcomeForm from './stage-forms/substep1-welcome';
+import AddressForm from './stage-forms/substep2-address';
 
 import Joi from 'joi-browser';
 
-class StageForm extends Component {
+class YourInfo extends Component {
   constructor(props) {
     super(props);
 
@@ -43,10 +44,8 @@ class StageForm extends Component {
       Object.keys(this.props.form)
     );
 
-    // update state
+    // update state and store
     this.setState(newState);
-    // Remove error messages for store update
-    delete newState.errorMsgs;
     this.props.updateStore(newState);
   }
 
@@ -75,7 +74,7 @@ class StageForm extends Component {
       newState[key] = value;
     });
 
-    // If Data is Valid update Local Store
+    // If Data is Valid update Store
     if (isDataValid) {
       this.props.updateStore(newStore);
     }
@@ -93,28 +92,23 @@ class StageForm extends Component {
   }
 
   render() {
-    return (
-      <Form>
-        {Object.entries(this.props.form).map(([key, value]) => {
-          let errorMsg = this.state.errorMsgs[key];
-          let errorCn = errorMsg == null ? "" : "ui red message";
-
-          return (<Form.Field key={key}>
-            <label>{value.label}</label>
-            <Input
-              ref={key}
-              name={key}
-              placeholder={value.placeholder}
-              type="text"
-              value={this.state[key]}
-              onChange={this.onChange}
-            />
-          <div className={errorCn}><span>{errorMsg}</span></div>
-          </Form.Field>);
-        })}
-      </Form >
-    );
+    if (this.props.formName === "welcomeSubstep") {
+      return (
+        <WelcomeForm 
+          state={this.state}
+          onChange={this.onChange}
+        />
+      )
+    }
+    else if (this.props.formName === "addressSubstep") {
+      return (
+        <AddressForm 
+          state={this.state}
+          onChange={this.onChange}
+        />
+      )
+    }
   }
 }
 
-export default StageForm;
+export default YourInfo;

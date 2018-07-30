@@ -5,17 +5,23 @@ import { Transition } from 'semantic-ui-react';
 import StepZilla from 'react-stepzilla';
 import 'react-stepzilla/src/css/main.css';
 
-// Form Stages
-import StageForm from './components/StageForm';
-import welcomeStage from './stages/stage1-welcome';
-import addressStage from './stages/stage2-address';
-import StepFinal from './stages/stage6-final';
+import './App.css';
 
-// Vote.org Iframe stages
-import StageIframe from './components/StageIframe';
-import voteVerify from './stages/stage3-verify';
-import voteRegister from './stages/stage4-register';
-import voteAbsentee from './stages/stage5-absentee';
+// Generic Components
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+// Stages
+import YourInfo from './components/stages/your-info';
+import YourVote from './components/stages/your-vote';
+import YourBallot from './components/stages/your-ballot';
+
+// Sub-steps
+import welcomeSubStep from './components/stages/your-info/sub-steps/substep1-welcome';
+import addressSubStep from './components/stages/your-info/sub-steps/substep2-address';
+import absentee from './components/stages/your-ballot/absentee';
+import register from './components/stages/your-ballot/register';
+import verify from './components/stages/your-ballot/verify';
 
 const Appcues = window.Appcues;
 
@@ -25,18 +31,23 @@ class App extends Component {
     super(props);
     this.state = {
       user: {
-        currentStep: 0
+        currentStep: 0,
+        showNavigation: true
       }
     };
 
-    this.stepProps = { getStore: this.getStore.bind(this), updateStore: this.updateStore.bind(this) }
+    this.stepProps = { 
+      getStore: this.getStore.bind(this), 
+      updateStore: this.updateStore.bind(this), 
+      changeSubStep: this.changeSubStep.bind(this)
+    };
+
     this.steps = [
-      { name: "Welcome", component: <StageForm form={welcomeStage} {...this.stepProps} /> },
-      { name: "Your Address", component: <StageForm form={addressStage} {...this.stepProps} /> },
-      { name: "Vote Verification", component: <StageIframe form={voteVerify} {...this.stepProps} /> },
-      { name: "Vote Registration", component: <StageIframe form={voteRegister} {...this.stepProps} /> },
-      { name: "Vote Absentee Ballot", component: <StageIframe form={voteAbsentee} {...this.stepProps} /> },
-      { name: "You're Done!", component: <StepFinal {...this.stepProps} /> }
+      { name: "Your Info: Welcome", component: <YourInfo formName="welcomeSubstep" form={welcomeSubStep} {...this.stepProps} /> },
+      { name: "Your Info: Address", component: <YourInfo formName="addressSubstep" form={addressSubStep} {...this.stepProps} /> },
+      { name: "Your Vote: Which State?", component: <YourVote formName="selectDistrict" {...this.stepProps} /> },
+      { name: "Your Vote: Are You Registered?", component: <YourVote formName="registered" {...this.stepProps} /> },
+      { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> }
     ];
   }
 
@@ -73,20 +84,45 @@ class App extends Component {
     });
   }
 
+  changeSubStep(step, subStep) {
+    let iframeComponent, index;
+
+    switch (step) {
+      case 'Your Ballot':
+        index = this.steps.length - 1;
+        switch (subStep) {
+          case 'absentee': 
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> };
+            break;
+          case 'register':
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Register to Vote" form={register} {...this.stepProps} /> };
+            break;
+          case 'verify':
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Verify Your Registration" form={verify} {...this.stepProps} /> };
+            break;
+        }
+        break;
+    }
+
+    this.steps[index] = iframeComponent;
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        </header>
-        <div className="App-form">
+      <div className="root">
+        <Header />
+        <div className="form">
           <StepZilla
             steps={this.steps}
             onStepChange={(step) => this.stepChange(step)}
             nextButtonCls="ui button"
             backButtonCls="ui button"
             startAtStep={this.state.user.currentStep || 0}
+            showNavigation={this.state.user.showNavigation}
+            showSteps={false}
           />
         </div>
+        <Footer />
       </div>
     );
   }
