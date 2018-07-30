@@ -12,16 +12,16 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 // Stages
-import YourInfo from './stages/your-info';
-import YourVote from './stages/your-vote';
-import YourBallot from './stages/your-ballot';
+import YourInfo from './components/stages/your-info';
+import YourVote from './components/stages/your-vote';
+import YourBallot from './components/stages/your-ballot';
 
 // Sub-steps
-import welcomeSubStep from './stages/your-info/sub-steps/substep1-welcome';
-import addressSubStep from './stages/your-info/sub-steps/substep2-address';
-import absentee from './stages/your-ballot/absentee';
-import register from './stages/your-ballot/register';
-import verify from './stages/your-ballot/verify';
+import welcomeSubStep from './components/stages/your-info/sub-steps/substep1-welcome';
+import addressSubStep from './components/stages/your-info/sub-steps/substep2-address';
+import absentee from './components/stages/your-ballot/absentee';
+import register from './components/stages/your-ballot/register';
+import verify from './components/stages/your-ballot/verify';
 
 const Appcues = window.Appcues;
 
@@ -31,7 +31,8 @@ class App extends Component {
     super(props);
     this.state = {
       user: {
-        currentStep: 0
+        currentStep: 0,
+        showNavigation: true
       }
     };
 
@@ -44,7 +45,8 @@ class App extends Component {
     this.steps = [
       { name: "Your Info: Welcome", component: <YourInfo formName="welcomeSubstep" form={welcomeSubStep} {...this.stepProps} /> },
       { name: "Your Info: Address", component: <YourInfo formName="addressSubstep" form={addressSubStep} {...this.stepProps} /> },
-      { name: "Your Vote", component: <YourVote formName="YourVote" form={welcomeSubStep} {...this.stepProps} /> },
+      { name: "Your Vote: Which State?", component: <YourVote formName="selectDistrict" {...this.stepProps} /> },
+      { name: "Your Vote: Are You Registered?", component: <YourVote formName="registered" {...this.stepProps} /> },
       { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> }
     ];
   }
@@ -87,7 +89,7 @@ class App extends Component {
 
     switch (step) {
       case 'Your Ballot':
-        index = 3;
+        index = this.steps.length - 1;
         switch (subStep) {
           case 'absentee': 
             iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> };
@@ -97,17 +99,6 @@ class App extends Component {
             break;
           case 'verify':
             iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Verify Your Registration" form={verify} {...this.stepProps} /> };
-            break;
-        }
-        break;
-      case 'Your Info':
-        index = 0;
-        switch (subStep) {
-          case 'welcome':
-            iframeComponent = { name: "Your Info", component: <YourInfo formName="welcomeSubstep" form={welcomeSubStep} {...this.stepProps} /> };
-            break;
-          case 'address':
-            iframeComponent = { name: "Your Info", component: <YourInfo formName="addressSubstep" form={addressSubStep} {...this.stepProps} /> };
             break;
         }
         break;
@@ -127,6 +118,8 @@ class App extends Component {
             nextButtonCls="ui button"
             backButtonCls="ui button"
             startAtStep={this.state.user.currentStep || 0}
+            showNavigation={this.state.user.showNavigation}
+            showSteps={false}
           />
         </div>
         <Footer />

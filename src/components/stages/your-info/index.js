@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import WelcomeForm from './stage-forms/substep1-welcome';
+import AddressForm from './stage-forms/substep2-address';
 
 import Joi from 'joi-browser';
 
-class YourVote extends Component {
+class YourInfo extends Component {
   constructor(props) {
     super(props);
 
@@ -11,8 +13,6 @@ class YourVote extends Component {
       props.getStore(),
       Object.keys(props.form)
     );
-
-    this.props.changeSubStep('Your Ballot', 'verify');
 
     this.onChange = this.onChange.bind(this);
     this.isValidated = this.isValidated.bind(this);
@@ -74,7 +74,7 @@ class YourVote extends Component {
       newState[key] = value;
     });
 
-    // If Data is Valid update Local Store
+    // If Data is Valid update Store
     if (isDataValid) {
       this.props.updateStore(newStore);
     }
@@ -92,12 +92,23 @@ class YourVote extends Component {
   }
 
   render() {
-    return (
-      <div>
-        Your VOTE!
-      </div>
-    )
+    if (this.props.formName === "welcomeSubstep") {
+      return (
+        <WelcomeForm 
+          state={this.state}
+          onChange={this.onChange}
+        />
+      )
+    }
+    else if (this.props.formName === "addressSubstep") {
+      return (
+        <AddressForm 
+          state={this.state}
+          onChange={this.onChange}
+        />
+      )
+    }
   }
 }
 
-export default YourVote;
+export default YourInfo;

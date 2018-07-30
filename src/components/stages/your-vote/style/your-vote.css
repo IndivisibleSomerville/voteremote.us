@@ -1,0 +1,17 @@
+.your-vote-container .yv-registered-question {
+  color: black;
+  padding: 40px 0;
+}
+
+.your-vote-container .yv-registered-question .yv-registered-question-title {
+  padding-bottom: 20px;
+}
+
+.your-vote-container .yv-state-question {
+  color: black;
+  padding: 40px 0;
+}
+
+.your-vote-container .yv-state-question .yv-state-question-title {
+  padding-bottom: 20px;
+}
