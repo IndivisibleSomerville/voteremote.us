@@ -37,7 +37,32 @@ body {
 
 .form {
   background-color:#FFFFFF;
+  color: black;
   padding: 20px;
+}
+
+.form_header_headline_box {
+
+}
+
+.form_header_headline_box h1 {
+
+}
+
+.form_header_headline_box h2 {
+
+}
+
+.form_header_description_box {
+
+}
+
+.form_header_description_box p {
+
+}
+
+.form_header_description_box button {
+
 }
 
 .footer_box {

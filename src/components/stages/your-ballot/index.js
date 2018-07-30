@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Iframe from 'react-iframe';
+import IframeTopper from './IframeTopper';
 
 export default class YourBallot extends Component {
   constructor(props) {
@@ -34,15 +35,20 @@ export default class YourBallot extends Component {
 
   render() {
     return (
-      <Iframe
-        url={this.buildUrl()}
-        width="100%"
-        height="1200px"
-        id={this.props.form.id}
-        display="initial"
-        position="relative"
-        allowFullScreen
-      />
+      <div>
+        {<IframeTopper
+          formName={this.props.formName}
+        />}
+        <Iframe
+          url={this.buildUrl()}
+          width="100%"
+          height="1200px"
+          id={this.props.form.id}
+          display="initial"
+          position="relative"
+          allowFullScreen
+        />
+      </div>
     );
   }
 }
