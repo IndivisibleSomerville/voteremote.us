@@ -33,22 +33,40 @@ export default class YourBallot extends Component {
     return url;
   }
 
+  handleNextClick = (step, subStep) => {
+    this.props.changeSubStep(step, subStep);
+    this.props.jumpToStep(4);
+    console.log("Theoretically I'm in handleNextClick");
+  }
+
   render() {
-    return (
-      <div>
-        {<IframeTopper
-          formName={this.props.formName}
-        />}
-        <Iframe
-          url={this.buildUrl()}
-          width="100%"
-          height="1200px"
-          id={this.props.form.id}
-          display="initial"
-          position="relative"
-          allowFullScreen
-        />
-      </div>
-    );
+    if (this.props.formName !== 'Done') {
+      return (
+        <div>
+          {<IframeTopper
+            formName={this.props.formName}
+            handleNextClick={this.handleNextClick}
+          />}
+          <Iframe
+            url={this.buildUrl()}
+            width="100%"
+            height="1200px"
+            id={this.props.form.id}
+            display="initial"
+            position="relative"
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+    else {
+      return (
+        <div>
+          <h1>All done!</h1>
+          <p>You have completed the VoteRemote process. Give yourself a high five!</p>
+        </div>
+      )
+    }
+
   }
 }

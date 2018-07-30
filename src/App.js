@@ -100,6 +100,9 @@ class App extends Component {
           case 'verify':
             iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Verify Your Registration" form={verify} {...this.stepProps} /> };
             break;
+          case 'done':
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Done" {...this.stepProps} /> };
+            break;
         }
         break;
     }

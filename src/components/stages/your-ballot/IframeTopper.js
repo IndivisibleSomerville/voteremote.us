@@ -11,8 +11,8 @@ const IframeTopper = (props) => {
                 <div class="form_header_description_box">
                     <p class="vr_form_body">Registering to vote is simple. Submit the form below, and complete all the steps requested. Once you've finished, let us know that you've registered, and move on to request your ballot.</p>
                     <div class="button_container">
-                        <button class="vr_section_subhead uppercase">I Registered</button>
-                        <button class="vr_section_subhead uppercase">I Printed My Form</button>
+                        <button class="vr_section_subhead uppercase" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Registered</button>
+                        <button class="vr_section_subhead uppercase" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Printed My Form</button>
                     </div>
                 </div>
             </div>
@@ -28,8 +28,8 @@ const IframeTopper = (props) => {
                 <div class="form_header_description_box">
                     <p class="vr_form_body">Registering to vote is simple. Submit the form below, and complete all the steps requested. Once you've finished, let us know that you've registered, and move on to request your ballot.</p>
                     <div class="button_container">
-                        <button class="vr_section_subhead uppercase">I Registered</button>
-                        <button class="vr_section_subhead uppercase">I Printed My Form</button>
+                        <button class="vr_section_subhead uppercase" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Registered</button>
+                        <button class="vr_section_subhead uppercase" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Printed My Form</button>
                     </div>
                 </div>
             </div>
@@ -45,8 +45,8 @@ const IframeTopper = (props) => {
                 <div class="form_header_description_box">
                     <p class="vr_form_body">This is the last step. Once you've requested your absentee ballot, let us know and we'll send you a handy checklist of dates to be aware of.</p>
                     <div class="button_container">
-                        <button class="vr_section_subhead uppercase">I Requested My Ballot</button>
-                        <button class="vr_section_subhead uppercase">I'll Vote in Person</button>
+                        <button class="vr_section_subhead uppercase" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I Requested My Ballot</button>
+                        <button class="vr_section_subhead uppercase" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I'll Vote in Person</button>
                     </div>
                 </div>
             </div>
