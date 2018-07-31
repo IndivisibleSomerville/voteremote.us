@@ -2,7 +2,7 @@
   "name": "voteremote.us",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://indivisiblesomerville.github.io/voteremote.us",
+  "homepage": "https://vr-app-20180731.herokuapp.com/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "gulp": "3.9.1",
