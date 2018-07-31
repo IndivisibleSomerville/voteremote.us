@@ -1,0 +1,17 @@
+{
+    "all": [
+        {
+            "warning-text": "This is a warning for all states."
+        }
+    ],
+    "MA": [
+        {
+            "warning-text": "This is a warning specific to MA."
+        }
+    ],
+    "CT": [
+        {
+            "warning-text": "This is a warning specific to CT."
+        }
+    ]
+}

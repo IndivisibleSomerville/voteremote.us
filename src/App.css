@@ -92,17 +92,32 @@ h1, h2, h3, h4, h5 {
 
 }
 
-.form_header_description_box .button_container {
+.form_container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.button_container {
   display: flex;
   justify-content: center;
 }
 
-.form_header_description_box button {
+button {
   border: 1px solid #FB3B3E;
   color: #FB3B3E;
   font-size: 24px;
   margin: 10px;
   padding: 10px;
+  cursor: pointer;
+}
+
+.form_header_description_two_wide_container {
+  display: flex;
+  justify-content: center;
+}
+
+.form_header_description_two_wide_container div {
+  margin: 5px;
 }
 
 .footer_box {
