@@ -152,8 +152,8 @@ class SelectDistrict extends Component {
                 <p>{item['warning-text']}</p>
                 </div> )
               }
-              <div className="button_container">
-                <button value="school" onClick={this.onClick}>I Want to Vote at School Address</button>
+              <div>
+                <button className="form_button form_button_solid_background" value="school" onClick={this.onClick}>I Want to Vote at School Address</button>
               </div>
             </div>
             <div>
@@ -179,8 +179,8 @@ class SelectDistrict extends Component {
                 <p>{item['warning-text']}</p>
                 </div> )
               }
-              <div className="button_container">
-                <button value="home" onClick={this.onClick}>I Want to Vote at Home Address</button>
+              <div>
+                <button className="form_button form_button_solid_background" value="home" onClick={this.onClick}>I Want to Vote at Home Address</button>
               </div>
             </div>
           </div>

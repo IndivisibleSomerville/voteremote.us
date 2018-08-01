@@ -119,8 +119,8 @@ class App extends Component {
             <StepZilla
               steps={this.steps}
               onStepChange={(step) => this.stepChange(step)}
-              nextButtonCls="form_nav_button"
-              backButtonCls="form_nav_button no_display"
+              nextButtonCls="form_button form_button_solid_background"
+              backButtonCls="form_button form_button_solid_background no_display"
               startAtStep={this.state.user.currentStep || 0}
               showNavigation={this.state.user.showNavigation}
               showSteps={false}
