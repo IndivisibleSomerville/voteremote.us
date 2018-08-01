@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5 {
 .form_header_box {
   background-color: #3983DA;
   color: white;
-  font-family: 'Lovelo';
+  font-family: "Lovelo-Black";
   margin: 10px auto;
   max-width: 708px;
   padding: 10px;
@@ -92,12 +92,27 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
 .form_header_box h1 {
+  font-family: "Lovelo-Black";
   font-size: 48px;
   margin: 0;
 }
 .form_header_box h2 {
+  font-family: "Lovelo-Black";
   font-size: 18px;
   margin: 0;
+}
+.form_header_box h3 {
+  font-family: "Lovelo-Black";
+  font-size: 18px;
+  margin: 0;
+}
+
+.form_description_box {
+  background-color: #f1f1f1;
+  color: black;
+  margin: 10px auto;
+  max-width: 708px;
+  padding: 20px;
 }
 
 .form_label {
@@ -107,6 +122,20 @@ h1, h2, h3, h4, h5 {
 .form_label_explanation_link {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
+}
+
+.questionRegistered {
+  line-height: 1.5;
+}
+
+.questionRegistered_header {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.questionRegistered_option {
+  color: #838383;
 }
 
 .footer-buttons {
@@ -124,35 +153,10 @@ h1, h2, h3, h4, h5 {
 
 
 
-.form_header_headline_box {
-  color: white;
-  margin: 0 auto;
-  max-width: 708px;
-  padding: 10px;
-  text-align: center;
-}
 
-.form_header_headline_box h1 {
-  font-size: 48px;
-  margin: 0;
-}
 
-.form_header_headline_box h2 {
-  font-size: 18px;
-  margin: 0;
-}
 
-.form_header_description_box {
-  background-color: #f1f1f1;
-  color: black;
-  margin: 10px auto;
-  max-width: 708px;
-  padding: 20px;
-}
 
-.form_header_description_box p {
-
-}
 
 
 
@@ -168,15 +172,6 @@ button {
   margin: 10px;
   padding: 10px;
   cursor: pointer;
-}
-
-.form_header_description_two_wide_container {
-  display: flex;
-  justify-content: center;
-}
-
-.form_header_description_two_wide_container div {
-  margin: 5px;
 }
 
 .footer_box {

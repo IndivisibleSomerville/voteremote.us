@@ -125,12 +125,12 @@ class SelectDistrict extends Component {
           <div className="form_header_box">
             <h1>Where do you want to vote?</h1>
           </div>
-          <div className="form_header_description_box">
+          <div className="form_description_box">
             <p>If you're a student who lives at one address during the semester, and a different address when you're not at school, you can choose to vote in either location (but not both).</p>
           </div>
-          <div className="form_header_description_two_wide_container">
+          <div>
             <div>
-              <div className="form_header_headline_box vr_blue_background uppercase">
+              <div className="form_header_box">
                 <h2>School Address</h2>
                 <p>{ this.props.getStore()['school[streetLine1]'] },{' '}
                 { this.props.getStore()['school[streetLine2]'] },{' '}
@@ -138,17 +138,17 @@ class SelectDistrict extends Component {
                 { this.props.getStore()['school[state]'] }{' '}
                 { this.props.getStore()['school[zipCode]'] }</p>
               </div>
-              <div className="form_header_description_box">
+              <div className="form_description_box">
                 <p>2016 presidential election margin of victory: { this.state.margins.schoolState.victoryMarginPercent }</p>
                 <p>Rank: { this.state.margins.schoolState.victoryMarginRank } closest election out of 50 states + DC</p>
               </div>
               { this.state.warnings.schoolState && this.state.warnings.schoolState.map( (item, index) => 
-                <div id={index} className="form_header_description_box">
+                <div id={index} className="form_description_box">
                   <p>{item['warning-text']}</p>
                 </div> )
               }
               { this.state.warnings.allStates && this.state.warnings.allStates.map( (item, index) => 
-                <div id={index} className="form_header_description_box">
+                <div id={index} className="form_description_box">
                 <p>{item['warning-text']}</p>
                 </div> )
               }
@@ -157,7 +157,7 @@ class SelectDistrict extends Component {
               </div>
             </div>
             <div>
-              <div className="form_header_headline_box vr_blue_background uppercase">
+              <div className="form_header_box">
                 <h2>Home Address</h2>
                 <p>{ this.props.getStore()['home[streetLine1]'] },{' '}
                 { this.props.getStore()['home[streetLine2]'] },{' '}
@@ -165,17 +165,17 @@ class SelectDistrict extends Component {
                 { this.props.getStore()['home[state]'] }{' '}
                 { this.props.getStore()['home[zipCode]'] }</p>
               </div>
-              <div className="form_header_description_box">
+              <div className="form_description_box">
                 <p>2016 presidential election margin of victory: { this.state.margins.homeState.victoryMarginPercent }</p>
                 <p>Rank: { this.state.margins.homeState.victoryMarginRank } closest election out of 50 states + DC</p>
               </div>
               { this.state.warnings.homeState && this.state.warnings.homeState.map( (item, index) => 
-                <div id={index} className="form_header_description_box">
+                <div id={index} className="form_description_box">
                 <p>{item['warning-text']}</p>
                 </div> )
               }
               { this.state.warnings.allStates && this.state.warnings.allStates.map( (item, index) => 
-                <div id={index} className="form_header_description_box">
+                <div id={index} className="form_description_box">
                 <p>{item['warning-text']}</p>
                 </div> )
               }
