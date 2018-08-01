@@ -86,7 +86,6 @@ class YourInfo extends Component {
 
   onChange(e) {
     let newState = {};
-
     newState[e.target.name] = e.target.value;
     this.setState(newState);
   }

@@ -22,6 +22,9 @@ h1, h2, h3, h4, h5 {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
+.transparent {
+  opacity: 0;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -56,11 +59,66 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
-.form {
+.form_page {
   background-color:#FFFFFF;
   color: black;
   padding: 20px;
 }
+.form_container {
+  margin: 0 auto;
+  max-width: 520px;
+}
+
+.form_header_progress_bar {
+  margin: 10px auto;
+  text-align: center;
+}
+.form_header_progress_bar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.form_header_box {
+  background-color: #3983DA;
+  color: white;
+  margin: 10px auto;
+  max-width: 708px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.form_header_box h1 {
+  font-size: 48px;
+  margin: 0;
+}
+.form_header_box h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.form_label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+}
+.form_label_explanation_link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+.form_nav_button {
+  background-color: black;
+  color: white;
+  margin: 10px;
+}
+
+
+
+
 
 .form_header_headline_box {
   color: white;
@@ -92,10 +150,7 @@ h1, h2, h3, h4, h5 {
 
 }
 
-.form_container {
-  margin: 0 auto;
-  max-width: 800px;
-}
+
 
 .button_container {
   display: flex;

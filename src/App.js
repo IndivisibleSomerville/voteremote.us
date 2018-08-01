@@ -114,16 +114,18 @@ class App extends Component {
     return (
       <div className="root">
         <Header />
-        <div className="form">
-          <StepZilla
-            steps={this.steps}
-            onStepChange={(step) => this.stepChange(step)}
-            nextButtonCls="ui button"
-            backButtonCls="ui button"
-            startAtStep={this.state.user.currentStep || 0}
-            showNavigation={this.state.user.showNavigation}
-            showSteps={false}
-          />
+        <div className="form_page">
+          <div className="form_container">
+            <StepZilla
+              steps={this.steps}
+              onStepChange={(step) => this.stepChange(step)}
+              nextButtonCls="form_nav_button"
+              backButtonCls="form_nav_button"
+              startAtStep={this.state.user.currentStep || 0}
+              showNavigation={this.state.user.showNavigation}
+              showSteps={false}
+            />
+          </div>
         </div>
         <Footer />
       </div>
