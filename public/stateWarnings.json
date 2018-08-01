@@ -1,0 +1,20 @@
+{
+    "all": [
+        {
+            "warning-text": "This is an example of a warning that would display for all states."
+        }
+    ],
+    "MA": [
+        {
+            "warning-text": "This is an example of a warning that would display only for Massachusetts."
+        }
+    ],
+    "CT": [
+        {
+            "warning-text": "This is an example of a warning that would display only for Connecticut."
+        },
+        {
+            "warning-text": "This is an example of another warning that would display only for Connecticut."
+        }
+    ]
+}

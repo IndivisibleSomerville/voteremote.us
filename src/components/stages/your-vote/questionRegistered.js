@@ -13,8 +13,11 @@ class QuestionRegistered extends Component {
 
   selectIframe(value) {
     switch (value) {
-      case 'yes':
+      case 'yesAbsentee':
         this.props.changeSubStep('Your Ballot', 'absentee');
+        break;
+      case 'yesInPerson':
+        this.props.changeSubStep('Your Ballot', 'done');
         break;
       case 'no':
         this.props.changeSubStep('Your Ballot', 'register');
@@ -36,27 +39,39 @@ class QuestionRegistered extends Component {
 
   render() {
     return (
-      <div className="yv-registered-question">
-        <div className="yv-registered-question-title">
-          <h2>Are you registered to vote?</h2>
+      <div>
+        <div className="form_header_progress_bar">
+          <img src="./images/form-header-your-vote.png" alt="Your Vote" />
         </div>
-        <form>
+        <div className="form_header_box">
+          <h1>Your Vote</h1>
+        </div>
+        <div>
+          <h2 className="questionRegistered_header">Are you registered to vote at that address?</h2>
+        </div>
+        <form className="questionRegistered">
           <div className="radio">
             <label>
-              <input type="radio" value="yes" checked={this.state.selectedOption === "yes"} onChange={this.onChange} />
-              <span> Yes, let's sign up for an absentee ballot</span>
+              <input type="radio" value="yesAbsentee" checked={this.state.selectedOption === "yesAbsentee"} onChange={this.onChange} />
+              <span className="questionRegistered_option"> Yes! Help me request an absentee ballot</span>
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" value="yesInPerson" checked={this.state.selectedOption === "yesInPerson"} onChange={this.onChange} />
+              <span className="questionRegistered_option"> Yes, and I'll be voting in person</span>
             </label>
           </div>
           <div className="radio">
             <label>
               <input type="radio" value="no" checked={this.state.selectedOption === "no"} onChange={this.onChange} />
-              <span> No, help me sign up</span>
+              <span className="questionRegistered_option"> No, help me register to vote</span>
             </label>
           </div>
           <div className="radio">
             <label>
               <input type="radio" value="not sure" checked={this.state.selectedOption === "not sure"} onChange={this.onChange} />
-              <span> I don't know, help me check.</span>
+              <span className="questionRegistered_option"> I don't know, help me check my registration</span>
             </label>
           </div>
         </form>

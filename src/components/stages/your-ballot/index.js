@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Iframe from 'react-iframe';
+import IframeTopper from './IframeTopper';
 
 export default class YourBallot extends Component {
   constructor(props) {
@@ -32,17 +33,41 @@ export default class YourBallot extends Component {
     return url;
   }
 
+  handleNextClick = (step, subStep) => {
+    this.props.changeSubStep(step, subStep);
+    this.props.jumpToStep(4);
+    console.log("Theoretically I'm in handleNextClick");
+  }
+
   render() {
-    return (
-      <Iframe
-        url={this.buildUrl()}
-        width="100%"
-        height="1200px"
-        id={this.props.form.id}
-        display="initial"
-        position="relative"
-        allowFullScreen
-      />
-    );
+    if (this.props.formName !== 'Done') {
+      return (
+        <div>
+          {<IframeTopper
+            formName={this.props.formName}
+            handleNextClick={this.handleNextClick}
+          />}
+          <Iframe
+            className="iframe_before_load"
+            url={this.buildUrl()}
+            width="100%"
+            height="50vh"
+            id={this.props.form.id}
+            display="initial"
+            position="relative"
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+    else {
+      return (
+        <div>
+          <h1>All done!</h1>
+          <p>You have completed the VoteRemote process. Give yourself a high five!</p>
+        </div>
+      )
+    }
+
   }
 }

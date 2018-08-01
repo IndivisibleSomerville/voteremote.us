@@ -100,6 +100,9 @@ class App extends Component {
           case 'verify':
             iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Verify Your Registration" form={verify} {...this.stepProps} /> };
             break;
+          case 'done':
+            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Done" {...this.stepProps} /> };
+            break;
         }
         break;
     }
@@ -111,16 +114,18 @@ class App extends Component {
     return (
       <div className="root">
         <Header />
-        <div className="form">
-          <StepZilla
-            steps={this.steps}
-            onStepChange={(step) => this.stepChange(step)}
-            nextButtonCls="ui button"
-            backButtonCls="ui button"
-            startAtStep={this.state.user.currentStep || 0}
-            showNavigation={this.state.user.showNavigation}
-            showSteps={false}
-          />
+        <div className="form_page">
+          <div className="form_container">
+            <StepZilla
+              steps={this.steps}
+              onStepChange={(step) => this.stepChange(step)}
+              nextButtonCls="form_button form_button_solid_background"
+              backButtonCls="form_button form_button_solid_background no_display"
+              startAtStep={this.state.user.currentStep || 0}
+              showNavigation={this.state.user.showNavigation}
+              showSteps={false}
+            />
+          </div>
         </div>
         <Footer />
       </div>

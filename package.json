@@ -2,7 +2,7 @@
   "name": "voteremote.us",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://indivisiblesomerville.github.io/voteremote.us",
+  "homepage": "https://vr-app-20180731.herokuapp.com/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "gulp": "3.9.1",
@@ -13,8 +13,9 @@
     "react-iframe": "^1.2.0",
     "react-scripts": "^1.1.4",
     "react-stepzilla": "^4.7.0",
+    "react-tooltip": "^3.6.1",
     "semantic-ui": "^2.3.2",
-    "semantic-ui-react": "^0.78.3",
+    "semantic-ui-react": "^0.80.0",
     "store": "^2.0.12"
   },
   "scripts": {
