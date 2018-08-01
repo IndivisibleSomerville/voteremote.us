@@ -50,7 +50,7 @@ export default class YourBallot extends Component {
           <Iframe
             url={this.buildUrl()}
             width="100%"
-            height="1200px"
+            height="50vh"
             id={this.props.form.id}
             display="initial"
             position="relative"

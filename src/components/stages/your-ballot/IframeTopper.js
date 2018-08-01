@@ -12,10 +12,10 @@ const IframeTopper = (props) => {
                     <h2>Check your registration through vote.org</h2>
                 </div>
                 <div class="form_description_box">
-                    <p class="vr_form_body">Registering to vote is simple. Submit the form below, and complete all the steps requested. Once you've finished, let us know that you've registered, and move on to request your ballot.</p>
+                    <p class="vr_form_body">Follow the instructions below and our partner vote.org will check to see if you're registered. If you're not, they'll automatically prompt you to either register online (if your state allows it), or they'll prepare a voter registration form for you to download, print, and mail. Once you've finished the instructions below, click the "I'm All Set" button that pertains to you.</p>
                     <div class="iframe_topper_button_container">
-                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Registered</button>
-                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Printed My Form</button>
+                    <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I'm All Set! Get me an absentee ballot request!</button>
+                    <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I'm All Set! And I'll be voting in person.</button>
                     </div>
                 </div>
             </div>
@@ -29,13 +29,13 @@ const IframeTopper = (props) => {
                 </div>
                 <div className="form_header_box">
                     <h1>Your Vote</h1>
-                    <h2>Register through vote.org</h2>
+                    <h2>Register online, or print a registration form through vote.org</h2>
                 </div>
                 <div class="form_description_box">
-                    <p class="vr_form_body">Registering to vote is simple. Submit the form below, and complete all the steps requested. Once you've finished, let us know that you've registered, and move on to request your ballot.</p>
+                    <p class="vr_form_body">Follow the instructions below and our partner vote.org will determine whether your state allows online registration. If it doesn't, vote.org will prepare a voter registration form for you to download, print, and mail. Once you've registered online, or downloaded the print form, click the "I'm All Set" button that pertains to you.</p>
                     <div class="iframe_topper_button_container">
-                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Registered</button>
-                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I Printed My Form</button>
+                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'absentee')} }>I'm All Set! Get me an absentee ballot request!</button>
+                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I'm All Set! And I'll be voting in person.</button>
                     </div>
                 </div>
             </div>
@@ -49,13 +49,12 @@ const IframeTopper = (props) => {
                 </div>
                 <div className="form_header_box">
                     <h1>Your Ballot</h1>
-                    <h2>Claim your absentee ballot through vote.org</h2>
+                    <h2>Generate your absentee ballot request through vote.org</h2>
                 </div>
                 <div class="form_description_box">
-                    <p class="vr_form_body">This is the last step. Once you've requested your absentee ballot, let us know and we'll send you a handy checklist of dates to be aware of.</p>
+                    <p class="vr_form_body">This is the last step! Follow the instructions below and our partner Vote.org will generate an absentee ballot request form for you to download. Once you've done that, click the "I'm all set" button and we'll give you our recommended deadlines!</p>
                     <div class="iframe_topper_button_container">
-                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I Requested My Ballot</button>
-                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I'll Vote in Person</button>
+                        <button class="form_button form_button_no_background" onClick={ () => {props.handleNextClick('Your Ballot', 'done')} }>I'm All Set!</button>
                     </div>
                 </div>
             </div>

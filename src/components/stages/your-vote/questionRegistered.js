@@ -53,6 +53,7 @@ class QuestionRegistered extends Component {
               <span className="questionRegistered_option"> Yes, help me request an absentee ballot</span>
             </label>
           </div>
+          <p>Add: "Yes, and I'll be voting in person"</p>
           <div className="radio">
             <label>
               <input type="radio" value="no" checked={this.state.selectedOption === "no"} onChange={this.onChange} />
