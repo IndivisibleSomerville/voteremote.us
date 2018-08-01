@@ -48,6 +48,7 @@ export default class YourBallot extends Component {
             handleNextClick={this.handleNextClick}
           />}
           <Iframe
+            className="iframe_before_load"
             url={this.buildUrl()}
             width="100%"
             height="50vh"

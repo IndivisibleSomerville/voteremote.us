@@ -144,6 +144,10 @@ h1, h2, h3, h4, h5 {
   margin: 0 10px;
 }
 
+.iframe_before_load {
+  background: url(/images/Spinner-1s-200px.gif) center top no-repeat;
+}
+
 .form_button {
   font-family: 'Lovelo-Black';
   font-weight: 900;

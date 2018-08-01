@@ -13,8 +13,11 @@ class QuestionRegistered extends Component {
 
   selectIframe(value) {
     switch (value) {
-      case 'yes':
+      case 'yesAbsentee':
         this.props.changeSubStep('Your Ballot', 'absentee');
+        break;
+      case 'yesInPerson':
+        this.props.changeSubStep('Your Ballot', 'done');
         break;
       case 'no':
         this.props.changeSubStep('Your Ballot', 'register');
@@ -49,11 +52,16 @@ class QuestionRegistered extends Component {
         <form className="questionRegistered">
           <div className="radio">
             <label>
-              <input type="radio" value="yes" checked={this.state.selectedOption === "yes"} onChange={this.onChange} />
-              <span className="questionRegistered_option"> Yes, help me request an absentee ballot</span>
+              <input type="radio" value="yesAbsentee" checked={this.state.selectedOption === "yesAbsentee"} onChange={this.onChange} />
+              <span className="questionRegistered_option"> Yes! Help me request an absentee ballot</span>
             </label>
           </div>
-          <p>Add: "Yes, and I'll be voting in person"</p>
+          <div className="radio">
+            <label>
+              <input type="radio" value="yesInPerson" checked={this.state.selectedOption === "yesInPerson"} onChange={this.onChange} />
+              <span className="questionRegistered_option"> Yes, and I'll be voting in person</span>
+            </label>
+          </div>
           <div className="radio">
             <label>
               <input type="radio" value="no" checked={this.state.selectedOption === "no"} onChange={this.onChange} />
