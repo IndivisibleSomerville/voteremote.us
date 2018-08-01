@@ -6,7 +6,7 @@ import schoolList from './schoolList';
 
 const WelcomeForm = (props) => (
     <div>
-        <ReactTooltip place='bottom' type='info' effect='solid' multiline=true />
+        <ReactTooltip place='bottom' type='info' effect='solid' multiline={true} />
         <div className="form_header_progress_bar">
             <img src="./images/form-header-your-info.png" alt="Your Info" />
         </div>
