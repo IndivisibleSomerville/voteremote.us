@@ -140,6 +140,9 @@ h1, h2, h3, h4, h5 {
   display: flex;
   justify-content: space-around;
 }
+.iframe_topper_button_container button {
+  margin: 0 10px;
+}
 
 .form_button {
   font-family: 'Lovelo-Black';

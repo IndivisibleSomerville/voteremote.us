@@ -129,6 +129,33 @@ class SelectDistrict extends Component {
             <p>If you're a student who lives at one address during the semester, and a different address when you're not at school, you can choose to vote in either location (but not both).</p>
           </div>
           <div>
+          <div>
+            <div className="form_header_box">
+                <h2>Home Address</h2>
+                <p>{ this.props.getStore()['home[streetLine1]'] },{' '}
+                { this.props.getStore()['home[streetLine2]'] },{' '}
+                { this.props.getStore()['home[city]'] },{' '}
+                { this.props.getStore()['home[state]'] }{' '}
+                { this.props.getStore()['home[zipCode]'] }</p>
+              </div>
+              <div className="form_description_box">
+                <p>2016 presidential election margin of victory: { this.state.margins.homeState.victoryMarginPercent }</p>
+                <p>Rank: { this.state.margins.homeState.victoryMarginRank } closest election out of 50 states + DC</p>
+              </div>
+              { this.state.warnings.homeState && this.state.warnings.homeState.map( (item, index) => 
+                <div id={index} className="form_description_box">
+                <p>{item['warning-text']}</p>
+                </div> )
+              }
+              { this.state.warnings.allStates && this.state.warnings.allStates.map( (item, index) => 
+                <div id={index} className="form_description_box">
+                <p>{item['warning-text']}</p>
+                </div> )
+              }
+              <div>
+                <button className="form_button form_button_solid_background" value="home" onClick={this.onClick}>I Want to Vote at Home Address</button>
+              </div>
+            </div>
             <div>
               <div className="form_header_box">
                 <h2>School Address</h2>
@@ -154,33 +181,6 @@ class SelectDistrict extends Component {
               }
               <div>
                 <button className="form_button form_button_solid_background" value="school" onClick={this.onClick}>I Want to Vote at School Address</button>
-              </div>
-            </div>
-            <div>
-              <div className="form_header_box">
-                <h2>Home Address</h2>
-                <p>{ this.props.getStore()['home[streetLine1]'] },{' '}
-                { this.props.getStore()['home[streetLine2]'] },{' '}
-                { this.props.getStore()['home[city]'] },{' '}
-                { this.props.getStore()['home[state]'] }{' '}
-                { this.props.getStore()['home[zipCode]'] }</p>
-              </div>
-              <div className="form_description_box">
-                <p>2016 presidential election margin of victory: { this.state.margins.homeState.victoryMarginPercent }</p>
-                <p>Rank: { this.state.margins.homeState.victoryMarginRank } closest election out of 50 states + DC</p>
-              </div>
-              { this.state.warnings.homeState && this.state.warnings.homeState.map( (item, index) => 
-                <div id={index} className="form_description_box">
-                <p>{item['warning-text']}</p>
-                </div> )
-              }
-              { this.state.warnings.allStates && this.state.warnings.allStates.map( (item, index) => 
-                <div id={index} className="form_description_box">
-                <p>{item['warning-text']}</p>
-                </div> )
-              }
-              <div>
-                <button className="form_button form_button_solid_background" value="home" onClick={this.onClick}>I Want to Vote at Home Address</button>
               </div>
             </div>
           </div>
