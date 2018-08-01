@@ -6,7 +6,7 @@ import schoolList from './schoolList';
 
 const WelcomeForm = (props) => (
     <div>
-        <ReactTooltip place='bottom' type='info' effect='solid' />
+        <ReactTooltip place='bottom' type='info' effect='solid' multiline='true' />
         <div className="form_header_progress_bar">
             <img src="./images/form-header-your-info.png" alt="Your Info" />
         </div>
@@ -69,7 +69,7 @@ const WelcomeForm = (props) => (
                 </div>
             </Form.Field>
             <Form.Field>
-                <label className="form_label">Your phone number <span data-tip="Having your phone number will help us to remind you to take critical actions before deadlines expire. We promise to send you no more than a few messages, and will do our best to make them fun!" className="form_label_explanation_link">(Why do we need this?)</span></label>
+                <label className="form_label">Your phone number <span data-tip="Having your phone number will help us to remind you<br />to take critical actions before deadlines expire.<br />We promise to send you no more than a few messages,<br />and will do our best to make them fun!" className="form_label_explanation_link">(Why do we need this?)</span></label>
                 <Input
                     type="text"
                     name="phone"
