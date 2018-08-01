@@ -119,7 +119,10 @@ class SelectDistrict extends Component {
     else {
       return (
         <div>
-          <div className="form_header_headline_box vr_blue_background uppercase">
+          <div className="form_header_progress_bar">
+            <img src="./images/form-header-your-vote.png" alt="Your Vote" />
+          </div>
+          <div className="form_header_box">
             <h1>Where do you want to vote?</h1>
           </div>
           <div className="form_header_description_box">

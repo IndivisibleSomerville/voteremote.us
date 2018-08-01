@@ -36,8 +36,14 @@ class QuestionRegistered extends Component {
 
   render() {
     return (
-      <div className="yv-registered-question">
-        <div className="yv-registered-question-title">
+      <div>
+        <div className="form_header_progress_bar">
+          <img src="./images/form-header-your-vote.png" alt="Your Vote" />
+        </div>
+        <div className="form_header_box">
+          <h1>Your Vote</h1>
+        </div>
+        <div>
           <h2>Are you registered to vote?</h2>
         </div>
         <form>
