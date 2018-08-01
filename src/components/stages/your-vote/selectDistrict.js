@@ -30,7 +30,7 @@ class SelectDistrict extends Component {
           homeVictoryMarginPercent = data[i]['victory-margin-percent'];
           homeVictoryMarginRank = data[i]['victory-margin-rank'];
         }
-        else if (data[i]['state-short'] === schoolState) {
+        if (data[i]['state-short'] === schoolState) {
           schoolVictoryMarginPercent = data[i]['victory-margin-percent'];
           schoolVictoryMarginRank = data[i]['victory-margin-rank'];
         }
