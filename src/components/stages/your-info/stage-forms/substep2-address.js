@@ -1,10 +1,11 @@
 import React from 'react';
 import { Input, Form, Dropdown } from 'semantic-ui-react';
-
+import ReactTooltip from 'react-tooltip';
 
 
 const AddressForm = (props) => (
     <div>
+        <ReactTooltip place='bottom' type='info' effect='solid' multiline={true} />
         <div className="form_header_progress_bar">
             <img src="./images/form-header-your-info.png" alt="Your Info" />
         </div>
@@ -13,11 +14,11 @@ const AddressForm = (props) => (
         </div>
         <Form>
             <Form.Field>
-                <label>Your address at school</label>
+                <label>Your address at school <span data-tip="If you live in a dorm, use the dorm's physical street address,<br />even if it's different than the mailing address your school gives you." className="form_label_explanation_link">(What if I'm in a dorm?)</span></label>
                 <Input
                     type="text"
                     name="school[streetLine1]"
-                    placeholder="Street 1 (no P.O. boxes)"
+                    placeholder="Street Address (no P.O. boxes)"
                     value={props.state["school[streetLine1]"]}
                     onChange={props.onChange}
                 />
@@ -127,7 +128,7 @@ const AddressForm = (props) => (
                 <Input
                     type="text"
                     name="home[streetLine1]"
-                    placeholder="Street 1 (no P.O. boxes)"
+                    placeholder="Street Address (no P.O. boxes)"
                     value={props.state["home[streetLine1]"]}
                     onChange={props.onChange}
                 />

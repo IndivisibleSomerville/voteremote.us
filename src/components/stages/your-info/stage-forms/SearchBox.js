@@ -56,6 +56,7 @@ class SearchBox extends React.Component {
                     autoComplete="school"
                     type="text"
                     loading={isLoading}
+                    placeholder="Type your school here..."
                     results={results}
                     value={value}
                     onSearchChange={this.handleSearchChange}
