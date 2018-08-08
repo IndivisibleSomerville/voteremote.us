@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input, Form, Dropdown } from 'semantic-ui-react';
 import ReactTooltip from 'react-tooltip';
+import SearchBox from './SearchBox';
 
 import schoolList from './schoolList';
 
@@ -56,13 +57,11 @@ const WelcomeForm = (props) => (
                 </div>
             </Form.Field>
             <Form.Field>
-                <label className="form_label">Your School</label>
-                <Input
-                    type="text"
+                <label className="form_label">Your School (type at least 3 letters of the name to search)</label>
+                <SearchBox 
                     name="school"
-                    placeholder="Your School"
+                    onSchoolSelect={props.onChange}
                     value={props.state["school"]}
-                    onChange={props.onChange}
                 />
                 <div className={props.state.errorMsgs["school"] === null ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["school"]}</span>
