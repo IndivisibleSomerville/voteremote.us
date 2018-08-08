@@ -1,0 +1,100 @@
+{
+    "MS": {
+        "stateFullName": "Mississippi",
+        "stepsAbsentee": [
+            {
+                "stepName": "Step 1: Register by Mail",
+                "stepDeadline": "By September 16",
+                "stepInstructions": [
+                    {
+                        "instructionType": "link",
+                        "instructionText": "Mississippi residents living outside of the state yada yada",
+                        "instructionLinkText": "Print Request Form",
+                        "instructionLink": "some-link-here"
+                    },
+                    {
+                        "instructionType": "reminder",
+                        "instructionText": "NOTE: Your ballot should arrive in about two weeks or less."
+                    }
+                ]
+            },
+            {
+                "stepName": "Step 2: Register by Mail",
+                "stepDeadline": "By September 16",
+                "stepInstructions": [
+                    {
+                        "instructionType": "link",
+                        "instructionText": "Mississippi residents living outside of the state yada yada",
+                        "instructionLinkText": "Print Request Form",
+                        "instructionLink": "some-link-here"
+                    },
+                    {
+                        "instructionType": "reminder",
+                        "instructionText": "NOTE: Your ballot should arrive in about two weeks or less."
+                    }
+                ]
+            }
+        ],
+        "stepsInPerson": [
+            {
+                "stepName": "Step 1: Register by Mail",
+                "stepDeadline": "By September 16",
+                "stepInstructions": [
+                    {
+                        "instructionType": "link",
+                        "instructionText": "Mississippi residents living outside of the state yada yada",
+                        "instructionLinkText": "Print Request Form",
+                        "instructionLink": "some-link-here"
+                    }
+                ]
+            },
+            {
+                "stepName": "Step 2: Register by Mail",
+                "stepDeadline": "By September 16",
+                "stepInstructions": [
+                    {
+                        "instructionType": "link",
+                        "instructionText": "Mississippi residents living outside of the state yada yada",
+                        "instructionLinkText": "Print Request Form",
+                        "instructionLink": "some-link-here"
+                    }
+                ]
+            }
+        ]
+    },
+    "CT": {
+        "stateFullName": "Connecticut",
+        "stepsAbsentee": [
+            {
+                "stepName": "Step 1: Register by Mail",
+                "stepDeadline": "By September 16",
+                "stepInstructions": [
+                    {
+                        "instructionType": "link",
+                        "instructionText": "CT Mississippi residents living outside of the state yada yada",
+                        "instructionLinkText": "Print Request Form",
+                        "instructionLink": "some-link-here"
+                    },
+                    {
+                        "instructionType": "reminder",
+                        "instructionText": "CT NOTE: Your ballot should arrive in about two weeks or less."
+                    }
+                ]
+            }
+        ],
+        "stepsInPerson": [
+            {
+                "stepName": "Step 1: Register by Mail",
+                "stepDeadline": "By September 16",
+                "stepInstructions": [
+                    {
+                        "instructionType": "link",
+                        "instructionText": "CT Mississippi residents living outside of the state yada yada",
+                        "instructionLinkText": "Print Request Form",
+                        "instructionLink": "some-link-here"
+                    }
+                ]
+            }
+        ]
+    }
+}

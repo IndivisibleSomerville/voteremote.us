@@ -1,0 +1,288 @@
+/* CSS animations */
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}  
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+/* Main and Headline/Menu */
+
+html {
+    width: 100%;
+}
+
+body {
+    line-height: 1;
+    margin: 0;
+}
+button {  /* button style reset code, inspired by https://gist.github.com/MoOx/9137295 */
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    width: auto;
+}
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+.hidden {
+    display: none;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.vr_body {
+    background-color: #0D1730;
+    color: #FFF;
+    line-height: 1;
+}
+.root {
+    margin: 0 auto;
+    width: 100%;
+}
+.headline {
+    align-items: center;
+    display: flex;
+    height: 125px;
+    justify-content: space-between;
+}
+.headline h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    padding-left: 50px;
+}
+.headline .social_box {
+    display: flex;
+    padding-right: 50px;
+}
+.social {
+    margin: 10px;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.menu_box {
+    display: none;
+    padding: 5px 0;
+    text-align: center;
+}
+.links_box {
+    align-items: center;
+    display: flex;
+    height: 75px;
+    justify-content: space-around;
+}
+.links_box .vr_section_subhead {
+    font-size: 24px;
+}
+
+/* Main Section */
+.main_container {
+    background-color: white;
+    color: black;
+}
+
+.content_container {
+    padding: 30px 10%;
+}
+
+.header_box {
+    text-align: center;
+}
+.header_box h1 {
+    color: white;
+    line-height: 1;
+    padding: 40px 0;
+}
+
+.select_state_box {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.select_method_box {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.select_method_box button {
+    border: 1px solid #3983DA;
+    color: lightgray;
+    padding: 10px 0;
+    width: 50%;
+}
+
+.select_method_box .select_method_active {
+    background-color: #3983DA;
+    color: white;
+}
+
+.step_container {
+    display: none;
+}
+.step_container.active {
+    display: block;
+    padding: 10px 0;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.step_header {
+    color: white;
+    display: flex;
+    padding: 10px 0;
+}
+.step_header_name h2 {
+    padding: 20px;
+}
+.step_header_deadline h3 {
+    padding: 20px;
+}
+.step_body_part {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    height: 6rem;
+}
+.step_body_part_description p {
+    padding: 0 20px;
+}
+.step_body_part_reminder {
+    background-color: #FDEEEE;
+}
+.step_body_part_link {
+    background-color: #E9EEF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.step_body_part a {
+    color: white;
+    height: 75%;
+    width: 75%;
+    padding: 10px;
+}
+
+.step_header_left, .step_body_part_left {
+    text-align: left;
+    width: 70%;
+}
+.step_header_right, .step_body_part_right {
+    text-align: center;
+    width: 30%;
+}
+
+/* Footer */
+
+.footer_box {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.footer_box a {
+    color: #ffffff;
+    padding: 0 20px;
+}
+.cr {
+    margin-top: 24px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 850px) {
+    .headline {
+        flex-direction: column;
+        justify-content: center;
+        height: 45px;
+    }
+    .headline h1 {
+        font-size: 1rem;
+        padding-left: 0;
+    }
+    .headline .social_box {
+        display: none;
+    }
+    .menu_box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
+    .menu_overlay {
+        display: none;
+        line-height: 2;
+    }
+    .menu_overlay.active {
+        display: block;
+    }
+    .menu_overlay ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .links_box {
+        display: none;
+    }
+
+    .select_method_box button {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .step_header {
+        flex-direction: column;
+    }
+    .step_header_name {
+        padding: 0;
+        width: auto;
+        text-align: center;
+    }
+    .step_header_deadline {
+        padding: 0;
+        width: auto;
+    }
+    .step_header_name h2 {
+        padding: 5px;
+    }
+    .step_header_deadline h3 {
+        padding: 5px;
+    }
+    .step_body_part {
+        flex-direction: column;
+        height: auto;
+    }
+    .step_body_part_description {
+        padding: 10px 0;
+        width: auto;
+    }
+    .step_body_part_left, .step_body_part_right {
+        width: auto;
+    }
+    .step_body_part a {
+        height: auto;
+        width: auto;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .footer_box {
+        flex-direction: column;
+        line-height: 1.5;
+    }
+}
