@@ -140,7 +140,6 @@ class SelectDistrict extends Component {
               </div>
               <div className="form_description_box">
                 <p>2016 presidential election margin of victory: { this.state.margins.homeState.victoryMarginPercent }</p>
-                <p>Rank: { this.state.margins.homeState.victoryMarginRank } closest election out of 50 states + DC</p>
               </div>
               { this.state.warnings.homeState && this.state.warnings.homeState.map( (item, index) => 
                 <div id={index} className="form_description_box">
@@ -167,7 +166,6 @@ class SelectDistrict extends Component {
               </div>
               <div className="form_description_box">
                 <p>2016 presidential election margin of victory: { this.state.margins.schoolState.victoryMarginPercent }</p>
-                <p>Rank: { this.state.margins.schoolState.victoryMarginRank } closest election out of 50 states + DC</p>
               </div>
               { this.state.warnings.schoolState && this.state.warnings.schoolState.map( (item, index) => 
                 <div id={index} className="form_description_box">
