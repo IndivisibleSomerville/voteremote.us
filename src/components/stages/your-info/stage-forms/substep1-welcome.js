@@ -17,8 +17,9 @@ const WelcomeForm = (props) => (
         <Form>
             <Form.Group widths='equal'>
                 <Form.Field>
-                    <label className="form_label">Your Name</label>
+                    <label className="form_label">Your Full Legal Name</label>
                     <Input
+                        autoComplete="never"
                         type="text"
                         name="firstName"
                         placeholder="First Name"
@@ -32,6 +33,7 @@ const WelcomeForm = (props) => (
                 <Form.Field>
                     <label className="transparent">Last Name</label>
                     <Input
+                        autoComplete="never"
                         type="text"
                         name="lastName"
                         placeholder="Last Name"
@@ -46,6 +48,7 @@ const WelcomeForm = (props) => (
             <Form.Field>
                 <label className="form_label">Your Email</label>
                 <Input
+                    autoComplete="never"
                     type="text"
                     name="email"
                     placeholder="your@email.com"
@@ -70,6 +73,7 @@ const WelcomeForm = (props) => (
             <Form.Field>
                 <label className="form_label">Your phone number <span data-tip="Having your phone number will help us to remind you<br />to take critical actions before deadlines expire.<br />We promise to send you no more than a few messages,<br />and will do our best to make them fun!" className="form_label_explanation_link">(Why do we need this?)</span></label>
                 <Input
+                    autoComplete="never"
                     type="text"
                     name="phone"
                     placeholder="xxx-xxx-xxxx"
