@@ -13,7 +13,7 @@ export default class YourBallot extends Component {
     let store = this.props.getStore();
     let form = this.props.form;
     let loc = store.districtSelector;
-    let url = form.url + '/?';
+    let url = form.url + '/?partner=194963&campaign=vote-remote&';
     
     url += form.firstName + '=' + store.firstName.replace(/ /g, '%20');
     url += '&' + form.lastName + '=' + store.lastName.replace(/ /g, '%20');
@@ -30,6 +30,7 @@ export default class YourBallot extends Component {
     url += '&' + form.birthYear + '=' + parseInt(store.birthYear, 10);
     url += '&' + form.phone + '=' + store.phone.replace(/ /g, '%20').replace(/-/g, '');
     url += '&' + form.email + '=' + store.email.replace(/ /g, '%20');
+    
     return url;
   }
 
