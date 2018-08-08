@@ -133,7 +133,7 @@ class SelectDistrict extends Component {
             <div className="form_header_box">
                 <h2>Home Address</h2>
                 <p>{ this.props.getStore()['home[streetLine1]'] },{' '}
-                { this.props.getStore()['home[streetLine2]'] },{' '}
+                { this.props.getStore()['home[streetLine2]'] && `${this.props.getStore()['home[streetLine2]']}, ` }
                 { this.props.getStore()['home[city]'] },{' '}
                 { this.props.getStore()['home[state]'] }{' '}
                 { this.props.getStore()['home[zipCode]'] }</p>
