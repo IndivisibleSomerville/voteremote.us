@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import VoteOrgForm from './VoteOrgForm';
 import { Transition } from 'semantic-ui-react';
 
+import firebase from './firebase/firebase';
+
 import StepZilla from 'react-stepzilla';
 import 'react-stepzilla/src/css/main.css';
 
@@ -82,6 +84,40 @@ class App extends Component {
       Appcues.identify(user.email, user || {});
       return user;
     });
+
+    // update firebase
+    const itemsRef = this.state.firebaseUserId ?
+      firebase.database().ref(`items/${this.state.firebaseUserId}`) :
+      firebase.database().ref('items');
+    const oldItem = this.state.user;
+    console.log(oldItem);
+    // rename any state items with Firebase-unallowed brackets
+    const newItem = Object.keys(oldItem).map( (key) => {
+      // Removing errorMsgs from the object stored in Firebase
+      // to avoid additional bracket removal, since errorMsgs
+      // doesn't need to be saved in Firebase anyway.
+      if (key === 'errorMsgs') {
+        return {};
+      }
+      const newKey = key.replace(/\[|\]/g, '-');
+      return { [newKey]: oldItem[key] };
+    });
+    const newerItem = Object.assign({}, ...newItem);
+    console.log(newerItem);
+    if (this.state.firebaseUserId) {
+      itemsRef.update(newerItem).catch( (error) => console.log("Error updating db."));
+    }
+    else {
+      itemsRef.push(newerItem).then((snap) => {
+        const key = snap.key;
+        this.setState({ firebaseUserId: key });
+        this.updateStore({ firebaseUserId: key });
+      }).catch( (error) => console.log("Error writing to db."));
+    }
+
+
+    // Scrolls back to top of page
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
   changeSubStep(step, subStep) {

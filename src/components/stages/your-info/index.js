@@ -47,6 +47,9 @@ class YourInfo extends Component {
     // update state and store
     this.setState(newState);
     this.props.updateStore(newState);
+
+    console.log(newState);
+
   }
 
   isValidated() {
