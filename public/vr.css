@@ -53,6 +53,10 @@
     font-size: 18px;
 }
 
+.vr_uppercase {
+    text-transform: uppercase;
+}
+
 .ballot_img  {
     width: 72px;
     height: 100px;

@@ -35,13 +35,8 @@ export default class YourBallot extends Component {
   }
 
   handleNextClick = (step, subStep) => {
-<<<<<<< HEAD:src/components/OLD-stages/your-ballot/index.js
     this.props.history.push('/finished');
     console.log("Theoretically I'm in handleNextClick");
-=======
-    this.props.changeSubStep(step, subStep);
-    this.props.jumpToStep(4);
->>>>>>> Added firebase connection and writing info to it:src/components/stages/your-ballot/index.js
   }
 
   render() {

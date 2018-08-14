@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/Header.css';
+
 const Header = () => (
     <div className="headline">
         <h1>VOTE REMOTE</h1> 

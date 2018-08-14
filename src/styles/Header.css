@@ -1,0 +1,53 @@
+.headline {
+    align-items: center;
+    display: flex;
+    height: 125px;
+    padding-top: 10px;
+    justify-content: space-between;
+  }
+  .headline h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .headline .social_box {
+    display: none;
+  }
+  .social {
+    margin: 10px;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  /* Breakpoint to keep banner text on 2 lines */
+@media only screen and (max-width: 1080px) {
+    .headline {
+        height: 75px;
+    }
+    .headline h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        padding-left: 50px;
+    }
+    .social {
+        margin: 10px;
+        color: #FFFFFF;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .headline .social_box {
+        display: flex;
+        padding-right: 50px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .headline h1 {
+      padding-left: 50px;
+    }
+    .headline .social_box {
+      display: flex;
+      padding-right: 50px;
+    }
+  }
