@@ -47,6 +47,7 @@ class YourInfo extends Component {
     );
     console.log('onStepChange', this.state, newState);
     // update state and store
+<<<<<<< HEAD:src/components/OLD-stages/your-info/index.js
     // this.isValidated();
     if (this.isValidated()) {
       this.props.updateStore(this.state, this.setState(newState));
@@ -69,6 +70,13 @@ class YourInfo extends Component {
     }
   this.onStepChange();
   this.props.history.push(path);
+=======
+    this.setState(newState);
+    this.props.updateStore(newState);
+
+    console.log(newState);
+
+>>>>>>> Added firebase connection and writing info to it:src/components/stages/your-info/index.js
   }
 
   isValidated() {
