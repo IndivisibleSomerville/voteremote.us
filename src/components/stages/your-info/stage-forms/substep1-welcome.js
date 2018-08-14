@@ -1,9 +1,11 @@
 import React from 'react';
-import { Input, Form, Dropdown } from 'semantic-ui-react';
+import { Input, Button, Form, Dropdown } from 'semantic-ui-react';
 import ReactTooltip from 'react-tooltip';
 import SearchBox from './SearchBox';
 
 import schoolList from './schoolList';
+
+// "/your-info/address"
 
 const WelcomeForm = (props) => (
     <div>
@@ -14,7 +16,7 @@ const WelcomeForm = (props) => (
         <div className="form_header_box">
             <h1>Your Info</h1>
         </div>
-        <Form>
+        <Form onSubmit={props.handleSubmit} name="Welcome Form">
             <Form.Group widths='equal'>
                 <Form.Field>
                     <label className="form_label">Your Full Legal Name</label>
@@ -84,6 +86,22 @@ const WelcomeForm = (props) => (
                     <span>{props.state.errorMsgs["phone"]}</span>
                 </div>
             </Form.Field>
+            <div className="buttons">
+                <div className="button form_button_solid_background form_button" style={{height: "50px"}} >
+                    <Button
+                        style={{
+                            color: "white", 
+                            display: "inline-block", 
+                            width: "100%", 
+                            height: "100%", 
+                            textAlign: "center", 
+                            backgroundColor: "#FB3B3E",
+                            fontSize: "22px"
+                        }}
+                        content="Next"  
+                    />
+                </div>
+            </div>
         </Form>
     </div>
 );

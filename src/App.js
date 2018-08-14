@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import VoteOrgForm from './VoteOrgForm';
 import { Transition } from 'semantic-ui-react';
-
-import StepZilla from 'react-stepzilla';
-import 'react-stepzilla/src/css/main.css';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import './App.css';
 
@@ -15,6 +13,7 @@ import Footer from './components/Footer';
 import YourInfo from './components/stages/your-info';
 import YourVote from './components/stages/your-vote';
 import YourBallot from './components/stages/your-ballot';
+import Finished from './components/stages/finished';
 
 // Sub-steps
 import welcomeSubStep from './components/stages/your-info/sub-steps/substep1-welcome';
@@ -38,17 +37,8 @@ class App extends Component {
 
     this.stepProps = { 
       getStore: this.getStore.bind(this), 
-      updateStore: this.updateStore.bind(this), 
-      changeSubStep: this.changeSubStep.bind(this)
+      updateStore: this.updateStore.bind(this)
     };
-
-    this.steps = [
-      { name: "Your Info: Welcome", component: <YourInfo formName="welcomeSubstep" form={welcomeSubStep} {...this.stepProps} /> },
-      { name: "Your Info: Address", component: <YourInfo formName="addressSubstep" form={addressSubStep} {...this.stepProps} /> },
-      { name: "Your Vote: Which State?", component: <YourVote formName="selectDistrict" {...this.stepProps} /> },
-      { name: "Your Vote: Are You Registered?", component: <YourVote formName="registered" {...this.stepProps} /> },
-      { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> }
-    ];
   }
 
   componentDidMount() {
@@ -84,47 +74,23 @@ class App extends Component {
     });
   }
 
-  changeSubStep(step, subStep) {
-    let iframeComponent, index;
-
-    switch (step) {
-      case 'Your Ballot':
-        index = this.steps.length - 1;
-        switch (subStep) {
-          case 'absentee': 
-            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Absentee Ballot" form={absentee} {...this.stepProps} /> };
-            break;
-          case 'register':
-            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Register to Vote" form={register} {...this.stepProps} /> };
-            break;
-          case 'verify':
-            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Verify Your Registration" form={verify} {...this.stepProps} /> };
-            break;
-          case 'done':
-            iframeComponent = { name: "Your Ballot", component: <YourBallot formName="Done" {...this.stepProps} /> };
-            break;
-        }
-        break;
-    }
-
-    this.steps[index] = iframeComponent;
-  }
-
   render() {
+    console.log('store', this.state);
     return (
       <div className="root">
         <Header />
         <div className="form_page">
           <div className="form_container">
-            <StepZilla
-              steps={this.steps}
-              onStepChange={(step) => this.stepChange(step)}
-              nextButtonCls="form_button form_button_solid_background"
-              backButtonCls="form_button form_button_solid_background no_display"
-              startAtStep={this.state.user.currentStep || 0}
-              showNavigation={this.state.user.showNavigation}
-              showSteps={false}
-            />
+            <Switch>
+              <Route exact path="/your-info/address" render={(props) => <YourInfo formName="Address Form" {...this.stepProps} {... props} form={addressSubStep} />} />
+              <Route exact path="/your-vote/choose-location" render={(props) => <YourVote formName="selectDistrict" {...this.stepProps} {... props} form={addressSubStep} />} />
+              <Route exact path="/your-vote/are-you-registered" render={(props) => <YourVote formName="registered" {...this.stepProps} {... props} form={addressSubStep} />} />
+              <Route exact path="/your-ballot/verify" render={(props) => <YourBallot formName="verify" {...this.stepProps} {... props} />} />
+              <Route exact path="/your-ballot/register" render={(props) => <YourBallot formName="register" {...this.stepProps} {... props} form={addressSubStep} />} />
+              <Route exact path="/your-ballot/absentee-ballot" render={(props) => <YourBallot formName="absentee" {...this.stepProps} {... props} form={addressSubStep} />} />
+              <Route exact path="/finished" render={(props) => <Finished {...this.stepProps} {... props} />} />
+              <Route path="/" render={(props) => <YourInfo formName="Welcome Form" {...this.stepProps} {... props} form={welcomeSubStep} />} />
+            </Switch>
           </div>
         </div>
         <Footer />

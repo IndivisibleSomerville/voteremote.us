@@ -7,7 +7,7 @@ import Joi from 'joi-browser';
 class YourInfo extends Component {
   constructor(props) {
     super(props);
-
+    console.log('props', this.props)
     // Setup this.state
     this.state = this.setupState(
       props.getStore(),
@@ -15,6 +15,8 @@ class YourInfo extends Component {
     );
 
     this.onChange = this.onChange.bind(this);
+    this.onStepChange = this.onStepChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.isValidated = this.isValidated.bind(this);
   }
 
@@ -43,10 +45,30 @@ class YourInfo extends Component {
       this.props.getStore(),
       Object.keys(this.props.form)
     );
-
+    console.log('onStepChange', this.state, newState);
     // update state and store
-    this.setState(newState);
-    this.props.updateStore(newState);
+    // this.isValidated();
+    if (this.isValidated()) {
+      this.props.updateStore(this.state, this.setState(newState));
+    }
+  }
+
+  handleSubmit(e, obj) {
+    e.preventDefault();
+    console.log('e.currentTarget', e.currentTarget);
+    console.log('e.target', e.target);
+    console.log('obj', obj);
+    let path = '/';
+    switch (e.currentTarget.name) {
+      case 'Welcome Form':
+        path = '/your-info/address';
+        break;
+      case 'Address Form':
+        path = '/your-vote/choose-location';
+        break;
+    }
+  this.onStepChange();
+  this.props.history.push(path);
   }
 
   isValidated() {
@@ -85,25 +107,28 @@ class YourInfo extends Component {
   }
 
   onChange(e) {
+    console.log('onChange', e.target.name, e.target.value)
     let newState = {};
     newState[e.target.name] = e.target.value;
     this.setState(newState);
   }
 
   render() {
-    if (this.props.formName === "welcomeSubstep") {
+    if (this.props.formName === "Welcome Form") {
       return (
         <WelcomeForm 
           state={this.state}
           onChange={this.onChange}
+          handleSubmit={this.handleSubmit}
         />
       )
     }
-    else if (this.props.formName === "addressSubstep") {
+    else if (this.props.formName === "Address Form") {
       return (
         <AddressForm 
           state={this.state}
           onChange={this.onChange}
+          handleSubmit={this.handleSubmit}
         />
       )
     }

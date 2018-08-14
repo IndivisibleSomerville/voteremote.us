@@ -35,8 +35,7 @@ export default class YourBallot extends Component {
   }
 
   handleNextClick = (step, subStep) => {
-    this.props.changeSubStep(step, subStep);
-    this.props.jumpToStep(4);
+    this.props.history.push('/finished');
     console.log("Theoretically I'm in handleNextClick");
   }
 

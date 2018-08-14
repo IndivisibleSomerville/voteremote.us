@@ -95,12 +95,13 @@ class SelectDistrict extends Component {
   onClick(e) {
     let newState = {};
     let value = e.target.value;
+    let path = '/';
 
     this.props.updateStore({
       districtSelector: e.target.value,
       showNavigation: true
     });
-    this.props.jumpToStep(this.props.getStore().currentStep + 1);
+    this.props.history.push('/your-vote/are-you-registered');
   }
 
   componentDidMount() {
@@ -147,7 +148,7 @@ class SelectDistrict extends Component {
                 </div> )
               }
               { this.state.warnings.allStates && this.state.warnings.allStates.map( (item, index) => 
-                <div id={index} className="form_description_box">
+                <div id={index} className="form_description_box" key={index}>
                 <p>{item['warning-text']}</p>
                 </div> )
               }
@@ -168,12 +169,12 @@ class SelectDistrict extends Component {
                 <p>2016 presidential election margin of victory: { this.state.margins.schoolState.victoryMarginPercent }</p>
               </div>
               { this.state.warnings.schoolState && this.state.warnings.schoolState.map( (item, index) => 
-                <div id={index} className="form_description_box">
+                <div id={index} className="form_description_box" key={index}>
                   <p>{item['warning-text']}</p>
                 </div> )
               }
               { this.state.warnings.allStates && this.state.warnings.allStates.map( (item, index) => 
-                <div id={index} className="form_description_box">
+                <div id={index} className="form_description_box" key={index}>
                 <p>{item['warning-text']}</p>
                 </div> )
               }

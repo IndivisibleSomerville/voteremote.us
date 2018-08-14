@@ -1,8 +1,9 @@
 import React from 'react';
-import { Input, Form, Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Input, Button, Form, Dropdown } from 'semantic-ui-react';
 import ReactTooltip from 'react-tooltip';
 
-
+// "/your-vote/choose-location"
 const AddressForm = (props) => (
     <div>
         <ReactTooltip place='bottom' type='info' effect='solid' multiline={true} />
@@ -12,7 +13,7 @@ const AddressForm = (props) => (
         <div className="form_header_box">
             <h1>Your Info</h1>
         </div>
-        <Form>
+        <Form onSubmit={props.handleSubmit} name="Address Form">
             <Form.Field>
                 <label>Your address at school <span data-tip="If you live in a dorm, use the dorm's physical street address,<br />even if it's different than the mailing address your school gives you." className="form_label_explanation_link">(What if I'm in a dorm?)</span></label>
                 <Input
@@ -233,7 +234,39 @@ const AddressForm = (props) => (
                     </div>
                 </Form.Field>
             </Form.Group>
+            <div className="buttons">
+                <div className="button form_button_solid_background form_button" style={{height: "50px"}} >
+                    <Button  
+                        style={{
+                            color: "white", 
+                            display: "inline-block", 
+                            width: "100%", 
+                            height: "100%", 
+                            textAlign: "center", 
+                            backgroundColor: "#FB3B3E",
+                            fontSize: "22px"
+                        }}
+                        content="Next"
+                    />
+                </div>
+            </div>
         </Form>
+        <div className="button form_button_solid_background form_button" style={{height: "50px"}} >
+            <Link  
+                to="/your-info/welcome"
+                style={{
+                    color: "white", 
+                    display: "inline-block", 
+                    width: "100%", 
+                    height: "100%", 
+                    textAlign: "center", 
+                    backgroundColor: "#FB3B3E",
+                    fontSize: "22px"
+                }}
+            >
+                Back
+            </Link>
+        </div>
     </div>
 );
 
