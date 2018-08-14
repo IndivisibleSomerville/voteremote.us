@@ -13,6 +13,10 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+// Pages
+import HomePage from './components/HomePage';
+import CampusCoordinatorPage from './components/CampusCoordinatorPage';
+
 // Stages
 import YourInfo from './components/stages/your-info';
 import YourVote from './components/stages/your-vote';
@@ -150,19 +154,7 @@ class App extends Component {
     return (
       <div className="root">
         <Header />
-        <div className="form_page">
-          <div className="form_container">
-            <StepZilla
-              steps={this.steps}
-              onStepChange={(step) => this.stepChange(step)}
-              nextButtonCls="form_button form_button_solid_background"
-              backButtonCls="form_button form_button_solid_background no_display"
-              startAtStep={this.state.user.currentStep || 0}
-              showNavigation={this.state.user.showNavigation}
-              showSteps={false}
-            />
-          </div>
-        </div>
+        <CampusCoordinatorPage />
         <Footer />
       </div>
     );
@@ -170,3 +162,19 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+// <div className="form_page">
+// <div className="form_container">
+//   <StepZilla
+//     steps={this.steps}
+//     onStepChange={(step) => this.stepChange(step)}
+//     nextButtonCls="form_button form_button_solid_background"
+//     backButtonCls="form_button form_button_solid_background no_display"
+//     startAtStep={this.state.user.currentStep || 0}
+//     showNavigation={this.state.user.showNavigation}
+//     showSteps={false}
+//   />
+// </div>
+// </div>
