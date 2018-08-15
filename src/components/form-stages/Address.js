@@ -1,9 +1,7 @@
 import React from 'react';
-import { Input, Form, Dropdown } from 'semantic-ui-react';
 import ReactTooltip from 'react-tooltip';
 
-
-const AddressForm = (props) => (
+const Address = (props) => (
     <div>
         <ReactTooltip place='bottom' type='info' effect='solid' multiline={true} />
         <div className="form_header_progress_bar">
@@ -12,229 +10,222 @@ const AddressForm = (props) => (
         <div className="form_header_box">
             <h1>Your Info</h1>
         </div>
-        <Form>
-            <Form.Field>
+        <form onSubmit={props.handleSubmit} name="Address">
                 <label>Your address at school <span data-tip="If you live in a dorm, use the dorm's physical street address,<br />even if it's different than the mailing address your school gives you." className="form_label_explanation_link">(What if I'm in a dorm?)</span></label>
-                <Input
+                <input
                     type="text"
-                    name="school[streetLine1]"
+                    name="schoolAddress_streetLine1"
                     placeholder="Street Address (no P.O. boxes)"
-                    value={props.state["school[streetLine1]"]}
-                    onChange={props.onChange}
+                    value={props.state["schoolAddress_streetLine1"]}
+                    onChange={props.handleChange}
                 />
-                <div className={props.state.errorMsgs["school[streetLine1]"] === null ? "" : "ui red message"}>
-                    <span>{props.state.errorMsgs["school[streetLine1]"]}</span>
+                <div className={props.state.errorMsgs["schoolAddress_streetLine1"] === null ? "" : "ui red message"}>
+                    <span>{props.state.errorMsgs["schoolAddress_streetLine1"]}</span>
                 </div>
-            </Form.Field>
-            <Form.Field>
-                <Input
-                    type="text"
-                    name="school[streetLine2]"
-                    placeholder="Apartment number, etc."
-                    value={props.state["school[streetLine2]"]}
-                    onChange={props.onChange}
-                />
-                <div className={props.state.errorMsgs["school[streetLine2]"] === null ? "" : "ui red message"}>
-                    <span>{props.state.errorMsgs["school[streetLine2]"]}</span>
-                </div>
-            </Form.Field>
-            <Form.Group>
-                <Form.Field>
-                    <Input
-                        type="text"
-                        name="school[city]"
-                        placeholder="City"
-                        value={props.state["school[city]"]}
-                        onChange={props.onChange}
-                    />
-                    <div className={props.state.errorMsgs["school[city]"] === null ? "" : "ui red message"}>
-                        <span>{props.state.errorMsgs["school[city]"]}</span>
-                    </div>
-                </Form.Field>
-                <Form.Field>
-                    <select name="school[state]" className="ui dropdown" value={props.state["school[state]"]} onChange={props.onChange}>
-                        <option value="">State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                    <div className={props.state.errorMsgs["school[state]"] === null ? "" : "ui red message"}>
-                        <span>{props.state.errorMsgs["school[state]"]}</span>
-                    </div>
-                </Form.Field>
-                <Form.Field>
-                    <Input
-                        type="text"
-                        name="school[zipCode]"
-                        placeholder="Zip"
-                        value={props.state["school[zipCode]"]}
-                        onChange={props.onChange}
-                    />
-                    <div className={props.state.errorMsgs["school[zipCode]"] === null ? "" : "ui red message"}>
-                        <span>{props.state.errorMsgs["school[zipCode]"]}</span>
-                    </div>
-                </Form.Field>
-            </Form.Group>
-            <Form.Field>
-                <label>Your address at home</label>
-                <Input
-                    type="text"
-                    name="home[streetLine1]"
-                    placeholder="Street Address (no P.O. boxes)"
-                    value={props.state["home[streetLine1]"]}
-                    onChange={props.onChange}
-                />
-                <div className={props.state.errorMsgs["home[streetLine1]"] === null ? "" : "ui red message"}>
-                    <span>{props.state.errorMsgs["home[streetLine1]"]}</span>
-                </div>
-            </Form.Field>
-            <Form.Field>
-                <Input
-                    type="text"
-                    name="home[streetLine2]"
-                    placeholder="Apartment number, etc."
-                    value={props.state["home[streetLine2]"]}
-                    onChange={props.onChange}
-                />
-                <div className={props.state.errorMsgs["home[streetLine2]"] === null ? "" : "ui red message"}>
-                    <span>{props.state.errorMsgs["home[streetLine2]"]}</span>
-                </div>
-            </Form.Field>
-            <Form.Group>
-                <Form.Field>
-                    <Input
-                        type="text"
-                        name="home[city]"
-                        placeholder="City"
-                        value={props.state["home[city]"]}
-                        onChange={props.onChange}
-                    />
-                    <div className={props.state.errorMsgs["home[city]"] === null ? "" : "ui red message"}>
-                        <span>{props.state.errorMsgs["home[city]"]}</span>
-                    </div>
-                </Form.Field>
-                <Form.Field>
-                    <select name="home[state]" className="ui dropdown" value={props.state["home[state]"]} onChange={props.onChange}>
-                        <option value="">State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                    <div className={props.state.errorMsgs["home[state]"] === null ? "" : "ui red message"}>
-                        <span>{props.state.errorMsgs["home[state]"]}</span>
-                    </div>
-                </Form.Field>
-                <Form.Field>
-                    <Input
-                        type="text"
-                        name="home[zipCode]"
-                        placeholder="Zip"
-                        value={props.state["home[zipCode]"]}
-                        onChange={props.onChange}
-                    />
-                    <div className={props.state.errorMsgs["home[zipCode]"] === null ? "" : "ui red message"}>
-                        <span>{props.state.errorMsgs["home[zipCode]"]}</span>
-                    </div>
-                </Form.Field>
-            </Form.Group>
-        </Form>
-    </div>
-);
 
-export default AddressForm;
+                <input
+                    type="text"
+                    name="schoolAddress_streetLine2"
+                    placeholder="Apartment number, etc."
+                    value={props.state["schoolAddress_streetLine2"]}
+                    onChange={props.handleChange}
+                />
+                <div className={props.state.errorMsgs["schoolAddress_streetLine2"] === null ? "" : "ui red message"}>
+                    <span>{props.state.errorMsgs["schoolAddress_streetLine2"]}</span>
+                </div>
+
+            <div className="field_group">
+                    <input
+                        type="text"
+                        name="schoolAddress_city"
+                        placeholder="City"
+                        value={props.state["schoolAddress_city"]}
+                        onChange={props.handleChange}
+                    />
+                    <div className={props.state.errorMsgs["schoolAddress_city"] === null ? "" : "ui red message"}>
+                        <span>{props.state.errorMsgs["schoolAddress_city"]}</span>
+                    </div>
+
+                    <select name="schoolAddress_state" className="ui dropdown" value={props.state["schoolAddress_state"]} onChange={props.handleChange}>
+                        <option value="">State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    <div className={props.state.errorMsgs["schoolAddress_state"] === null ? "" : "ui red message"}>
+                        <span>{props.state.errorMsgs["schoolAddress_state"]}</span>
+                    </div>
+
+                    <input
+                        type="text"
+                        name="schoolAddress_zipCode"
+                        placeholder="Zip"
+                        value={props.state["schoolAddress_zipCode"]}
+                        onChange={props.handleChange}
+                    />
+                    <div className={props.state.errorMsgs["schoolAddress_zipCode"] === null ? "" : "ui red message"}>
+                        <span>{props.state.errorMsgs["schoolAddress_zipCode"]}</span>
+                    </div>
+            </div>
+
+                <label>Your address at home</label>
+                <input
+                    type="text"
+                    name="homeAddress_streetLine1"
+                    placeholder="Street Address (no P.O. boxes)"
+                    value={props.state["homeAddress_streetLine1"]}
+                    onChange={props.handleChange}
+                />
+                <div className={props.state.errorMsgs["homeAddress_streetLine1"] === null ? "" : "ui red message"}>
+                    <span>{props.state.errorMsgs["homeAddress_streetLine1"]}</span>
+                </div>
+
+                <input
+                    type="text"
+                    name="homeAddress_streetLine2"
+                    placeholder="Apartment number, etc."
+                    value={props.state["homeAddress_streetLine2"]}
+                    onChange={props.handleChange}
+                />
+                <div className={props.state.errorMsgs["homeAddress_streetLine2"] === null ? "" : "ui red message"}>
+                    <span>{props.state.errorMsgs["homeAddress_streetLine2"]}</span>
+                </div>
+
+                    <input
+                        type="text"
+                        name="homeAddress_city"
+                        placeholder="City"
+                        value={props.state["homeAddress_city"]}
+                        onChange={props.handleChange}
+                    />
+                    <div className={props.state.errorMsgs["homeAddress_city"] === null ? "" : "ui red message"}>
+                        <span>{props.state.errorMsgs["homeAddress_city"]}</span>
+                    </div>
+
+                    <select name="homeAddress_state" className="ui dropdown" value={props.state["homeAddress_state"]} onChange={props.handleChange}>
+                        <option value="">State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    <div className={props.state.errorMsgs["homeAddress_state"] === null ? "" : "ui red message"}>
+                        <span>{props.state.errorMsgs["homeAddress_state"]}</span>
+                    </div>
+
+                    <input
+                        type="text"
+                        name="homeAddress_zipCode"
+                        placeholder="Zip"
+                        value={props.state["homeAddress_zipCode"]}
+                        onChange={props.handleChange}
+                    />
+                    <div className={props.state.errorMsgs["homeAddress_zipCode"] === null ? "" : "ui red message"}>
+                        <span>{props.state.errorMsgs["homeAddress_zipCode"]}</span>
+                    </div>
+
+            <div className="buttons">
+                <button className="button form_button_solid_background form_button">
+                    Next
+                </button>
+            </div>
+        </form>
+    </div>
+)
+
+export default Address;

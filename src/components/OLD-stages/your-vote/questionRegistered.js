@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Button } from 'semantic-ui-react';
 
 class QuestionRegistered extends Component {
   constructor(props) {
@@ -9,23 +10,29 @@ class QuestionRegistered extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  selectIframe(value) {
-    switch (value) {
+  handleSubmit(e) {
+    console.log('e.currentTarget.value', e.currentTarget.value);
+    console.log('this.state.sel', this.state.selectedOption);
+    let path = '/';
+
+    switch (this.state.selectedOption) {
       case 'yesAbsentee':
-        this.props.changeSubStep('Your Ballot', 'absentee');
+        path = '/your-ballot/absentee-ballot';
         break;
       case 'yesInPerson':
-        this.props.changeSubStep('Your Ballot', 'done');
+        path = '/finished';
         break;
       case 'no':
-        this.props.changeSubStep('Your Ballot', 'register');
+        path = '/your-ballot/register';
         break;
       case 'not sure':
-        this.props.changeSubStep('Your Ballot', 'verify');
+        path = '/your-ballot/verify';
         break;
     }
+    this.props.history.push(path);
   }
 
   onChange(e) {
@@ -33,7 +40,6 @@ class QuestionRegistered extends Component {
     let value = e.target.value;
 
     newState.selectedOption = value;
-    this.selectIframe(value);
     this.setState(newState);
   }
 
@@ -49,7 +55,7 @@ class QuestionRegistered extends Component {
         <div>
           <h2 className="questionRegistered_header">Are you registered to vote at that address?</h2>
         </div>
-        <form className="questionRegistered">
+        <Form onSubmit={this.handleSubmit} className="questionRegistered">
           <div className="radio">
             <label>
               <input type="radio" value="yesAbsentee" checked={this.state.selectedOption === "yesAbsentee"} onChange={this.onChange} />
@@ -74,7 +80,19 @@ class QuestionRegistered extends Component {
               <span className="questionRegistered_option"> I don't know, help me check my registration</span>
             </label>
           </div>
-        </form>
+          <Button
+            style={{
+                color: "white", 
+                display: "inline-block", 
+                width: "100%", 
+                height: "100%", 
+                textAlign: "center", 
+                backgroundColor: "#FB3B3E",
+                fontSize: "22px"
+            }}
+            content="Next"  
+          />
+        </Form>
       </div>
     )
   }
