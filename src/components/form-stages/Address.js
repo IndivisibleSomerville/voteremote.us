@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
+import '../../styles/form-inputs.css';
 
 const Address = (props) => (
     <div>
@@ -11,6 +12,7 @@ const Address = (props) => (
             <h1>Your Info</h1>
         </div>
         <form onSubmit={props.handleSubmit} name="Address">
+            <div class="form_field">
                 <label>Your address at school <span data-tip="If you live in a dorm, use the dorm's physical street address,<br />even if it's different than the mailing address your school gives you." className="form_label_explanation_link">(What if I'm in a dorm?)</span></label>
                 <input
                     type="text"
@@ -19,10 +21,11 @@ const Address = (props) => (
                     value={props.state["schoolAddress_streetLine1"]}
                     onChange={props.handleChange}
                 />
-                <div className={props.state.errorMsgs["schoolAddress_streetLine1"] === null ? "" : "ui red message"}>
+                <div className={props.state.errorMsgs["schoolAddress_streetLine1"] === undefined ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["schoolAddress_streetLine1"]}</span>
                 </div>
-
+            </div>
+            <div class="form_field">
                 <input
                     type="text"
                     name="schoolAddress_streetLine2"
@@ -30,11 +33,12 @@ const Address = (props) => (
                     value={props.state["schoolAddress_streetLine2"]}
                     onChange={props.handleChange}
                 />
-                <div className={props.state.errorMsgs["schoolAddress_streetLine2"] === null ? "" : "ui red message"}>
+                <div className={props.state.errorMsgs["schoolAddress_streetLine2"] === undefined ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["schoolAddress_streetLine2"]}</span>
                 </div>
-
-            <div className="field_group">
+            </div>
+            <div className="form_group">
+                <div className="form_field">
                     <input
                         type="text"
                         name="schoolAddress_city"
@@ -42,10 +46,11 @@ const Address = (props) => (
                         value={props.state["schoolAddress_city"]}
                         onChange={props.handleChange}
                     />
-                    <div className={props.state.errorMsgs["schoolAddress_city"] === null ? "" : "ui red message"}>
+                    <div className={props.state.errorMsgs["schoolAddress_city"] === undefined ? "" : "ui red message"}>
                         <span>{props.state.errorMsgs["schoolAddress_city"]}</span>
                     </div>
-
+                </div>
+                <div className="form_field">
                     <select name="schoolAddress_state" className="ui dropdown" value={props.state["schoolAddress_state"]} onChange={props.handleChange}>
                         <option value="">State</option>
                         <option value="AL">Alabama</option>
@@ -100,10 +105,11 @@ const Address = (props) => (
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <div className={props.state.errorMsgs["schoolAddress_state"] === null ? "" : "ui red message"}>
+                    <div className={props.state.errorMsgs["schoolAddress_state"] === undefined ? "" : "ui red message"}>
                         <span>{props.state.errorMsgs["schoolAddress_state"]}</span>
                     </div>
-
+                </div>
+                <div class="form_field">
                     <input
                         type="text"
                         name="schoolAddress_zipCode"
@@ -111,11 +117,12 @@ const Address = (props) => (
                         value={props.state["schoolAddress_zipCode"]}
                         onChange={props.handleChange}
                     />
-                    <div className={props.state.errorMsgs["schoolAddress_zipCode"] === null ? "" : "ui red message"}>
+                    <div className={props.state.errorMsgs["schoolAddress_zipCode"] === undefined ? "" : "ui red message"}>
                         <span>{props.state.errorMsgs["schoolAddress_zipCode"]}</span>
                     </div>
+                </div>
             </div>
-
+            <div className="form_field">
                 <label>Your address at home</label>
                 <input
                     type="text"
@@ -124,10 +131,11 @@ const Address = (props) => (
                     value={props.state["homeAddress_streetLine1"]}
                     onChange={props.handleChange}
                 />
-                <div className={props.state.errorMsgs["homeAddress_streetLine1"] === null ? "" : "ui red message"}>
+                <div className={props.state.errorMsgs["homeAddress_streetLine1"] === undefined ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["homeAddress_streetLine1"]}</span>
                 </div>
-
+            </div>
+            <div className="form_field">
                 <input
                     type="text"
                     name="homeAddress_streetLine2"
@@ -135,10 +143,12 @@ const Address = (props) => (
                     value={props.state["homeAddress_streetLine2"]}
                     onChange={props.handleChange}
                 />
-                <div className={props.state.errorMsgs["homeAddress_streetLine2"] === null ? "" : "ui red message"}>
+                <div className={props.state.errorMsgs["homeAddress_streetLine2"] === undefined ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["homeAddress_streetLine2"]}</span>
                 </div>
-
+            </div>
+            <div className="form_group">
+                <div className="form_field">
                     <input
                         type="text"
                         name="homeAddress_city"
@@ -146,10 +156,11 @@ const Address = (props) => (
                         value={props.state["homeAddress_city"]}
                         onChange={props.handleChange}
                     />
-                    <div className={props.state.errorMsgs["homeAddress_city"] === null ? "" : "ui red message"}>
+                    <div className={props.state.errorMsgs["homeAddress_city"] === undefined ? "" : "ui red message"}>
                         <span>{props.state.errorMsgs["homeAddress_city"]}</span>
                     </div>
-
+                </div>
+                <div className="form_field">
                     <select name="homeAddress_state" className="ui dropdown" value={props.state["homeAddress_state"]} onChange={props.handleChange}>
                         <option value="">State</option>
                         <option value="AL">Alabama</option>
@@ -204,10 +215,11 @@ const Address = (props) => (
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <div className={props.state.errorMsgs["homeAddress_state"] === null ? "" : "ui red message"}>
+                    <div className={props.state.errorMsgs["homeAddress_state"] === undefined ? "" : "ui red message"}>
                         <span>{props.state.errorMsgs["homeAddress_state"]}</span>
                     </div>
-
+                </div>
+                <div className="form_field">
                     <input
                         type="text"
                         name="homeAddress_zipCode"
@@ -215,10 +227,12 @@ const Address = (props) => (
                         value={props.state["homeAddress_zipCode"]}
                         onChange={props.handleChange}
                     />
-                    <div className={props.state.errorMsgs["homeAddress_zipCode"] === null ? "" : "ui red message"}>
+                    <div className={props.state.errorMsgs["homeAddress_zipCode"] === undefined ? "" : "ui red message"}>
                         <span>{props.state.errorMsgs["homeAddress_zipCode"]}</span>
                     </div>
-
+                </div>
+            </div>
+            
             <div className="buttons">
                 <button className="button form_button_solid_background form_button">
                     Next

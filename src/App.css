@@ -1,9 +1,10 @@
 html {
   width: 100%;
 }
-
 body {
   margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 button {  /* button style reset code, inspired by https://gist.github.com/MoOx/9137295 */
   border: none;
@@ -14,13 +15,28 @@ button {  /* button style reset code, inspired by https://gist.github.com/MoOx/9
   overflow: visible;
   padding: 0;
   width: auto;
+
+  cursor: pointer;
 }
+/* Not sure what this styling is for */
+/* button {
+  border: 1px solid #FB3B3E;
+  color: #FB3B3E;
+  font-size: 24px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+} */
 h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
   line-height: 1;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
+}
+.link_no_decoration {
+  color: inherit;
+  text-decoration: inherit;
 }
 .transparent {
   opacity: 0;
@@ -40,27 +56,7 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
   width: 100%;
 }
-.headline {
-  align-items: center;
-  display: flex;
-  height: 125px;
-  padding-top: 10px;
-  justify-content: space-between;
-}
-.headline h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: center;
-}
-.headline .social_box {
-  display: none;
-}
-.social {
-  margin: 10px;
-  color: #FFFFFF;
-  font-size: 2rem;
-  font-weight: bold;
-}
+
 
 .form_page {
   background-color:#FFFFFF;
@@ -167,62 +163,9 @@ h1, h2, h3, h4, h5 {
   color: #FB3B3E;
 }
 
+/* Refers to the Next/Previous buttons, I believe */
 .footer-buttons {
   display: flex;
   justify-content: center;
   margin: 10px auto;
-}
-
-
-
-
-
-
-
-
-
-
-button {
-  border: 1px solid #FB3B3E;
-  color: #FB3B3E;
-  font-size: 24px;
-  margin: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.footer_box {
-  padding-top: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.footer_box a {
-  color: #ffffff;
-  padding: 10px 20px;
-}
-.cr {
-  margin-top: 24px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-@media screen and (min-width: 600px) {
-  .headline h1 {
-    padding-left: 50px;
-  }
-  .headline .social_box {
-    display: flex;
-    padding-right: 50px;
-  }
-  .footer_box {
-    flex-direction: row;
-  }
-  .footer_box a {
-    padding: 0 20px;
-  }
 }

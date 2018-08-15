@@ -1,0 +1,44 @@
+input, select {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+input, select {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.form_group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_field {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.form_field label {
+    padding: 10px 0;
+}
+
+.radioButton label {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.radioButton label input {
+    width: 30px;
+}

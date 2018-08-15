@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/form-inputs.css';
 
 class AreYouRegistered extends React.Component {
   state = {
@@ -46,31 +47,31 @@ class AreYouRegistered extends React.Component {
           <h2 className="questionRegistered_header">Are you registered to vote at that address?</h2>
         </div>
         <form onSubmit={this.handleSubmit} className="questionRegistered">
-          <div className="radio">
+          <div className="radioButton">
             <label>
               <input type="radio" value="yesAbsentee" checked={this.state.selectedOption === "yesAbsentee"} onChange={this.handleChange} />
               <span className="questionRegistered_option"> Yes! Help me request an absentee ballot</span>
             </label>
           </div>
-          <div className="radio">
+          <div className="radioButton">
             <label>
               <input type="radio" value="yesInPerson" checked={this.state.selectedOption === "yesInPerson"} onChange={this.handleChange} />
               <span className="questionRegistered_option"> Yes, and I'll be voting in person</span>
             </label>
           </div>
-          <div className="radio">
+          <div className="radioButton">
             <label>
               <input type="radio" value="no" checked={this.state.selectedOption === "no"} onChange={this.handleChange} />
               <span className="questionRegistered_option"> No, help me register to vote</span>
             </label>
           </div>
-          <div className="radio">
+          <div className="radioButton">
             <label>
               <input type="radio" value="not sure" checked={this.state.selectedOption === "not sure"} onChange={this.handleChange} />
               <span className="questionRegistered_option"> I don't know, help me check my registration</span>
             </label>
           </div>
-          <button>Next</button>
+          <button className="button form_button_solid_background form_button">Next</button>
         </form>
       </div>
     )
