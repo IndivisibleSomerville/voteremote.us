@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import MenuBar from './MenuBar';
 import '../styles/HomePage.css';
 
@@ -23,7 +23,7 @@ class HomePage extends React.Component {
                         Vote by Mail-In Ballot
                     </div>
                     <div className="started_box vr_red_background">
-                        Get Started
+                        <Link className="link_no_decoration" to="/get-started">Get Started</Link>
                     </div>
                     <div className="teaser_circle" onClick={this.scrollToWhat}>
                         <svg xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@ class HomePage extends React.Component {
                             are working to get out the vote.
                         </p>
                         <div className="started_box vr_red_background vr_uppercase">
-                            Get Started
+                            <Link className="link_no_decoration" to="/get-started">Get Started</Link>
                         </div>
                     </div>
                     <div className="count_box_image">

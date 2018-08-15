@@ -7,7 +7,7 @@ const Header = () => (
         <h1>VOTE REMOTE</h1> 
         <div className="social_box"> 
             <div className="social vr_black_background">
-                    <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f"></i>
             </div>
             <div className="social vr_black_background">
                 <i className="fab fa-twitter"></i>
