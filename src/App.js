@@ -17,7 +17,8 @@ const App = () => (
       <Switch>
         <Route path={'/get-started'} component={IntakeForm} />
         <Route path={'/get-involved'} component={CampusCoordinatorPage} />
-        <Route path={'/state-requirements'} component={StateRequirementsPage} />
+        <Route path={`/state-requirements/:usState`} component={StateRequirementsPage}/>
+        <Route exact path={'/state-requirements'} component={StateRequirementsPage} />
         <Route path={'/about'} component={AboutPage} />
         <Route exact path={'/'} component={HomePage} />
       </Switch>

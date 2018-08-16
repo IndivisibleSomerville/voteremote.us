@@ -6,7 +6,7 @@ import '../styles/StateRequirements.css';
 class StateRequirementsPage extends React.Component {
     state = {
         stateJsonData: {},
-        usState: this.props.usState || '',
+        usState: '',
         votingSteps: 'stepsAbsentee'
     }
 
@@ -16,16 +16,27 @@ class StateRequirementsPage extends React.Component {
         }));
     }
 
-    // Imports the JSON data
-    getJson = () => {
+    setUsState = (usState) => {
+        this.setState( () => ({
+            usState
+        }));
+    }
+
+    // Imports the JSON data for all states
+    // Then uses passed-in US state (if provided) to set React initial state
+    getJson = (usStateInitialValue) => {
         var request = new XMLHttpRequest();
         request.open('GET', './stateReqs.json', true);
         const component = this;
-        request.onload = function(setStateJsonData) {
+        request.onload = function() {
             if (this.status >=200 && this.status < 400) {
                 const json = JSON.parse(this.response);
-                component.setState( () => ({ stateJsonData: json }));
+                component.setStateJsonData(json);
                 console.log("JSON data loaded successfully");
+                // Set initial US state if that value was passed in
+                if (usStateInitialValue) {
+                    component.setUsState(usStateInitialValue)
+                }
             } else {
                 console.log("Error during JSON load");
             }
@@ -49,7 +60,22 @@ class StateRequirementsPage extends React.Component {
     }
 
     componentDidMount() {
-        this.getJson();
+        // Set US state if passed from URL
+        const usState = this.props.match.params.usState && this.props.match.params.usState.toUpperCase();
+        this.getJson(usState);
+    }
+    componentDidUpdate(prevProps, prevState) {
+        // Catches if the user manually enters a new state URL
+        if (this.props.match.params.usState !== prevProps.match.params.usState) {
+            const usState = this.props.match.params.usState && this.props.match.params.usState.toUpperCase();
+            this.setUsState(usState);
+        }
+        // Catches when the user changes the US state in the dropdown
+        // This way, the URL in the browser stays updated
+        // TODO: This is getting triggered too many times.
+        if (this.state.usState !== prevState.usState) {
+            this.props.history.push(`/state-requirements/${this.state.usState}`);
+        }
     }
 
     render() {
@@ -64,7 +90,7 @@ class StateRequirementsPage extends React.Component {
                         <div className="select_state_box">
                             <p>Select a state to learn about its requirements</p>
                             <form className="ui form">
-                                <select className="ui dropdown" onChange={this.handleUsStateChange}>
+                                <select className="ui dropdown" value={this.state.usState} onChange={this.handleUsStateChange}>
                                     <option value="">State</option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -125,7 +151,7 @@ class StateRequirementsPage extends React.Component {
                             <button id="select_method_in_person" className={`vr_form_head ${this.state.votingSteps === 'stepsInPerson' && 'select_method_active'}`} onClick={() => this.handleVotingStepsChange('stepsInPerson')}>Vote in State</button>
                         </div>
                         <div id="steps_to_vote">
-                            <div class="step_container active">
+                            <div className="step_container active">
                                 <Step
                                     data={this.state.stateJsonData}
                                     usState={this.state.usState}

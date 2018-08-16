@@ -123,8 +123,15 @@ class IntakeForm extends React.Component {
                 path = `${this.props.match.path}/prefill-absentee-request`;
                 break;
             case 'Finished':
-                // TODO: Implement "Finished" case
-                path = 'to be determined';
+                if (this.state.districtSelector === 'school') {
+                    path = `/state-requirements/${this.state.schoolAddress_state}`
+                }
+                else if (this.state.districtSelector === 'home') {
+                    path = `/state-requirements/${this.state.homeAddress_state}`
+                }
+                else {
+                    path = '/state-requirements';
+                }
                 break;
             default:
                 break;

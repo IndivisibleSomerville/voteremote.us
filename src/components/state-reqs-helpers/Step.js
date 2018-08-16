@@ -20,13 +20,15 @@ class Step extends React.Component {
             return (
                 <div>
                 { this.props.data[this.props.usState][this.props.votingSteps].map( (step) => (
-                        <div>
+                        <div key={step.stepName}>
                             <StepHeader 
+                                key={step.stepName}
                                 stepName={step.stepName}
                                 stepDeadline={step.stepDeadline}
                             />
                             { step.stepInstructions.map( (body) => (
                                 <StepBody 
+                                    key={body.instructionType}
                                     instructionType={body.instructionType}
                                     instructionText={body.instructionText}
                                     instructionLink={body.instructionLink && body.instructionLink}
