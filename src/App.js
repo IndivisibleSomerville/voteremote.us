@@ -7,7 +7,7 @@ import IntakeForm from './components/IntakeForm';
 import CampusCoordinatorPage from './components/CampusCoordinatorPage';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
-import StateRequirementsPageTemp from './components/StateRequirementsPageTemp';
+import StateRequirementsPage from './components/StateRequirementsPage';
 
 import './App.css';
 
@@ -17,7 +17,7 @@ const App = () => (
       <Switch>
         <Route path={'/get-started'} component={IntakeForm} />
         <Route path={'/get-involved'} component={CampusCoordinatorPage} />
-        <Route path={'/state-requirements'} component={StateRequirementsPageTemp} />
+        <Route path={'/state-requirements'} component={StateRequirementsPage} />
         <Route path={'/about'} component={AboutPage} />
         <Route exact path={'/'} component={HomePage} />
       </Switch>
