@@ -4,37 +4,43 @@ import StepBody from './StepBody';
 
 class Step extends React.Component {
     render() {
-        if (this.props.votingMethod === '' || this.props.usState === '') {
+        if (!this.props.usState || !this.props.votingSteps) {
+            return (
+                <div></div>
+            )
+        }
+        else if (!this.props.data[this.props.usState] || !this.props.data[this.props.usState][this.props.votingSteps]) {
             return (
                 <div>
-                    Error accessing US State information.
+                    Error accessing information for this U.S. state.
                 </div>
             )
         }
         else {
-            let typeArray = [];
-            if (this.props.type === 'absentee' && this.props.stateJsonData[this.props.usState]) {
-                typeArray = this.state.stateJsonData[this.props.usState].stepsAbsentee;
-            }
-            else if (this.props.type === 'inPerson' && this.props.stateJsonData[this.props.usState]) {
-                typeArray = this.state.stateJsonData[this.props.usState].stepsInPerson;
-            }
-            typeArray.map( (step) => (
+            return (
                 <div>
-                    <StepHeader 
-                        stepName={step.stepName}
-                        stepDeadline={step.stepDeadline}
-                    />
-                    { step.stepInstructions.map( (body) => (
-                        <StepBody 
-                            instructionType={body.instructionType}
-                            instructionText={body.instructionText}
-                            instructionLink={body.instructionLink && body.instructionLink}
-                            instructionLinkText={body.instructionLinkText && body.instructionLinkText}
-                        />
-                    ))}
+                { this.props.data[this.props.usState][this.props.votingSteps].map( (step) => (
+                        <div key={step.stepName}>
+                            <StepHeader 
+                                key={step.stepName}
+                                stepName={step.stepName}
+                                stepDeadline={step.stepDeadline}
+                            />
+                            { step.stepInstructions.map( (body) => (
+                                <StepBody 
+                                    key={body.instructionType}
+                                    instructionType={body.instructionType}
+                                    instructionText={body.instructionText}
+                                    instructionLink={body.instructionLink && body.instructionLink}
+                                    instructionLinkText={body.instructionLinkText && body.instructionLinkText}
+                                />
+                            ))}
+                        </div>
+                    ))
+                }
                 </div>
-            ))
+            )
+
         }
     }
 }

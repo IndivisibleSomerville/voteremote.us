@@ -12,7 +12,7 @@ const Address = (props) => (
             <h1>Your Info</h1>
         </div>
         <form onSubmit={props.handleSubmit} name="Address">
-            <div class="form_field">
+            <div className="form_field">
                 <label>Your address at school <span data-tip="If you live in a dorm, use the dorm's physical street address,<br />even if it's different than the mailing address your school gives you." className="form_label_explanation_link">(What if I'm in a dorm?)</span></label>
                 <input
                     type="text"
@@ -25,7 +25,7 @@ const Address = (props) => (
                     <span>{props.state.errorMsgs["schoolAddress_streetLine1"]}</span>
                 </div>
             </div>
-            <div class="form_field">
+            <div className="form_field">
                 <input
                     type="text"
                     name="schoolAddress_streetLine2"
@@ -109,7 +109,7 @@ const Address = (props) => (
                         <span>{props.state.errorMsgs["schoolAddress_state"]}</span>
                     </div>
                 </div>
-                <div class="form_field">
+                <div className="form_field">
                     <input
                         type="text"
                         name="schoolAddress_zipCode"
