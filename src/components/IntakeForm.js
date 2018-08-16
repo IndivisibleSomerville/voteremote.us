@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import Joi from 'joi-browser';
 
 import Name from './form-stages/Name';
 import Address from './form-stages/Address';
@@ -8,6 +9,9 @@ import AreYouRegistered from './form-stages/AreYouRegistered';
 import LookUpReg from './form-stages/LookUpReg';
 import PrefillReg from './form-stages/PrefillReg';
 import PrefillAbsenteeRequest from './form-stages/PrefillAbsenteeRequest';
+
+import nameValidator from './form-validators/nameValidator';
+import addressValidator from './form-validators/addressValidator';
 
 class IntakeForm extends React.Component {
     state = {
@@ -40,20 +44,59 @@ class IntakeForm extends React.Component {
         newState[e.target.name] = e.target.value;
         this.setState(newState);
     }
+    validateForm = (validator) => {
+        const newState = {
+            errorMsgs: {}
+        }
+        Object.keys(validator).forEach( (key) => {
+            const validation = Joi.validate(this.state[key], validator[key].validation);
+            if (validation.error) {
+                newState.errorMsgs[key] =
+                    validator[key].errorMsg
+                    ? validator[key].errorMsg
+                    : validation.error.details[0].message;
+            }
+        })
+        return newState;
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         //TODO: Validate the input
         const currentStep = e.currentTarget.name;
-        let nextStep = ''
+
+        // Validate the input
+        let validator = undefined;
         switch (currentStep) {
             case 'Name':
-                nextStep = 'Address';
+                validator = nameValidator;
                 break;
             case 'Address':
-                nextStep = 'WhereToVote';
+                validator = addressValidator;
                 break;
-          }
-        this.handleStepChange(nextStep);
+            default:
+                break;
+        }
+        const stateUpdateValidation = this.validateForm(validator);
+        // If errors, display them; else go to next step
+        if (Object.keys(stateUpdateValidation.errorMsgs).length > 0) {
+            this.setState(stateUpdateValidation);
+        }
+        else {
+            this.setState({ errorMsgs: {} })
+            // Determine which form to go to next based on current step
+            let nextStep = '';
+            switch (currentStep) {
+                case 'Name':
+                    nextStep = 'Address';
+                    break;
+                case 'Address':
+                    nextStep = 'WhereToVote';
+                    break;
+                default:
+                    break;
+            }
+            this.handleStepChange(nextStep);
+        }
     }
     handleStepChange = (nextStep) => {
         let path = '';
@@ -82,6 +125,8 @@ class IntakeForm extends React.Component {
             case 'Finished':
                 // TODO: Implement "Finished" case
                 path = 'to be determined';
+                break;
+            default:
                 break;
         }
         this.props.history.push(path);

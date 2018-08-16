@@ -23,6 +23,8 @@ class AreYouRegistered extends React.Component {
       case 'not sure':
         nextStep = 'LookUpReg';
         break;
+      default:
+        break;
     }
     this.props.handleStepChange(nextStep);
   }

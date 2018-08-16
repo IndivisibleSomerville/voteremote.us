@@ -3,6 +3,8 @@ import ReactTooltip from 'react-tooltip';
 import SearchBox from '../form-helpers/SearchBox';
 import '../../styles/form-inputs.css';
 
+// Note: <Search /> itself has the "required" tag (re HTML validation)
+// which is why <SearchBox /> doesn't have a "required" tag
 const Name = (props) => (
     <div>
         <ReactTooltip place='bottom' type='info' effect='solid' multiline={true} />
@@ -29,7 +31,7 @@ const Name = (props) => (
                     </div>
                 </div>
                 <div className="form_field">
-                    <label htmlFor="lastName" class="hidden">Last Name</label>
+                    <label htmlFor="lastName" className="hidden">Last Name</label>
                     <input
                         autoComplete="never"
                         type="text"
