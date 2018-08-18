@@ -13,30 +13,66 @@ class WhereToVote extends React.Component {
     if (typeOfData === 'margins') {
       const homeState = this.props.state.homeAddress_state;
       const schoolState = this.props.state.schoolAddress_state;
-      let homeVictoryMarginPercent = '';
-      let homeVictoryMarginRank = '';
-      let schoolVictoryMarginPercent = '';
-      let schoolVictoryMarginRank = '';
+
+      let homePercentTrump,
+          homePercentClinton,
+          homePercentOther,
+          schoolPercentTrump,
+          schoolPercentClinton,
+          schoolPercentOther;
       for (let i = 0; i < data.length; i++) {
         if (data[i]['state-short'] === homeState) {
-          homeVictoryMarginPercent = data[i]['victory-margin-percent'];
-          homeVictoryMarginRank = data[i]['victory-margin-rank'];
+          homePercentTrump = data[i]['percent-trump'];
+          homePercentClinton = data[i]['percent-clinton'];
+          homePercentOther = data[i]['percent-other'];
         }
         if (data[i]['state-short'] === schoolState) {
-          schoolVictoryMarginPercent = data[i]['victory-margin-percent'];
-          schoolVictoryMarginRank = data[i]['victory-margin-rank'];
+          schoolPercentTrump = data[i]['percent-trump'];
+          schoolPercentClinton = data[i]['percent-clinton'];
+          schoolPercentOther = data[i]['percent-other'];
         }
       }
+      // Create a sorted array of objects
+      let homePercent = [
+        {
+          candidate: 'Donald J. Trump (Republican)',
+          percent: homePercentTrump
+        },
+        {
+          candidate: 'Hillary Clinton (Democrat)',
+          percent: homePercentClinton
+        },
+        {
+          candidate: 'Other (other parties and write-in votes)',
+          percent: homePercentOther
+        }
+      ];
+      let schoolPercent = [
+        {
+          candidate: 'Donald J. Trump (Republican)',
+          percent: schoolPercentTrump
+        },
+        {
+          candidate: 'Hillary Clinton (Democrat)',
+          percent: schoolPercentClinton
+        },
+        {
+          candidate: 'Other (other parties and write-in votes)',
+          percent: schoolPercentOther
+        }
+      ]
+      // Sort from highest to lowest
+      let homePercentSorted = homePercent.sort( (a, b) => {
+        return a.percent > b.percent ? -1 : 1;
+      });
+      let schoolPercentSorted = schoolPercent.sort( (a, b) => {
+        return a.percent > b.percent ? -1 : 1;
+      });
+
       this.setState({
         margins: {
-          homeState: {
-            victoryMarginPercent: homeVictoryMarginPercent,
-            victoryMarginRank: homeVictoryMarginRank
-          },
-          schoolState: {
-            victoryMarginPercent: schoolVictoryMarginPercent,
-            victoryMarginRank: schoolVictoryMarginRank
-          }
+          homePercentSorted,
+          schoolPercentSorted
         },
         marginsLoaded: true
       })
@@ -81,7 +117,7 @@ class WhereToVote extends React.Component {
   }
 
   componentDidMount() {
-    this.getJson('./stateMargins.json', 'margins');
+    this.getJson('./stateMarginsByCandidate.json', 'margins');
     this.getJson('./stateWarnings.json', 'warnings');
   }
 
@@ -116,7 +152,10 @@ class WhereToVote extends React.Component {
                 { this.props.state.homeAddress_zipCode }</p>
               </div>
               <div className="form_description_box">
-                <p>2016 presidential election margin of victory: { this.state.margins.homeState.victoryMarginPercent }</p>
+                <p>2016 presidential election results:</p>
+                { this.state.margins.homePercentSorted.map( (item) => (
+                  <p>{item.candidate}: {Math.round(item.percent * 100)}%</p>
+                ))}
               </div>
               { this.state.warnings.homeState && this.state.warnings.homeState.map( (item, index) => 
                 <div id={index} className="form_description_box">
@@ -142,7 +181,10 @@ class WhereToVote extends React.Component {
                 { this.props.state.schoolAddress_zipCode }</p>
               </div>
               <div className="form_description_box">
-                <p>2016 presidential election margin of victory: { this.state.margins.schoolState.victoryMarginPercent }</p>
+                <p>2016 presidential election results:</p>
+                { this.state.margins.schoolPercentSorted.map( (item) => (
+                  <p>{item.candidate}: {Math.round(item.percent * 100)}%</p>
+                ))}
               </div>
               { this.state.warnings.schoolState && this.state.warnings.schoolState.map( (item, index) => 
                 <div id={index} className="form_description_box" key={index}>
