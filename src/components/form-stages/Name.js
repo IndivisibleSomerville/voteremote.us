@@ -71,7 +71,7 @@ const Name = (props) => (
                 </div>            
             </div>
             <div className="form_field">
-                <label htmlFor="phone">Your Cell Phone Number <span data-tip="Having your phone number will help us to remind you<br />to take critical actions before deadlines expire.<br />We promise to send you no more than a few messages,<br />and will do our best to make them fun!" className="form_label_explanation_link">(Why do we need this?)</span></label>
+                <label htmlFor="phone">Your Cell Phone Number <span data-tip="We need your number for deadlines, not “u up” texts.<br />We won’t send that many. We’re not that needy." className="form_label_explanation_link">(Why do we need this?)</span></label>
                 <input
                     autoComplete="never"
                     type="text"

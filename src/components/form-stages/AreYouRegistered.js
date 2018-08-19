@@ -52,7 +52,7 @@ class AreYouRegistered extends React.Component {
           <div className="radioButton">
             <label>
               <input type="radio" value="yesAbsentee" checked={this.state.selectedOption === "yesAbsentee"} onChange={this.handleChange} />
-              <span className="questionRegistered_option"> Yes! Help me request an absentee ballot</span>
+              <span className="questionRegistered_option"> Yes, and I need to request an absentee ballot</span>
             </label>
           </div>
           <div className="radioButton">
