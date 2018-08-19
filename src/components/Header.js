@@ -5,7 +5,9 @@ import '../styles/Header.css';
 
 const Header = () => (
     <div className="headline">
-        <h1><Link to="/">VOTE REMOTE</Link></h1> 
+        <h1><Link className="link_white_text" to="/">
+        VOTE REMOTE
+        </Link></h1> 
         <div className="social_box"> 
             <div className="social vr_black_background">
                 <i className="fab fa-facebook-f"></i>
