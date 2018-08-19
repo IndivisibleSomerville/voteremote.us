@@ -12,7 +12,7 @@ class Step extends React.Component {
         else if (!this.props.data[this.props.usState] || !this.props.data[this.props.usState][this.props.votingSteps]) {
             return (
                 <div>
-                    Error accessing information for this U.S. state.
+                    We're working to get information for this state! Stay tuned!
                 </div>
             )
         }

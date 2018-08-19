@@ -4,21 +4,24 @@
     height: 125px;
     padding-top: 10px;
     justify-content: space-between;
-  }
-  .headline h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    text-align: center;
-  }
-  .headline .social_box {
-    display: none;
-  }
-  .social {
-    margin: 10px;
-    color: #FFFFFF;
-    font-size: 2rem;
-    font-weight: bold;
-  }
+}
+.headline h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
+.headline .social_box {
+  display: none;
+}
+.link_white_text {
+  color: #FFFFFF;
+}
+.social {
+  margin: 10px;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
+}
 
   /* Breakpoint to keep banner text on 2 lines */
 @media only screen and (max-width: 1080px) {
