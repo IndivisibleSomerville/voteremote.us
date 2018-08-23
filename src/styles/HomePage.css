@@ -88,8 +88,8 @@
     width: 50%;
 }
 
-/* Breakpoint to keep banner text on 2 lines */
-@media only screen and (max-width: 1080px) {
+/* Breakpoint for medium-size desktop/laptop screens */
+@media only screen and (max-width: 1400px) {
     .banner_box {
         height: calc(100vh - 125px);
         min-height: 500px;
@@ -98,8 +98,8 @@
         justify-content: space-around;
     }
     .banner_box .vr_section_head {
-        padding-top: 96px;
-        font-size: 80px;
+        padding-top: 50px;
+        font-size: 100px;
     }
     .banner_box .started_box {
         margin-top: 30px;
