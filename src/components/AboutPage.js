@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MenuBar from './MenuBar';
 import '../styles/AboutPage.css';
 
@@ -17,7 +18,7 @@ const AboutPage = () => (
                     <p>Even if you're already registered, signing up for Vote Remote will provide you with reminders, IRL support, and access to your campus's Vote Remote community.</p>
                     <h2 className="vr_section_head vr_uppercase">Our Vision</h2>
                     <p>We strive to remove all obstacles preventing college students from voting, and provide them with the knowledge they need to navigate the unnecessarily complex remote voting system.</p>
-                    <button className="about_button_red_background">Get Started</button>
+                    <Link to="/get-started" className="about_link_red_background">Get Started</Link>
                 </div>
             </div>
             <div className="about_bottom_container">
@@ -26,22 +27,22 @@ const AboutPage = () => (
                     <div className="about_bottom_grid_item">
                         <h3 className="vr_section_subhead vr_uppercase">For College Students:</h3>
                         <p>Campus Coordinators connect members of their school with the Vote Remote community, and help students with every step, from giving extra reminders to providing stamps and envelopes. They play a key role in helping their fellow students get their votes counted.</p>
-                        <button className="about_button_no_background">Learn More</button>
+                        <Link to="/get-involved" className="about_link_no_background">Learn More</Link>
                     </div>
                     <div className="about_bottom_grid_item">
                         <h3 className="vr_section_subhead vr_uppercase">For Businesses and Donors:</h3>
                         <p>Vote Remote accepts tax-deductible donations. We rely heavily on sponsors who can provide merchandise and food events, and discount opportunities for our Campus Coordinators.</p>
-                        <button className="about_button_no_background">Donate Now</button>
+                        <a className="about_link_no_background" href="#">Donate Now</a>
                     </div>
                     <div className="about_bottom_grid_item">
                         <h3 className="vr_section_subhead vr_uppercase">For Faculty Members:</h3>
                         <p>Vote Remote Supporting Faculty members are educators working to share Vote Remote's mission on their campuses.</p>
-                        <button className="about_button_no_background">Learn More</button>
+                        <a className="about_link_no_background" href="#">Learn More</a>
                     </div>
                     <div className="about_bottom_grid_item">
                         <h3 className="vr_section_subhead vr_uppercase">For Anyone Else:</h3>
                         <p>We're always in need of general volunteers.</p>
-                        <button className="about_button_no_background">Sign Up</button>
+                        <a className="about_link_no_background" href="#">Sign Up</a>
                     </div>                                        
                 </div>
             </div>
