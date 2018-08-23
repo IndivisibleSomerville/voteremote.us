@@ -4,9 +4,9 @@ import MenuBar from './MenuBar';
 import '../styles/CampusCoordinatorPage.css';
 
 class CampusCoordinatorPage extends React.Component {
-    scrollToWhat() {
-        document.querySelector('.what_box').scrollIntoView({
-            alignToTop: true, 
+    scrollToFirstSectionHeader() {
+        document.querySelector('.first_section_header').scrollIntoView({
+            block: 'start', 
             behavior: 'smooth' 
         });
     }
@@ -25,14 +25,14 @@ class CampusCoordinatorPage extends React.Component {
                     <div className="started_box vr_red_background">
                         Sign Up
                     </div>
-                    <div className="teaser_circle" onClick={this.scrollToWhat}>
+                    <div className="teaser_circle" onClick={this.scrollToFirstSectionHeader}>
                         <svg xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke-width="4" stroke-linecap="round" stroke="#FFF"
                                 d="M30 25 L50 35 L70 25" />
                         </svg>
                     </div>
                 </div>
-                <div className="section_header_blue">
+                <div className="section_header_blue first_section_header">
                     <h3 className="vr_section_subhead vr_uppercase">According to XYZ...</h3>
                     <h2 className="vr_section_head vr_uppercase">52% of college students don't vote</h2>
                 </div>

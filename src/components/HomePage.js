@@ -6,7 +6,7 @@ import '../styles/HomePage.css';
 class HomePage extends React.Component {
     scrollToWhat() {
         document.querySelector('.what_box').scrollIntoView({
-            alignToTop: true, 
+            block: 'start', 
             behavior: 'smooth' 
         });
     }
