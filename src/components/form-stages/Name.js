@@ -16,7 +16,7 @@ const Name = (props) => (
         </div>
         <form onSubmit={props.handleSubmit} name="Name">
             <div className="form_group">
-                <div className="form_field">
+                <div className="form_field name first_name">
                     <label htmlFor="firstName">Your Full Legal Name</label>
                     <input
                         autoComplete="never"
@@ -30,8 +30,8 @@ const Name = (props) => (
                         <span>{props.state.errorMsgs["firstName"]}</span>
                     </div>
                 </div>
-                <div className="form_field">
-                    <label htmlFor="lastName" className="hidden">Last Name</label>
+                <div className="form_field name last_name">
+                    <label htmlFor="lastName" className="hidden last_name_label">Last Name</label>
                     <input
                         autoComplete="never"
                         type="text"

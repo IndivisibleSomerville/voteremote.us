@@ -9,7 +9,6 @@ const Footer = () => (
             <a href="#">Find your Campus Community</a>
             <a href="#">Get Involved</a>
             <a href="#">About</a>
-            <a href="#">Become a Campus Ambassador</a>
         </div>
         <div className="social_box cr"> 
             <div className="social vr_black_background"><i className="fab fa-facebook-f"></i></div>

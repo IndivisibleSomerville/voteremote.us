@@ -25,8 +25,8 @@
   font-weight: bold;
 }
 
-  /* Breakpoint to keep banner text on 2 lines */
-@media only screen and (max-width: 1080px) {
+/* Breakpoint for medium-size desktop/laptop screens */
+@media only screen and (max-width: 1400px) {
     .headline {
         height: 75px;
     }

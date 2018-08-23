@@ -22,7 +22,7 @@
     flex-direction: column;
 }
 
-.about_top_container_text button {
+.about_top_container_text a {
     margin-top: auto;
     margin-bottom: 0;
 }
@@ -44,11 +44,13 @@
     flex-direction: column;
 }
 
-.about_bottom_grid_item button {
+.about_bottom_grid_item a {
     margin-top: auto;
 }
 
-.about_button_no_background {
+.about_link_no_background {
+    display: block;
+    text-align: center;
     cursor: pointer;
     margin: 10px 0;
     padding: 10px;
@@ -58,7 +60,9 @@
     width: 200px;
 }
 
-.about_button_red_background {
+.about_link_red_background {
+    display: block;
+    text-align: center;
     cursor: pointer;
     margin: 10px 0;
     padding: 10px;

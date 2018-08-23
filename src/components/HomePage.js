@@ -6,7 +6,7 @@ import '../styles/HomePage.css';
 class HomePage extends React.Component {
     scrollToWhat() {
         document.querySelector('.what_box').scrollIntoView({
-            alignToTop: true, 
+            block: 'start', 
             behavior: 'smooth' 
         });
     }
@@ -22,9 +22,9 @@ class HomePage extends React.Component {
                     <div className="vr_section_subhead">
                         Vote by Mail-In Ballot
                     </div>
-                    <div className="started_box vr_red_background">
-                        <Link className="link_no_decoration" to="/get-started">Get Started</Link>
-                    </div>
+                    <Link className="started_box vr_red_background link_no_decoration" to="/get-started">
+                        Get Started
+                    </Link>
                     <div className="teaser_circle" onClick={this.scrollToWhat}>
                         <svg xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke-width="4" stroke-linecap="round" stroke="#FFF"
@@ -84,9 +84,9 @@ class HomePage extends React.Component {
                             now and we'll connect you with students at your school who 
                             are working to get out the vote.
                         </p>
-                        <div className="started_box vr_red_background vr_uppercase">
-                            <Link className="link_no_decoration" to="/get-started">Get Started</Link>
-                        </div>
+                        <Link className="started_box vr_red_background link_no_decoration" to="/get-started">
+                            Get Started
+                        </Link>
                     </div>
                     <div className="count_box_image">
                         &nbsp;<br />

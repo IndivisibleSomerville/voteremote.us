@@ -118,6 +118,8 @@ h1, h2, h3, h4, h5 {
 .form_label_explanation_link {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
+  color: darkblue;
+  text-decoration: underline darkblue dotted;
 }
 
 .questionRegistered {
