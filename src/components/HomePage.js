@@ -13,7 +13,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="homepage_container">
                 <MenuBar />
                 <div className="banner_box vr_grey_background vr_uppercase">
                     <div className="vr_section_head">

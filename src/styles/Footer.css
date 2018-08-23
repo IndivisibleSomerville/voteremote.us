@@ -22,6 +22,7 @@
 @media screen and (min-width: 600px) {
     .footer_box {
       flex-direction: row;
+      padding-top: 10px;
     }
     .footer_box a {
       padding: 0 20px;
