@@ -97,6 +97,10 @@ select:invalid {
     padding: 10px;
 }
 
+.form_button.no_top_margin {
+    margin-top: 0;
+}
+
 @media only screen and (max-width: 600px) {
     .form_group {
         flex-direction: column;

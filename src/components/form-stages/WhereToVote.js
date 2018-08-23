@@ -139,7 +139,7 @@ class WhereToVote extends React.Component {
             <h1>Where do you want to vote?</h1>
           </div>
           <div className="form_description_box">
-            <p>If you're a student who lives at one address during the semester, and a different address when you're not at school, you can choose to vote in either location (but not both).</p>
+            <p>If you're a student who lives at one address during the semester, and a different address when you're not at school, you can choose to register to vote in either location (but not both).</p>
           </div>
           <div>
           <div>
@@ -152,10 +152,14 @@ class WhereToVote extends React.Component {
                 { this.props.state.homeAddress_zipCode }</p>
               </div>
               <div className="form_description_box">
-                <p>2016 presidential election results:</p>
-                { this.state.margins.homePercentSorted.map( (item) => (
-                  <p>{item.candidate}: {Math.round(item.percent * 100)}%</p>
-                ))}
+                <p>2016 presidential election results for {this.props.state.homeAddress_state}:</p>
+                <table className="table_presidential_results">
+                  <tbody>
+                    { this.state.margins.homePercentSorted.map( (item) => (
+                      <tr key={`${this.props.state.homeAddress_state}_${item.candidate}`}><td>{item.candidate}:</td><td>{Math.round(item.percent * 100)}%</td></tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               { this.state.warnings.homeState && this.state.warnings.homeState.map( (item, index) => 
                 <div id={index} className="form_description_box">
@@ -167,9 +171,7 @@ class WhereToVote extends React.Component {
                 <p>{item['warning-text']}</p>
                 </div> )
               }
-              <div>
-                <button className="form_button form_button_solid_background" value="home" onClick={this.onClick}>I Want to Vote at Home Address</button>
-              </div>
+              <button className="form_button form_button_solid_background no_top_margin" value="home" onClick={this.onClick}>I Want to Vote at Home Address</button>
             </div>
             <div>
               <div className="form_header_box">
@@ -181,10 +183,14 @@ class WhereToVote extends React.Component {
                 { this.props.state.schoolAddress_zipCode }</p>
               </div>
               <div className="form_description_box">
-                <p>2016 presidential election results:</p>
-                { this.state.margins.schoolPercentSorted.map( (item) => (
-                  <p>{item.candidate}: {Math.round(item.percent * 100)}%</p>
-                ))}
+                <p>2016 presidential election results for {this.props.state.schoolAddress_state}:</p>
+                <table className="table_presidential_results">
+                  <tbody>
+                    { this.state.margins.schoolPercentSorted.map( (item) => (
+                      <tr key={`${this.props.state.schoolAddress_state}_${item.candidate}`}><td>{item.candidate}:</td><td>{Math.round(item.percent * 100)}%</td></tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               { this.state.warnings.schoolState && this.state.warnings.schoolState.map( (item, index) => 
                 <div id={index} className="form_description_box" key={index}>
@@ -196,9 +202,7 @@ class WhereToVote extends React.Component {
                 <p>{item['warning-text']}</p>
                 </div> )
               }
-              <div>
-                <button className="form_button form_button_solid_background" value="school" onClick={this.onClick}>I Want to Vote at School Address</button>
-              </div>
+              <button className="form_button form_button_solid_background  no_top_margin" value="school" onClick={this.onClick}>I Want to Vote at School Address</button>
             </div>
           </div>
         </div>
