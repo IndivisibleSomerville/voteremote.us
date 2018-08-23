@@ -120,11 +120,11 @@
     }
 }
 
-/* Breakpoint for mobile */
+/* Breakpoint for mobile, portrait mode */
 @media only screen and (max-width: 600px) {
     .banner_box {
-        height: calc(100vh - 146px); /* 90px for navs; 56px for address bar (Chrome workaround)*/
-        min-height: auto;
+        height: calc(100vh - 150px); /* 94px for navs; 56px for address bar (Chrome workaround)*/
+        min-height: 160px;
         position: relative;
         text-align: center;
         display: flex;
@@ -132,8 +132,8 @@
         justify-content: space-around;
     }
     .banner_box .vr_section_head {
-        font-size: 48px;
-        padding-top: 20px;
+        font-size: 36px;
+        padding-top: 0;
     }
     .banner_box .vr_section_subhead {
         font-size: 24px;
@@ -146,7 +146,18 @@
         text-align: center;
     }
     .banner_box .started_box {
-        margin-top: 30px;
-        margin-bottom: 70px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .teaser_circle {
+        display: none;
+    }
+
+    .count_box .count_box_text {
+        margin: 50px 0;
+        width: 90%;
+    }
+    .count_box_image {
+        height: 0;
     }
 }

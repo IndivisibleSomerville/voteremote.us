@@ -1,17 +1,19 @@
 .headline {
-    align-items: center;
     display: flex;
     height: 125px;
     padding-top: 10px;
     justify-content: space-between;
+    align-items: center;
 }
 .headline h1 {
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
+  padding-left: 50px;
 }
 .headline .social_box {
-  display: none;
+  display: flex;
+  padding-right: 50px;
 }
 .link_white_text {
   color: #FFFFFF;
@@ -45,12 +47,18 @@
     }
 }
 
-@media screen and (min-width: 600px) {
-    .headline h1 {
-      padding-left: 50px;
-    }
-    .headline .social_box {
-      display: flex;
-      padding-right: 50px;
-    }
+@media screen and (max-width: 600px) {
+  .headline {
+    margin: 0;
+    padding: 0;
+    height: auto;
   }
+  .headline h1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .headline .social_box {
+    display: none;
+  }
+}

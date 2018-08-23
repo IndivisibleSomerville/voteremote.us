@@ -37,13 +37,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 15px 0;
+        padding: 10px 0;
     }
     .menu_overlay {
-        display: none;
+        height: 0;
         line-height: 2;
     }
     .menu_overlay.active {
+        height: auto;
         display: block;
     }
     .menu_overlay ul {
