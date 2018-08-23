@@ -139,6 +139,13 @@ class IntakeForm extends React.Component {
         this.props.history.push(path);
     }
 
+    // In the Switch component:
+    // Address component can only be reached if Name component has been completed
+    // (which I am representing by firstName being not empty)
+    // WhereToVote component can only be reached if Address component has been completed
+    // (which I am representing by homeAddress Line 1 being not empty)
+    // Subsequent components can only be reached if WhereToVote component has been completed
+    // (districtSelector is not empty)
     render() {
         return (
             <div className="form_page">
@@ -150,38 +157,110 @@ class IntakeForm extends React.Component {
                                 handleSubmit={this.handleSubmit}
                                 state={this.state}
                             />} />
-                        <Route path={`${this.props.match.path}/address`} render={() => 
-                            <Address 
-                                handleChange={this.handleChange}
-                                handleSubmit={this.handleSubmit}
-                                state={this.state}
-                            />} />
-                        <Route path={`${this.props.match.path}/where-to-vote`} render={() => 
-                            <WhereToVote 
-                                handleStepChange={this.handleStepChange}
-                                state={this.state}
-                                updateDistrictSelector={this.updateDistrictSelector}
-                            />} />
-                        <Route path={`${this.props.match.path}/are-you-registered`} render={() => 
-                            <AreYouRegistered 
-                                handleStepChange={this.handleStepChange}
-                                state={this.state}
-                            />} />
-                        <Route path={`${this.props.match.path}/look-up-registration`} render={() => 
-                            <LookUpReg
-                                handleStepChange={this.handleStepChange}
-                                state={this.state}
-                            />} />
-                        <Route path={`${this.props.match.path}/prefill-registration`} render={() => 
-                            <PrefillReg 
-                                handleStepChange={this.handleStepChange}
-                                state={this.state}
-                            />} />
-                        <Route path={`${this.props.match.path}/prefill-absentee-request`} render={() => 
-                            <PrefillAbsenteeRequest 
-                                handleStepChange={this.handleStepChange}
-                                state={this.state}
-                            />} />
+                        <Route path={`${this.props.match.path}/address`} render={() => {
+                            if (!this.state.firstName) {
+                                return (
+                                    <Redirect
+                                        to={`${this.props.match.path}/name`}
+                                    />
+                                )
+                            }
+                            else {
+                                return (
+                                    <Address 
+                                        handleChange={this.handleChange}
+                                        handleSubmit={this.handleSubmit}
+                                        state={this.state}
+                                    />
+                                )
+                            }
+                        } } />
+                        <Route path={`${this.props.match.path}/where-to-vote`} render={() => {
+                            if (!this.state.homeAddress_streetLine1) {
+                                return (
+                                    <Redirect
+                                        to={`${this.props.match.path}/address`}
+                                    />
+                                )
+                            }
+                            else {
+                                return (
+                                    <WhereToVote 
+                                        handleStepChange={this.handleStepChange}
+                                        state={this.state}
+                                        updateDistrictSelector={this.updateDistrictSelector}
+                                    />
+                                )
+                            }
+                        } } />
+                        <Route path={`${this.props.match.path}/are-you-registered`} render={() => {
+                            if (!this.state.districtSelector) {
+                                return (
+                                    <Redirect
+                                        to={`${this.props.match.path}/where-to-vote`}
+                                    />
+                                )
+                            }
+                            else {
+                                return (
+                                    <AreYouRegistered 
+                                        handleStepChange={this.handleStepChange}
+                                        state={this.state}
+                                    />
+                                )
+                            }
+                        } } />
+                        <Route path={`${this.props.match.path}/look-up-registration`} render={() => {
+                            if (!this.state.districtSelector) {
+                                return (
+                                    <Redirect
+                                        to={`${this.props.match.path}/address`}
+                                    />
+                                )
+                            }
+                            else {
+                                return (
+                                    <LookUpReg
+                                        handleStepChange={this.handleStepChange}
+                                        state={this.state}
+                                    />
+                                )
+                            }
+                        } } />
+                        <Route path={`${this.props.match.path}/prefill-registration`} render={() => {
+                            if (!this.state.districtSelector) {
+                                return (
+                                    <Redirect
+                                        to={`${this.props.match.path}/address`}
+                                    />
+                                )
+                            }
+                            else {
+                                return (
+                                    <PrefillReg 
+                                        handleStepChange={this.handleStepChange}
+                                        state={this.state}
+                                    />
+                                )
+                            }
+                        } } />
+                        <Route path={`${this.props.match.path}/prefill-absentee-request`} render={() => {
+                            if (!this.state.districtSelector) {
+                                return (
+                                    <Redirect
+                                        to={`${this.props.match.path}/address`}
+                                    />
+                                )
+                            }
+                            else {
+                                return (
+                                    <PrefillAbsenteeRequest 
+                                        handleStepChange={this.handleStepChange}
+                                        state={this.state}
+                                    />
+                                )
+                            }
+                        } } />
                         <Route exact path={`${this.props.match.path}`} render={() => <Redirect to={`${this.props.match.path}/name`} />} />
                     </Switch>
                 </div>
