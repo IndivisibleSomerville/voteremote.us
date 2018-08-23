@@ -2,6 +2,13 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import '../../styles/form-inputs.css';
 
+// "noValidate" is a property on <form> so that we can use the select:invalid CSS pseudo-class
+// so that the U.S. state default of "State" is gray, like other placeholder text,
+// without also getting a browser-created tooltip upon submit if the U.S. state isn't selected.
+// We use our own custom validation upon form submit.
+// Same reason for why "required" is a property on <select>
+// even though no other fields have the "required" property.
+// We have to require the select fields in order to use the :invalid CSS pseudo-class.
 const Address = (props) => (
     <div>
         <ReactTooltip place='bottom' type='info' effect='solid' multiline={true} />
@@ -11,7 +18,7 @@ const Address = (props) => (
         <div className="form_header_box">
             <h1>Your Info</h1>
         </div>
-        <form onSubmit={props.handleSubmit} name="Address">
+        <form noValidate onSubmit={props.handleSubmit} name="Address">
 
         <div className="form_field">
             <label>Your address at home</label>
@@ -39,7 +46,7 @@ const Address = (props) => (
             </div>
         </div>
         <div className="form_group">
-            <div className="form_field">
+            <div className="form_field address_city">
                 <input
                     type="text"
                     name="homeAddress_city"
@@ -51,9 +58,9 @@ const Address = (props) => (
                     <span>{props.state.errorMsgs["homeAddress_city"]}</span>
                 </div>
             </div>
-            <div className="form_field">
-                <select name="homeAddress_state" className="ui dropdown" value={props.state["homeAddress_state"]} onChange={props.handleChange}>
-                    <option value="">State</option>
+            <div className="form_field address_state">
+                <select name="homeAddress_state" required value={props.state["homeAddress_state"]} onChange={props.handleChange}>
+                    <option value="" disabled selected>State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -110,7 +117,7 @@ const Address = (props) => (
                     <span>{props.state.errorMsgs["homeAddress_state"]}</span>
                 </div>
             </div>
-            <div className="form_field">
+            <div className="form_field address_zip">
                 <input
                     type="text"
                     name="homeAddress_zipCode"
@@ -150,7 +157,7 @@ const Address = (props) => (
                 </div>
             </div>
             <div className="form_group">
-                <div className="form_field">
+                <div className="form_field address_city">
                     <input
                         type="text"
                         name="schoolAddress_city"
@@ -162,9 +169,9 @@ const Address = (props) => (
                         <span>{props.state.errorMsgs["schoolAddress_city"]}</span>
                     </div>
                 </div>
-                <div className="form_field">
-                    <select name="schoolAddress_state" className="ui dropdown" value={props.state["schoolAddress_state"]} onChange={props.handleChange}>
-                        <option value="">State</option>
+                <div className="form_field address_state">
+                    <select name="schoolAddress_state" required value={props.state["schoolAddress_state"]} onChange={props.handleChange}>
+                        <option value="" disabled selected>State</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -221,7 +228,7 @@ const Address = (props) => (
                         <span>{props.state.errorMsgs["schoolAddress_state"]}</span>
                     </div>
                 </div>
-                <div className="form_field">
+                <div className="form_field address_zip">
                     <input
                         type="text"
                         name="schoolAddress_zipCode"
