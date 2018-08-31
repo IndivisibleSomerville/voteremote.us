@@ -25,6 +25,7 @@ class Step extends React.Component {
                                 key={step.stepName}
                                 stepName={step.stepName}
                                 stepDeadline={step.stepDeadline}
+                                stepDeadlineMouseoverText={step.stepDeadlineMouseoverText}
                             />
                             { step.stepInstructions.map( (body) => (
                                 <StepBody 

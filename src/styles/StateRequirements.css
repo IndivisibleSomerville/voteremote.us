@@ -34,6 +34,10 @@
     align-items: center;
 }
 
+.select_state_box p {
+    text-align: center;
+}
+
 .select_method_box {
     text-align: center;
     display: flex;
@@ -71,6 +75,9 @@
 }
 .step_header_deadline h3 {
     padding: 20px;
+}
+.deadline_explanation_link {
+    text-decoration: underline;
 }
 .step_body_part {
     display: flex;
