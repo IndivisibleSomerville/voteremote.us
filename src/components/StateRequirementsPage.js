@@ -88,10 +88,11 @@ class StateRequirementsPage extends React.Component {
                             <h1 className="vr_section_head">State Requirements</h1>
                         </div>
                         <div className="select_state_box">
-                            <p>Select a state to learn about its requirements</p>
+                            <p>Select a state to learn about its requirements for absentee voting.</p>
+                            <p>Overseas and military voters may have different deadlines. Those voters should visit <a href="https://www.fvap.gov/">FVAP</a> for more info.</p>
                             <form className="ui form">
                                 <select className="ui dropdown" value={this.state.usState} onChange={this.handleUsStateChange}>
-                                    <option value="">State</option>
+                                    <option value="" disabled selected>State</option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AZ">Arizona</option>
@@ -146,10 +147,12 @@ class StateRequirementsPage extends React.Component {
                                 </select>
                             </form>
                         </div>
+                        { /* Toggle between absentee voting requirements and in-person voting requirements.
                         <div id="select_method_box" className={`select_method_box ${!this.state.usState ? "hidden" : ''}`}>
-                            <button id="select_method_absentee" className={`vr_form_head ${this.state.votingSteps === 'stepsAbsentee' && 'select_method_active'}`} onClick={() => this.handleVotingStepsChange('stepsAbsentee')}>Vote Remote (Absentee)</button>
+                            <button id="select_method_absentee" className={`vr_form_head ${this.state.votingSteps === 'stepsAbsentee' && 'select_method_active'}`} onClick={() => this.handleVotingStepsChange('stepsAbsentee')}>Vote Absentee</button>
                             <button id="select_method_in_person" className={`vr_form_head ${this.state.votingSteps === 'stepsInPerson' && 'select_method_active'}`} onClick={() => this.handleVotingStepsChange('stepsInPerson')}>Vote in State</button>
                         </div>
+                        */ }
                         <div id="steps_to_vote">
                             <div className="step_container active">
                                 <Step
