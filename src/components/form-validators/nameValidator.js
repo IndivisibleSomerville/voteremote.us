@@ -1,5 +1,11 @@
 import Joi from 'joi-browser';
 
+/*
+Phone number is not required.
+Regex will match empty string or properly formatted phone number.
+Improperly formatted phone number will throw error.
+*/
+
 export default {
   firstName: {
     validation: Joi.string().required(),
@@ -18,7 +24,7 @@ export default {
     errorMsg: "School is required"
   },
   phone: {
-    validation: Joi.string().regex(/^([0-9]){3}(-)?([0-9]){3}(-)?([0-9]){4}$/),
-    errorMsg: "Valid phone number (10 digits) is required"
+    validation: Joi.string().allow('').regex(/^(?:[0-9]){3}(?:-)?(?:[0-9]){3}(?:-)?(?:[0-9]){4}$/),
+    errorMsg: "Please enter a valid phone number (10 digits)."
   }
 }
