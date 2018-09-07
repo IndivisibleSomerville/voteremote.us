@@ -3,13 +3,13 @@
         "stateFullName": "Alabama",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Alabama’s official registration deadline is October 22, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Alabama residents can register to vote online if they have an Alabama driver’s license or Alabama non-driver ID card.",
+                        "instructionText": "Alabama residents can register online to vote if they have an Alabama driver’s license or Alabama non-driver ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.alabamainteractive.org/sos/voter_registration/voterRegistrationWelcome.action"
                     },
@@ -42,6 +42,10 @@
                     {
                         "instructionType": "reminder",
                         "instructionText": "Completed absentee ballots must be received by noon on Tuesday, November 6."
+                    },
+                    {
+                        "instructionType": "reminder",
+                        "instructionText": "Alabama requires that when you return your absentee ballot, you include a photocopy of an approved photo ID."
                     }
                 ]
             }
@@ -51,13 +55,13 @@
         "stateFullName": "Alaska",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Alaska’s official registration deadline is October 6, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Alaska residents can register to vote online if they have an Alaska driver’s license or Alaska state ID card.",
+                        "instructionText": "Alaska residents can register online to vote if they have an Alaska driver’s license or Alaska state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://voterregistration.alaska.gov"
                     },
@@ -99,13 +103,13 @@
         "stateFullName": "Arizona",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Arizona’s official registration deadline is October 8, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Arizona residents can register to vote online if they have an Arizona driver’s license or Arizona state ID card.",
+                        "instructionText": "Arizona residents can register online to vote if they have an Arizona driver’s license or Arizona state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://servicearizona.com/webapp/evoter/selectLanguage"
                     },
@@ -147,7 +151,7 @@
         "stateFullName": "Arkansas",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Arkansas’s official registration deadline is October 8, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -189,13 +193,13 @@
         "stateFullName": "California",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While California’s official registration deadline is October 22, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "California residents can register to vote online if they have an California driver’s license or California state ID card.",
+                        "instructionText": "California residents can register online to vote if they have an California driver’s license or California state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://covr.sos.ca.gov/?"
                     },
@@ -227,7 +231,7 @@
                 "stepInstructions": [
                     {
                         "instructionType": "reminder",
-                        "instructionText": "Completed absentee ballots must be received by 7 p.m. MST Tuesday, October 24."
+                        "instructionText": "Completed absentee ballots must be received by 8 p.m. Tuesday, November 6."
                     }
                 ]
             }
@@ -237,13 +241,13 @@
         "stateFullName": "Colorado",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Colorado’s official deadline for by-mail registration is October 30, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Colorado residents can register to vote online if they have a Colorado driver’s license or Colorado state ID card.",
+                        "instructionText": "Colorado residents can register online to vote if they have a Colorado driver’s license or Colorado state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.sos.state.co.us/voter/pages/pub/olvr/verifyNewVoter.xhtml"
                     },
@@ -262,7 +266,7 @@
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "All Colorado residents receive mailed ballots; out-of-state voters should use the following link to redirect their ballot to their current address.",
+                        "instructionText": "All Colorado registered voters receive mailed ballots; out-of-state voters should use the following link to redirect their ballot to their current address.",
                         "instructionLinkText": "Request Ballot",
                         "instructionLink": "https://www.colorado.gov/pacific/atom/11406"
                     }
@@ -285,13 +289,13 @@
         "stateFullName": "Connecticut",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Connecticut’s official registration deadline is October 30, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Connecticut residents can register to vote online if they have an Connecticut driver’s license or Connecticut state ID card.",
+                        "instructionText": "Connecticut residents can register online to vote if they have an Connecticut driver’s license or Connecticut state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://voterregistration.ct.gov/OLVR/welcome.do"
                     },
@@ -310,9 +314,9 @@
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Connecticut residents can request an absentee ballot by contacting their County Recorder’s office.",
+                        "instructionText": "Connecticut residents can request an absentee ballot online using the forms on this page.",
                         "instructionLinkText": "Request Ballot",
-                        "instructionLink": "https://portal.ct.gov/-/media/sots/ElectionServices/ElectForms/electforms/aabengpdf.pdf?la=en"
+                        "instructionLink": "https://portal.ct.gov/SOTS/Election-Services/Voter-Information/Absentee-Voting"
                     }
                 ]
             },
@@ -333,13 +337,13 @@
         "stateFullName": "Washington, D.C.",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Washington, D.C.’s official registration deadline is October 16, 2018, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Washington, D.C. residents can register to vote online if they have a Washington, D.C. license or identification card.",
+                        "instructionText": "Washington, D.C. residents can register online to vote if they have a Washington, D.C. license or identification card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.vote4dc.com/ApplyInstructions/Register"
                     },
@@ -359,20 +363,14 @@
                     {
                         "instructionType": "link",
                         "instructionText": "Washington, D.C. residents can request an absentee ballot online using this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request Online",
                         "instructionLink": "https://vote4dc.com/ApplyInstructions/Absentee"
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "Residents can request an absentee ballot by mail with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request by Mail",
                         "instructionLink": "https://www.dcboe.org/getattachment/Data-Resources/Forms-and-Resources/AbsenteeBallotRequestForm.pdf.aspx?lang=en-US"
-                    },
-                    {
-                        "instructionType": "link",
-                        "instructionText": "Residents can also request an absentee ballot by downloading the app Vote 4 DC.",
-                        "instructionLinkText": "Request Ballot",
-                        "instructionLink": "https://vote4dc.com/ApplyInstructions/Absentee"
                     }
                 ]
             },
@@ -393,13 +391,13 @@
         "stateFullName": "Delaware",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Delaware’s official registration deadline is October 13, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Delaware residents can register to vote online if they have a Delaware driver’s license or Delaware state ID card.",
+                        "instructionText": "Delaware residents can register online to vote if they have a Delaware driver’s license or Delaware state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://ivote.de.gov/"
                     },
@@ -441,13 +439,13 @@
         "stateFullName": "Florida",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Florida’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Florida residents can register to vote online if they have a Florida driver’s license or Florida state ID card.",
+                        "instructionText": "Florida residents can register online to vote if they have a Florida driver’s license or Florida state ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://registertovoteflorida.gov/"
                     },
@@ -489,13 +487,13 @@
         "stateFullName": "Georgia",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Georgia’s official registration deadline is October 8, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Georgia residents can register to vote online if they have a Georgia driver’s license or Georgia state ID.",
+                        "instructionText": "Georgia residents can register online to vote if they have a Georgia driver’s license or Georgia state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://registertovote.sos.ga.gov/GAOLVR/welcome.do#no-back-button"
                     },
@@ -528,10 +526,6 @@
                     {
                         "instructionType": "reminder",
                         "instructionText": "Completed absentee ballots must be received by Tuesday, November 6."
-                    },
-                    {
-                        "instructionType": "reminder",
-                        "instructionText": "With their completed ballot, first-time absentee voters must include a copy of one form of photo ID."
                     }
                 ]
             }
@@ -541,13 +535,13 @@
         "stateFullName": "Hawaii",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Hawaii’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Hawaii residents can register to vote online.",
+                        "instructionText": "Hawaii residents can register online to vote.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://olvr.hawaii.gov/Default.aspx"
                     },
@@ -589,13 +583,13 @@
         "stateFullName": "Idaho",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Idaho’s official registration deadline is October 12, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Idaho residents can register to vote online if they have an Idaho driver’s license or identification card.",
+                        "instructionText": "Idaho residents can register online to vote if they have an Idaho driver’s license or identification card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://apps.idahovotes.gov/OnlineVoterRegistration"
                     },
@@ -604,10 +598,6 @@
                         "instructionText": "Residents without an Idaho ID can use Vote Remote to register by mail.",
                         "instructionLinkText": "Register by Mail",
                         "instructionLink": "/get-started"
-                    },
-                    {
-                        "instructionType": "reminder",
-                        "instructionText": "To register via mail, residents must provide a copy of a current and valid photo identification, a copy of a current utility bill, bank statement, or government check, or a government document that shows name and address."
                     }
                 ]
             },
@@ -641,13 +631,13 @@
         "stateFullName": "Illinois",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Illinois’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Illinois residents can register to vote online if they have an Illinois driver’s license or ID card.",
+                        "instructionText": "Illinois residents can register online to vote if they have an Illinois driver’s license or ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://ova.elections.il.gov/"
                     },
@@ -689,13 +679,13 @@
         "stateFullName": "Indiana",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Indiana’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Indiana residents can register to vote online if they have an Indiana driver’s license or Indiana state ID.",
+                        "instructionText": "Indiana residents can register online to vote if they have an Indiana driver’s license or Indiana state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "http://www.indianavoters.com/"
                     },
@@ -737,13 +727,13 @@
         "stateFullName": "Iowa",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Iowa’s official registration deadline is October 27, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Iowa residents can register to vote online if they have an Iowa driver’s license or state ID.",
+                        "instructionText": "Iowa residents can register online to vote if they have an Iowa driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://mymvd.iowadot.gov/Account/Login?ReturnUrl=%2fVoterRegistration"
                     },
@@ -775,7 +765,7 @@
                 "stepInstructions": [
                     {
                         "instructionType": "reminder",
-                        "instructionText": "Completed absentee ballots must be received by noon on Tuesday, November 13."
+                        "instructionText": "Completed absentee ballots must be postmarked by Monday, November 5 and received by noon on Monday, November 12."
                     }
                 ]
             }
@@ -785,13 +775,13 @@
         "stateFullName": "Kansas",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Kansas’ official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Kansas residents can register to vote online if they have a Kansas driver’s license or non-driver ID card.",
+                        "instructionText": "Kansas residents can register online to vote if they have a Kansas driver’s license or non-driver ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.kdor.ks.gov/Apps/VoterReg/Default.aspx"
                     },
@@ -833,13 +823,13 @@
         "stateFullName": "Kentucky",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Kentucky’s official registration deadline is October 8, 2018, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Kentucky residents can register to vote online.",
+                        "instructionText": "Kentucky residents can register online to vote.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://vrsws.sos.ky.gov/ovrweb/"
                     },
@@ -881,13 +871,13 @@
         "stateFullName": "Louisiana",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Louisiana's official registration deadline is October 7 (October 17 for online registration), registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Louisiana residents can register to vote online if they have a Louisiana driver’s license or special ID card with the four digit Audit code on the front.",
+                        "instructionText": "Louisiana residents can register online to vote if they have a Louisiana driver’s license or special ID card with the four digit Audit code on the front.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://voterportal.sos.la.gov/VoterRegistration"
                     },
@@ -906,18 +896,18 @@
                 "stepInstructions": [
                     {
                         "instructionType": "reminder",
-                        "instructionText": "If you haven’t voted in a Louisiana election before and you registered by mail, you’ll need to include a photocopy of your student ID with your ballot request."
+                        "instructionText": "If you are voting absentee because you are a student, when you submit your first absentee ballot request you must include a copy of your student ID or your fee bill. This is in addition to any other ID requirement that might apply."
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "Louisiana residents can request an absentee ballot online by clicking on “Search by Voter,” entering their information, and clicking on “Request Absentee Ballot.” You’ll be asked why you need an absentee ballot, so make sure to click the “higher education” box.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request Online",
                         "instructionLink": "https://voterportal.sos.la.gov/"
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "Louisiana residents can request an absentee ballot by mail with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request by Mail",
                         "instructionLink": "https://www.sos.la.gov/ElectionsAndVoting/PublishedDocuments/GeneralApplicationForAbsenteeByMailBallot.pdf"
                     }
                 ]
@@ -939,7 +929,7 @@
         "stateFullName": "Maine",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Maine’s official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -959,13 +949,13 @@
                     {
                         "instructionType": "link",
                         "instructionText": "Maine residents can request an absentee ballot online with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request Online",
                         "instructionLink": "https://www1.maine.gov/cgi-bin/online/AbsenteeBallot/online-form.pl"
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "Maine residents can request an absentee ballot by mail with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request by Mail",
                         "instructionLink": "https://www1.maine.gov/online/AbsenteeBallot/ABS-2018-11-06.pdf"
                     }
                 ]
@@ -987,13 +977,13 @@
         "stateFullName": "Maryland",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Maryland’s official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Maryland residents can register to vote online if they have a Maryland driver’s license or state ID.",
+                        "instructionText": "Maryland residents can register online to vote if they have a Maryland driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://voterservices.elections.maryland.gov/OnlineVoterRegistration/InstructionsStep1"
                     },
@@ -1035,13 +1025,13 @@
         "stateFullName": "Massachusetts",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Massachusetts’ official registration deadline is October 17, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Massachusetts residents can register to vote online if they have a Massachusetts driver’s license or state ID.",
+                        "instructionText": "Massachusetts residents can register online to vote if they have a Massachusetts driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.sec.state.ma.us/OVR/Pages/CheckEligibility.aspx?&Action=Register"
                     },
@@ -1083,7 +1073,7 @@
         "stateFullName": "Michigan",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Michigan’s official registration deadline is October 5, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1092,6 +1082,10 @@
                         "instructionText": "Michigan residents can use Vote Remote to register by mail.",
                         "instructionLinkText": "Register by Mail",
                         "instructionLink": "/get-started"
+                    },
+                    {
+                        "instructionType": "reminder",
+                        "instructionText": "Residents who register to vote via mail must vote in person in the first election they participate in."
                     }
                 ]
             },
@@ -1105,10 +1099,6 @@
                         "instructionText": "Michigan residents can request an absentee ballot by mail with this form.",
                         "instructionLinkText": "Request Ballot",
                         "instructionLink": "https://www.michigan.gov/documents/AbsentVoterBallot_105377_7.pdf"
-                    },
-                    {
-                        "instructionType": "reminder",
-                        "instructionText": "Residents who register to vote via mail must vote in person in the first election they participate in."
                     }
                 ]
             },
@@ -1129,13 +1119,13 @@
         "stateFullName": "Minnesota",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Minnesota’s official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Minnesota residents can register to vote online.",
+                        "instructionText": "Minnesota residents can register online to vote.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://mnvotes.sos.state.mn.us/VoterRegistration/VoterRegistrationMain.aspx"
                     },
@@ -1155,13 +1145,13 @@
                     {
                         "instructionType": "link",
                         "instructionText": "Minnesota residents can request an absentee ballot online.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request Online",
                         "instructionLink": "https://mnvotes.sos.state.mn.us/ABRegistration/ABRegistrationStep1.aspx"
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "Minnesota residents can also request an absentee ballot by email, mail, or fax with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request by Mail",
                         "instructionLink": "https://www.sos.state.mn.us/media/2444/english-regular-absentee-ballot-application.pdf"
                     }
                 ]
@@ -1187,7 +1177,7 @@
         "stateFullName": "Mississippi",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Mississippi’s official registration deadline is October 7, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1229,13 +1219,13 @@
         "stateFullName": "Missouri",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Missouri’s official registration deadline is October 10, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Missouri residents can register to vote by mail if they have Missouri driver’s license or state ID.",
+                        "instructionText": "Missouri residents can use Vote Remote to register by mail.",
                         "instructionLinkText": "Register by Mail",
                         "instructionLink": "/get-started"
                     }
@@ -1271,7 +1261,7 @@
         "stateFullName": "Montana",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Montana’s official registration deadline is October 7, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1313,13 +1303,13 @@
         "stateFullName": "Nebraska",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Nebraska’s official registration deadline is October 20, 2018, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Nebraska residents can register to vote online if they have a Nebraska driver’s license or state ID.",
+                        "instructionText": "Nebraska residents can register online to vote if they have a Nebraska driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.nebraska.gov/apps-sos-voter-registration/"
                     },
@@ -1361,13 +1351,13 @@
         "stateFullName": "Nevada",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Nevada’s official registration deadline is October 8 (October 18 for online registration), registering early will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Nevada residents can register to vote online if they have a Nevada Driver’s license or state ID.",
+                        "instructionText": "Nevada residents can register online to vote if they have a Nevada Driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.nvsos.gov/sosvoterservices/Registration/Step0.aspx"
                     },
@@ -1409,7 +1399,7 @@
         "stateFullName": "New Jersey",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While New Jersey’s official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1451,7 +1441,7 @@
         "stateFullName": "New Mexico",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While New Mexico’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1493,13 +1483,13 @@
         "stateFullName": "New York",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While New York’s official registration deadline is October 12, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "New York residents can register to vote online if they have a New York driver’s license or non-driver state ID.",
+                        "instructionText": "New York residents can register online to vote if they have a New York driver’s license or non-driver state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://voterreg.dmv.ny.gov/MotorVoter/"
                     },
@@ -1541,7 +1531,7 @@
         "stateFullName": "North Carolina",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While North Carolina’s official registration deadline is October 12, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1583,7 +1573,7 @@
         "stateFullName": "North Dakota",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "N/A",
                 "stepDeadlineMouseoverText": "",
                 "stepInstructions": [
@@ -1623,13 +1613,13 @@
         "stateFullName": "Ohio",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Ohio’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Ohio residents can register to vote online if they have an Ohio driver’s license or Ohio ID.",
+                        "instructionText": "Ohio residents can register online to vote if they have an Ohio driver’s license or Ohio ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://olvr.sos.state.oh.us/"
                     },
@@ -1671,7 +1661,7 @@
         "stateFullName": "Oklahoma",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Oklahoma’s official registration deadline is October 13, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1691,13 +1681,13 @@
                     {
                         "instructionType": "link",
                         "instructionText": "Oklahoma residents can request an absentee ballot online.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request Online",
                         "instructionLink": "https://services.okelections.us/AbsenteeApplication/"
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "Oklahoma residents can request an absentee ballot by mail with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request by Mail",
                         "instructionLink": "https://www.ok.gov/elections/documents/Oklahoma%20Absentee%20Ballot%20Application%20-%20fillable.pdf"
                     }
                 ]
@@ -1719,13 +1709,13 @@
         "stateFullName": "Oregon",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Oregon’s official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Oregon residents can register to vote online if they have an Oregon driver’s license or Oregon state ID.",
+                        "instructionText": "Oregon residents can register online to vote if they have an Oregon driver’s license or Oregon state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://secure.sos.state.or.us/orestar/vr/register.do"
                     },
@@ -1767,13 +1757,13 @@
         "stateFullName": "Pennsylvania",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Pennsylvania’s official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Pennsylvania residents can register to vote online.",
+                        "instructionText": "Pennsylvania residents can register online to vote.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.pavoterservices.pa.gov/pages/VoterRegistrationApplication.aspx"
                     },
@@ -1815,13 +1805,13 @@
         "stateFullName": "Rhode Island",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Rhode Island’s official registration deadline is October 8, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Rhode Island residents can register to vote online if they have a Rhode Island driver’s license or state ID.",
+                        "instructionText": "Rhode Island residents can register online to vote if they have a Rhode Island driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://vote.sos.ri.gov/"
                     },
@@ -1854,10 +1844,6 @@
                     {
                         "instructionType": "reminder",
                         "instructionText": "Completed absentee ballots must be received by 8 p.m. EST Tuesday, November 6."
-                    },
-                    {
-                        "instructionType": "reminder",
-                        "instructionText": "Two individuals or a notary must witness the voter signing their oath envelope."
                     }
                 ]
             }
@@ -1867,13 +1853,13 @@
         "stateFullName": "South Carolina",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While South Carolina’s official registration deadline is October 7, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "South Carolina residents can register to vote online if they have a South Carolina driver’s license or state ID.",
+                        "instructionText": "South Carolina residents can register online to vote if they have a South Carolina driver’s license or state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://info.scvotes.sc.gov/eng/ovr/start.aspx"
                     },
@@ -1893,13 +1879,13 @@
                     {
                         "instructionType": "link",
                         "instructionText": "South Carolina residents can request an absentee ballot online.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request Online",
                         "instructionLink": "https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx?PageMode=AbsenteeRequest"
                     },
                     {
                         "instructionType": "link",
                         "instructionText": "South Carolina residents can also request an absentee ballot by mail with this form.",
-                        "instructionLinkText": "Request Ballot",
+                        "instructionLinkText": "Request by Mail",
                         "instructionLink": "https://www.scvotes.org/how-register-absentee-voting"
                     }
                 ]
@@ -1921,7 +1907,7 @@
         "stateFullName": "South Dakota",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While registration applications must be received by October 22, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -1963,13 +1949,13 @@
         "stateFullName": "Tennessee",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Tennessee's official registration deadline is October 8, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Tennessee residents can register to vote online if they have a Tennessee driver’s license or Tennessee Department of Safety and Homeland Security ID.",
+                        "instructionText": "Tennessee residents can register online to vote if they have a Tennessee driver’s license or Tennessee Department of Safety and Homeland Security ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://ovr.govote.tn.gov/"
                     },
@@ -1988,7 +1974,7 @@
             {
                 "stepName": "Request Your Ballot",
                 "stepDeadline": "By October 5, 2018",
-                "stepDeadlineMouseoverText": "While absentee ballot requests must be received by October 5, requesting earlier will ensure that you can receive and mail your ballot before the voting deadline.",
+                "stepDeadlineMouseoverText": "While absentee ballot requests must be received by October 30, requesting earlier will ensure that you can receive and mail your ballot before the voting deadline.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
@@ -2015,7 +2001,7 @@
         "stateFullName": "Texas",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Texas’ official registration deadline is October 9, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
@@ -2047,7 +2033,7 @@
                 "stepInstructions": [
                     {
                         "instructionType": "reminder",
-                        "instructionText": "Completed absentee ballots must be received by 5 p.m. Wednesday, November 7."
+                        "instructionText": "Completed absentee ballots must be postmarked by Tuesday, November 6 and received by 5 p.m. Wednesday, November 7."
                     }
                 ]
             }
@@ -2057,13 +2043,13 @@
         "stateFullName": "Utah",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Utah’s official mail registration deadline is October 9 (October 22 for online registration), registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Utah residents can register to vote online if they have an Utah driver’s license or Utah state ID.",
+                        "instructionText": "Utah residents can register online to vote if they have an Utah driver’s license or Utah state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://secure.utah.gov/voterreg/index.html"
                     },
@@ -2105,13 +2091,13 @@
         "stateFullName": "Vermont",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Vermont residents can register to vote even on Election Day, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Vermont residents can register to vote online if they have a U.S. passport, Vermont state ID, current bank statement, or utility bill.",
+                        "instructionText": "Vermont residents can register online to vote if they have a U.S. passport, Vermont state ID, current bank statement, or utility bill.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://www.olvr.sec.state.vt.us/"
                     },
@@ -2153,13 +2139,13 @@
         "stateFullName": "Washington state",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Washington’s official registration deadline is October 8, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Washington residents can register to vote online if they have a Washington driver’s license or Washington non-driver ID card.",
+                        "instructionText": "Washington residents can register online to vote if they have a Washington driver’s license or Washington non-driver ID card.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://weiapplets.sos.wa.gov/MyVoteOLVR/MyVoteOLVR"
                     },
@@ -2181,12 +2167,6 @@
                         "instructionText": "Check your registration in MyVote to make sure that your ballot will get to you on time.",
                         "instructionLinkText": "Check Address",
                         "instructionLink": "https://weiapplets.sos.wa.gov/MyVote/#/login"
-                    },
-                    {
-                        "instructionType": "link",
-                        "instructionText": "If you live on campus and provide a campus address as your residential address, be sure to list your dormitory and room number; a PO Box is not a residential address.",
-                        "instructionLinkText": "Residency FAQ",
-                        "instructionLink": "https://www.sos.wa.gov/elections/voter-eligibility.aspx"
                     }
                 ]
             },
@@ -2203,17 +2183,17 @@
             }
         ]
     },
-    "West Virginia": {
-        "stateFullName": "WV",
+    "WV": {
+        "stateFullName": "West Virginia",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While West Virginia’s official registration deadline is October 16, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "West Virginia residents can register to vote online if they have a West Virginia driver’s license or West Virginia state ID.",
+                        "instructionText": "West Virginia residents can register online to vote if they have a West Virginia driver’s license or West Virginia state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "https://ovr.sos.wv.gov/Register/Landing#Qualifications"
                     },
@@ -2245,7 +2225,7 @@
                 "stepInstructions": [
                     {
                         "instructionType": "reminder",
-                        "instructionText": "Completed absentee ballots must be received by Monday, November 12."
+                        "instructionText": "Completed absentee ballots must be postmarked by Tuesday, November 6 and received by Monday, November 12."
                     }
                 ]
             }
@@ -2255,13 +2235,13 @@
         "stateFullName": "Wisconsin",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Wisconsin’s official registration deadline is October 17, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
                     {
                         "instructionType": "link",
-                        "instructionText": "Wisconsin residents can register to vote online if they have a Wisconsin driver’s license or Wisconsin state ID.",
+                        "instructionText": "Wisconsin residents can register online to vote if they have a Wisconsin driver’s license or Wisconsin state ID.",
                         "instructionLinkText": "Register Online",
                         "instructionLink": "http://myvote.wi.gov"
                     },
@@ -2303,7 +2283,7 @@
         "stateFullName": "Wyoming",
         "stepsAbsentee": [
             {
-                "stepName": "Register",
+                "stepName": "Register to Vote",
                 "stepDeadline": "By September 28, 2018",
                 "stepDeadlineMouseoverText": "While Wyoming’s official registration deadline is October 23, registering earlier will ensure that your ballot gets to you on time.",
                 "stepInstructions": [
