@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialMediaLinks from './SocialMediaLinks';
 
 import '../styles/Footer.css';
 
@@ -10,13 +11,7 @@ const Footer = () => (
             <a href="#">Get Involved</a>
             <a href="#">About</a>
         </div>
-        <div className="social_box cr"> 
-            <div className="social vr_black_background"><i className="fab fa-facebook-f"></i></div>
-            <div className="social vr_black_background"><i className="fab fa-twitter"></i></div>
-            <div className="social vr_black_background"><i className="fab fa-instagram"></i></div>
-            <div className="social vr_black_background"><i className="far fa-envelope"></i></div>
-            <div className="social vr_black_background"><i className="fas fa-rss"></i></div>
-        </div>
+        <SocialMediaLinks className="social_box cr"/>
     </div>
 );
 
