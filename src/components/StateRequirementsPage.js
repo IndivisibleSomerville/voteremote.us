@@ -162,6 +162,7 @@ class StateRequirementsPage extends React.Component {
                                 />
                             </div>
                         </div>
+                        <p className="disclaimer_legal">We provide as accurate information as we can, but we can't guarantee 100% accuracy. We're also not election lawyers, so don't use our information as legal advice.</p>
                     </div>
                 </div>
             </div>
