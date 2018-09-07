@@ -15,7 +15,7 @@ class CampusCoordinatorPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <div className="banner_box vr_grey_background vr_uppercase">
+                <div className="banner_box campus_coordinator vr_uppercase">
                     <h1 className="vr_section_head">
                         Become a Campus Coordinator
                     </h1>

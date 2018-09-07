@@ -15,7 +15,7 @@ class HomePage extends React.Component {
         return (
             <div className="homepage_container">
                 <MenuBar />
-                <div className="banner_box vr_grey_background vr_uppercase">
+                <div className="banner_box homepage vr_uppercase">
                     <div className="vr_section_head">
                         52% of College Students Don't Vote
                     </div>
