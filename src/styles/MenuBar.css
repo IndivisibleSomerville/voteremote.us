@@ -37,6 +37,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        line-height: 1;
+    }
+    .menu_box button {
         padding: 10px 0;
     }
     .menu_overlay {
