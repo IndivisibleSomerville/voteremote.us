@@ -3,6 +3,11 @@
     min-height: 600px;
     position: relative;
     text-align: center;
+    background-image: url('/images/students-marching-on-street_shutterstock_1046250628.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .banner_box .vr_section_head {
     padding-top: 96px;
