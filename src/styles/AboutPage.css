@@ -16,8 +16,8 @@
 }
 
 .about_top_container_text {
-    padding-left: 20px;
-    width: 67%;
+    /* padding-left: 20px; */
+    /* width: 67%; */
     display: flex;
     flex-direction: column;
 }

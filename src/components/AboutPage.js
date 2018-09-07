@@ -8,9 +8,11 @@ const AboutPage = () => (
         <MenuBar />
         <div className="about_content_container">
             <div className="about_top_container">
+            { /*
                 <div className="about_top_container_image">
                     &nbsp;
                 </div>
+            */ }
                 <div className="about_top_container_text">
                     <h2 className="vr_section_head vr_uppercase">About Us</h2>
                     <p>Tens of thousands of students live outside of their home states during election season. In a country full of confusing absentee voter rules, students often skip voting entirely.</p>
