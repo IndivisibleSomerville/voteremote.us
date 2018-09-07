@@ -1,15 +1,23 @@
 .headline {
-    display: flex;
-    height: 125px;
-    padding-top: 10px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  height: 125px;
+  justify-content: space-between;
+  align-items: center;
 }
-.headline h1 {
+.headline .link_white_text {
+  display: flex;
+  align-items: center;
+}
+.headline .link_white_text img {
+  max-height: 100px;
+  padding-left: 20px;
+}
+.headline .link_white_text h1 {
   font-size: 4rem;
   font-weight: bold;
+  margin-top: 0;
+  padding-left: 20px;
   text-align: center;
-  padding-left: 50px;
 }
 .headline .social_box {
   display: flex;
@@ -29,11 +37,16 @@
 @media only screen and (max-width: 1400px) {
     .headline {
         height: 75px;
+        padding-top: 0;
     }
-    .headline h1 {
+    .headline .link_white_text img {
+      max-height: 50px;
+      padding-left: 20px;
+    }
+    .headline .link_white_text h1 {
         font-size: 3rem;
         font-weight: bold;
-        padding-left: 50px;
+        padding-left: 20px;
     }
     .social {
         margin: 10px;
@@ -47,15 +60,21 @@
     }
 }
 
+/* Breakpoint for mobile */
 @media screen and (max-width: 600px) {
   .headline {
     margin: 0;
     padding: 0;
     height: auto;
   }
-  .headline h1 {
+  .headline .link_white_text img {
+    max-height: 40px;
+    padding-left: 20px;
+  }
+  .headline .link_white_text h1 {
+    font-size: 2.5rem;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 10px;
     width: 100%;
   }
   .headline .social_box {
