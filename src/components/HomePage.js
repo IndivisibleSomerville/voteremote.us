@@ -85,11 +85,6 @@ class HomePage extends React.Component {
                         </Link>
                     </div>
                     <div className="count_box_image">
-                        &nbsp;<br />
-                        &nbsp;<br />
-                        &nbsp;<br />
-                        &nbsp;<br />
-                        &nbsp;<br />
                     </div>
                 </div>
             </div>

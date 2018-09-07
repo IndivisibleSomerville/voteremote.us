@@ -91,6 +91,10 @@
 .count_box_image {
     background-color: #D8D8D8;
     width: 50%;
+    background-image: url('/images/students-voting_shutterstock_342696611.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Breakpoint for medium-size desktop/laptop screens */
