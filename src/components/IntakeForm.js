@@ -41,7 +41,6 @@ class IntakeForm extends React.Component {
         }));
     }
     handleChange = (e) => {
-        console.log('onChange', e.target.name, e.target.value);
         let newState = {};
         newState[e.target.name] = e.target.value;
         this.setState(newState);

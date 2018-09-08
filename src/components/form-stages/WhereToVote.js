@@ -110,7 +110,6 @@ class WhereToVote extends React.Component {
   }
 
   onClick = (e) => {
-    console.log('e.target.value in onclick of wheretovote', e.target.value)
     const districtSelector = e.target.value;
     this.props.updateDistrictSelector(districtSelector);
     this.props.handleStepChange('AreYouRegistered');
