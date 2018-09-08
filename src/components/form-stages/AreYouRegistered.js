@@ -7,8 +7,6 @@ class AreYouRegistered extends React.Component {
   }
 
   handleSubmit = (e) => {
-    console.log('e.currentTarget.value', e.currentTarget.value);
-    console.log('this.state.sel', this.state.selectedOption);
     let nextStep = '';
     switch (this.state.selectedOption) {
       case 'yesAbsentee':
