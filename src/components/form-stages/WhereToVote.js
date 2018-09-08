@@ -205,6 +205,7 @@ class WhereToVote extends React.Component {
               <button className="form_button form_button_solid_background  no_top_margin" value="school" onClick={this.onClick}>I Want to Vote at School Address</button>
             </div>
           </div>
+          <p className="disclaimer_legal">This is not legal advice and we are not responsible if information is not fully accurate. Users of this site should also consult their state’s elections website to confirm information.</p>
         </div>
       )
     }

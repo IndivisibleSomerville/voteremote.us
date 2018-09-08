@@ -1,30 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialMediaLinks from './SocialMediaLinks';
 
 import '../styles/Header.css';
 
 const Header = () => (
     <div className="headline">
-        <h1><Link className="link_white_text" to="/">
-        VOTE REMOTE
-        </Link></h1> 
-        <div className="social_box"> 
-            <div className="social vr_black_background">
-                <i className="fab fa-facebook-f"></i>
-            </div>
-            <div className="social vr_black_background">
-                <i className="fab fa-twitter"></i>
-            </div>
-            <div className="social vr_black_background">
-                <i className="fab fa-instagram"></i>
-            </div>
-            <div className="social vr_black_background">
-                <i className="far fa-envelope"></i>
-            </div>
-            <div className="social vr_black_background">
-                <i className="fas fa-rss"></i>
-            </div>
-        </div> 
+        <Link className="link_white_text" to="/">
+            <img src="/images/VoteRemoteLogo-white-01.png" alt="" />
+            <h1>VOTE REMOTE</h1>
+        </Link>
+        <SocialMediaLinks className="social_box" />
     </div>
 );
 

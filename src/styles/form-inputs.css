@@ -101,6 +101,13 @@ select:invalid {
     margin-top: 0;
 }
 
+.disclaimer_contact {
+    margin-bottom: 0;
+    color: darkgray;
+    font-size: 0.8em;
+}
+
+/* Breakpoints for Mobile */
 @media only screen and (max-width: 600px) {
     .form_group {
         flex-direction: column;

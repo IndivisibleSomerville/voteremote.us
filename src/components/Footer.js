@@ -1,22 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import SocialMediaLinks from './SocialMediaLinks';
 
 import '../styles/Footer.css';
 
 const Footer = () => (
     <div className="footer">
         <div className="footer_box">
-            <a href="#">View your State Requirements</a>
-            <a href="#">Find your Campus Community</a>
-            <a href="#">Get Involved</a>
-            <a href="#">About</a>
+            <Link className="link_no_decoration" to="/get-involved">Get Involved</Link>
+            <Link className="link_no_decoration" to="/state-requirements">View Your State Requirements</Link>
+            <Link className="link_no_decoration" to="/about">About</Link>
+            <Link className="link_no_decoration" to="/terms-and-privacy">Terms & Privacy</Link>
         </div>
-        <div className="social_box cr"> 
-            <div className="social vr_black_background"><i className="fab fa-facebook-f"></i></div>
-            <div className="social vr_black_background"><i className="fab fa-twitter"></i></div>
-            <div className="social vr_black_background"><i className="fab fa-instagram"></i></div>
-            <div className="social vr_black_background"><i className="far fa-envelope"></i></div>
-            <div className="social vr_black_background"><i className="fas fa-rss"></i></div>
-        </div>
+        <SocialMediaLinks className="social_box cr"/>
     </div>
 );
 

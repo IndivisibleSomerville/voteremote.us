@@ -4,6 +4,13 @@
     position: relative;
     text-align: center;
 }
+.banner_box.campus_coordinator {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/crowded-street_shutterstock_1053948191.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .banner_box .vr_section_head {
     padding-top: 96px;
     font-size: 124px;

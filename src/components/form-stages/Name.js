@@ -55,6 +55,7 @@ const Name = (props) => (
                     value={props.state["email"]}
                     onChange={props.handleChange}
                 />
+                <p className="disclaimer_contact">You will receive occasional emails from Vote Remote. You can unsubscribe at any time.</p>
                 <div className={props.state.errorMsgs["email"] === undefined ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["email"]}</span>
                 </div>            
@@ -71,7 +72,7 @@ const Name = (props) => (
                 </div>            
             </div>
             <div className="form_field">
-                <label htmlFor="phone">Your Cell Phone Number <span data-tip="We need your number for deadlines, not “u up” texts.<br />We won’t send that many. We’re not that needy." className="form_label_explanation_link">(Why do we need this?)</span></label>
+                <label htmlFor="phone">Your Cell Phone Number</label>
                 <input
                     autoComplete="never"
                     type="text"
@@ -80,6 +81,7 @@ const Name = (props) => (
                     value={props.state["phone"]}
                     onChange={props.handleChange}
                 />
+                <p className="disclaimer_contact">If you provide your cell phone number, you will receive occasional text messages from Vote Remote about election reminders and, at some campuses, voting-related events. Message and data rates may apply. Text STOP to opt out. Text HELP for more info.</p>
                 <div className={props.state.errorMsgs["phone"] === undefined ? "" : "ui red message"}>
                     <span>{props.state.errorMsgs["phone"]}</span>
                 </div>            

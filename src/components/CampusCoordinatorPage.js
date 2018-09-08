@@ -15,7 +15,7 @@ class CampusCoordinatorPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <div className="banner_box vr_grey_background vr_uppercase">
+                <div className="banner_box campus_coordinator vr_uppercase">
                     <h1 className="vr_section_head">
                         Become a Campus Coordinator
                     </h1>
@@ -33,8 +33,8 @@ class CampusCoordinatorPage extends React.Component {
                     </div>
                 </div>
                 <div className="section_header_blue first_section_header">
-                    <h3 className="vr_section_subhead vr_uppercase">According to XYZ...</h3>
-                    <h2 className="vr_section_head vr_uppercase">52% of college students don't vote</h2>
+                    <h3 className="vr_section_subhead vr_uppercase">According to <span className="italic">The New York Times</span>,</h3>
+                    <h2 className="vr_section_head vr_uppercase">over 50% of college students don't vote.</h2>
                 </div>
                 <div className="section_info_white">
                     <div className="section_info_two_wide_container">

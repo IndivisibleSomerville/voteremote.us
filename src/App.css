@@ -57,6 +57,19 @@ h1, h2, h3, h4, h5 {
   width: 100%;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.terms_container {
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.disclaimer_legal {
+    font-style: italic;
+}
 
 .form_page {
   background-color:#FFFFFF;

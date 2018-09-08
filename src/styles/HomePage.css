@@ -4,6 +4,13 @@
     position: relative;
     text-align: center;
 }
+.banner_box.homepage {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/students-marching-on-street_shutterstock_1046250628.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .banner_box .vr_section_head {
     padding-top: 96px;
     font-size: 124px;
@@ -86,6 +93,10 @@
 .count_box_image {
     background-color: #D8D8D8;
     width: 50%;
+    background-image: url('/images/students-voting_shutterstock_342696611.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Breakpoint for medium-size desktop/laptop screens */
