@@ -43,7 +43,7 @@ class HomePage extends React.Component {
                                     Making Your Vote Count
                                 </div>
                                 <div className="img_txt">
-                                    Use our district tool to find out where your vote is most useful.
+                                    Use our district tool to find out where your vote is the most useful.
                                 </div>
                             </div>
                             <div className="what_icon_box">

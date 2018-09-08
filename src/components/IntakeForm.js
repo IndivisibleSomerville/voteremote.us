@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Joi from 'joi-browser';
 
+import firebase from '../firebase/firebase';
+
 import Name from './form-stages/Name';
 import Address from './form-stages/Address';
 import WhereToVote from './form-stages/WhereToVote';
@@ -39,7 +41,6 @@ class IntakeForm extends React.Component {
         }));
     }
     handleChange = (e) => {
-        console.log('onChange', e.target.name, e.target.value);
         let newState = {};
         newState[e.target.name] = e.target.value;
         this.setState(newState);
@@ -99,6 +100,11 @@ class IntakeForm extends React.Component {
         }
     }
     handleStepChange = (nextStep) => {
+        // Save data in Firebase
+        const itemsRef = firebase.database().ref('items');
+        const oldItem = this.state;
+        itemsRef.push(oldItem).catch( (error) => console.log("Error writing to db."));
+        // Go to next step
         let path = '';
         switch (nextStep) {
             case 'Name':
